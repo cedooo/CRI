@@ -1,0 +1,18 @@
+CREATE TABLE  country  (
+   Code  VARCHAR(3) NOT NULL   PRIMARY KEY,
+   Name  VARCHAR(52) NOT NULL  ,
+   Continent  VARCHAR(64) NOT NULL  ,
+   Region  VARCHAR(26) NOT NULL  ,
+   SurfaceArea  DOUBLE NOT NULL  ,
+   IndepYear  INTEGER  DEFAULT NULL,
+   Population  INTEGER  NOT NULL  ,
+   LifeExpectancy  DOUBLE  DEFAULT NULL,
+   GNP  DOUBLE  DEFAULT NULL,
+   GNPOld  DOUBLE   DEFAULT NULL,
+   LocalName  VARCHAR(45) NOT NULL  ,
+   GovernmentForm  VARCHAR(45) NOT NULL  ,
+   HeadOfState  VARCHAR(60) DEFAULT NULL,
+   Capital  INTEGER  DEFAULT NULL,
+   Code2  VARCHAR(2) NOT NULL   
+);
+
