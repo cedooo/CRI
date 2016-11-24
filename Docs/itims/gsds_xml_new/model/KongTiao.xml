@@ -1,0 +1,65 @@
+<model name="en" desc="空调">
+	<typ name="KongTiao" desc="空调" parentName="">
+		<group groupId="KongTiao" idTyp="version" ref="" priority="1" desc="机房动力 空调">
+			<allKpiDesc>
+				<partTyp id="ktInfo" name="空调"  pname="空调"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" dbModel="xxx" isPublic="true" dbTable="tc_kongtiao" isMO="false" markKpi=""  >
+					<kpi id="mosn" name="MOSN" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="dmsn" name="域" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="fPartID" name="模拟量" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="A1" name="实测湿度" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A2" name="实测温度" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A3" name="平均湿度" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A4" name="平均温度" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D1" name="系统状态" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D2" name="除湿器状态" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D3" name="加热器1状态" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D4" name="加热器2状态" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D5" name="压缩机1状态" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D6" name="压缩机2状态" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D7" name="风机状态" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D8" name="过滤器阻塞" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D9" name="压缩机1低压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D10" name="压缩机1高压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D11" name="冷却水温度过高" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D12" name="冷却水流量过低" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D13" name="电子加热器过热" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D14" name="风机故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D15" name="漏水" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D16" name="外加加湿器故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D17" name="加湿器电流过高" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D18" name="加湿器故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D19" name="室内湿度过高(EEAP)" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D20" name="室内湿度过低(EEAP)" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D21" name="室内温度过高" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D22" name="室内温度过低" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D23" name="室内湿度过高" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D24" name="室内湿度过低" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D25" name="压缩机1工作超时" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D26" name="加湿器工作超时" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D27" name="室内温度过高(EEAP)" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D28" name="室内温度过低(EEAP)" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D29" name="PTC传感器故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D30" name="室温传感器故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D31" name="室温传感器故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D32" name="加湿器故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D33" name="加湿器缸磨损" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D34" name="EEAP传感器故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D35" name="水流传感器故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D36" name="压缩机2高压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D37" name="压缩机2低压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D38" name="室外温感故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D39" name="乙二醇温感故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D40" name="压缩机2工作超时" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D41" name="火警" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D42" name="冷凝器2风扇故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D43" name="冷凝器1风扇故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D44" name="烟雾报警" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+				</partTyp>
+			</allKpiDesc>
+			<init />
+			<protocol defaultProtocol="" unreachableProtocol="">
+				<snmp port="12" version="1.21" readCommunity="123" writeCommunity="1231" overTime="13" desc="" usmUser="" authAlogrithm="" authPassword="" privacyAlogrithm="" privacyPassword="" />	 
+			</protocol>
+		</group>
+	</typ>
+</model>

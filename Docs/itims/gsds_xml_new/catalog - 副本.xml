@@ -1,0 +1,515 @@
+<catalog>
+   <node mosn="99800001" pmosn="0" title="网络" icon="img/mo/nw16.gif" iconname="" devType="10"/>
+   <node mosn="99800002" pmosn="99800001" title="路由器" icon="img/mo/nwR16.gif" iconname="" devType="1010"/>
+   <node mosn="99800003" pmosn="99800001" title="交换机" icon="img/mo/nwS16.gif" iconname="" devType="1020"/>
+   <node mosn="99800018" pmosn="99800001" title="Wireless AP" icon="img/mo/wifi.png" iconname="" devType="1045"/>
+   <node mosn="99800011" pmosn="99800001" title="负载均衡" icon="img/mo/nw4Layer16.gif" iconname="" devType="1030"/>
+   <node mosn="99800014" pmosn="99800001" title="其它" icon="img/mo/other16.png" iconname="" devType="1050"/>
+   <node mosn="99800004" pmosn="0" title="主机" icon="img/mo/ho16.gif" iconname="" devType="12"/>
+   <node mosn="99800005" pmosn="0" title="数据库" icon="img/mo/db16.gif" iconname="" devType="20"/>
+   <node mosn="99800006" pmosn="0" title="中间件" icon="img/mo/mw16.gif" iconname="" devType="21"/>
+   <node mosn="99800008" pmosn="0" title="安全" icon="img/mo/se16.gif" iconname="" devType="11"/>
+   <node mosn="99800009" pmosn="99800008" title="防火墙" icon="img/mo/seF16.png" iconname="" devType="1110"/>
+   <node mosn="99800010" pmosn="99800008" title="网关" icon="img/mo/gateway16.png" iconname="" devType="1120"/>
+   <node mosn="99800012" pmosn="0" title="其他" icon="img/mo/other16.png" iconname="" devType="40"/>
+   <node mosn="99800013" pmosn="0" title="环境" icon="img/mo/en16.gif" iconname="" devType="42"/>
+   <node mosn="99800015" pmosn="99800013" title="UPS" icon="img/mo/enp16.gif" iconname="" devType="4204"/>
+   <node mosn="99800017" pmosn="99800013" title="空调" icon="img/mo/air16.gif" iconname="" devType="4205"/>
+   <node mosn="99800016" pmosn="99800013" title="温湿度传感器" icon="img/mo/ent16.jpg" iconname="" devType="4201"/>
+   <node mosn="99800019" pmosn="0" title="存储" icon="img/mo/st16.gif" iconname="" devType="15"/>
+   <node mosn="99800020" pmosn="0" title="虚拟化" icon="img/mo/ho16.gif" iconname="" devType="50"/>
+   <node mosn="99800024" pmosn="0" title="IB系统" icon="img/vendor/mellanox16.png" iconname="" devType="60"/>
+   <node mosn="99800025" pmosn="0" title="机房动力" icon="img/mo/en16.gif" iconname="" devType="70"/>
+   <node mosn="99800026" pmosn="99800025" title="兰州机房" icon="img/mo/en16.gif" iconname="" devType="7010"/>
+   <node mosn="99800027" pmosn="99800025" title="张掖机房" icon="img/mo/en16.gif" iconname="" devType="7020"/>
+
+   <type mosn="99800701" pmosn="99800026" title="配电柜" icon="img/mo/ho16.gif" iconname="" absModel="PeiDianGui" devType="701001">
+      <group mosn="99800702" pmosn="99800701" title="配电柜" icon="img/mo/ho16.gif" iconname="" forward="" id="PeiDianGui" devType=""/>
+   </type>
+   <type mosn="99800703" pmosn="99800026" title="UPS" icon="img/mo/ho16.gif" iconname="" absModel="UPS" devType="701002">
+      <group mosn="99800704" pmosn="99800703" title="UPS" icon="img/mo/ho16.gif" iconname="" forward="" id="UPS" devType=""/>
+   </type>
+   <type mosn="99800705" pmosn="99800026" title="STS" icon="img/mo/ho16.gif" iconname="" absModel="STS" devType="701003">
+      <group mosn="99800706" pmosn="99800705" title="STS" icon="img/mo/ho16.gif" iconname="" forward="" id="STS" devType=""/>
+   </type>
+   <type mosn="99800707" pmosn="99800026" title="STS开关" icon="img/mo/ho16.gif" iconname="" absModel="STSKaiGuan" devType="701004">
+      <group mosn="99800708" pmosn="99800707" title="STS" icon="img/mo/ho16.gif" iconname="" forward="" id="STSKaiGuan" devType=""/>
+   </type>
+   <type mosn="99800709" pmosn="99800026" title="电池架" icon="img/mo/ho16.gif" iconname="" absModel="DianChiJia" devType="701005">
+      <group mosn="99800710" pmosn="99800709" title="电池架" icon="img/mo/ho16.gif" iconname="" forward="" id="DianChiJia" devType=""/>
+   </type>
+   <type mosn="99800711" pmosn="99800026" title="列头柜" icon="img/mo/ho16.gif" iconname="" absModel="LieTouGui" devType="701006">
+      <group mosn="99800712" pmosn="99800711" title="列头柜" icon="img/mo/ho16.gif" iconname="" forward="" id="LieTouGui" devType=""/>
+   </type>
+   <type mosn="99800713" pmosn="99800026" title="空调" icon="img/mo/ho16.gif" iconname="" absModel="KongTiao" devType="701007">
+      <group mosn="99800714" pmosn="99800713" title="空调" icon="img/mo/ho16.gif" iconname="" forward="" id="KongTiao" devType=""/>
+   </type>
+   <type mosn="99800715" pmosn="99800026" title="温湿度" icon="img/mo/ho16.gif" iconname="" absModel="WenShiDu" devType="701008">
+      <group mosn="99800716" pmosn="99800715" title="温湿度" icon="img/mo/ho16.gif" iconname="" forward="" id="WenShiDu" devType=""/>
+   </type>
+   <type mosn="99800720" pmosn="99800026" title="防雷检测" icon="img/mo/ho16.gif" iconname="" absModel="FangLei" devType="701009">
+      <group mosn="99800721" pmosn="99800720" title="防雷检测" icon="img/mo/ho16.gif" iconname="" forward="" id="FangLei" devType=""/>
+   </type>
+   <type mosn="99800722" pmosn="99800026" title="漏水" icon="img/mo/ho16.gif" iconname="" absModel="LouShui" devType="701010">
+      <group mosn="99800723" pmosn="99800722" title="漏水" icon="img/mo/ho16.gif" iconname="" forward="" id="LouShui" devType=""/>
+   </type>
+   <type mosn="99800724" pmosn="99800026" title="进水电磁阀" icon="img/mo/ho16.gif" iconname="" absModel="JinShui" devType="701011">
+      <group mosn="99800725" pmosn="99800724" title="进水电磁阀" icon="img/mo/ho16.gif" iconname="" forward="" id="JinShui" devType=""/>
+   </type>
+   <type mosn="99800726" pmosn="99800026" title="新风机" icon="img/mo/ho16.gif" iconname="" absModel="XinFengJi" devType="701012">
+      <group mosn="99800727" pmosn="99800726" title="新风机" icon="img/mo/ho16.gif" iconname="" forward="" id="XinFengJi" devType=""/>
+   </type>
+   <type mosn="99800728" pmosn="99800026" title="消防" icon="img/mo/ho16.gif" iconname="" absModel="XiaoFang" devType="701013">
+      <group mosn="99800729" pmosn="99800728" title="消防" icon="img/mo/ho16.gif" iconname="" forward="" id="XiaoFang" devType=""/>
+   </type>
+   <type mosn="99800730" pmosn="99800026" title="门禁" icon="img/mo/ho16.gif" iconname="" absModel="MenJin" devType="701014">
+      <group mosn="99800731" pmosn="99800730" title="门禁" icon="img/mo/ho16.gif" iconname="" forward="" id="MenJin" devType=""/>
+   </type>
+   <type mosn="99800732" pmosn="99800026" title="报警主机红外" icon="img/mo/ho16.gif" iconname="" absModel="BaoJing" devType="701015">
+      <group mosn="99800733" pmosn="99800732" title="报警主机红外" icon="img/mo/ho16.gif" iconname="" forward="" id="BaoJing" devType=""/>
+   </type>
+
+
+   <type mosn="99800734" pmosn="99800027" title="配电柜" icon="img/mo/ho16.gif" iconname="" absModel="PeiDianGui" devType="701001">
+      <group mosn="99800735" pmosn="99800734" title="配电柜" icon="img/mo/ho16.gif" iconname="" forward="" id="PeiDianGui" devType=""/>
+   </type>
+   <type mosn="99800736" pmosn="99800027" title="UPS" icon="img/mo/ho16.gif" iconname="" absModel="UPS" devType="701002">
+      <group mosn="99800737" pmosn="99800736" title="UPS" icon="img/mo/ho16.gif" iconname="" forward="" id="UPS" devType=""/>
+   </type>
+   <type mosn="99800738" pmosn="99800027" title="STS" icon="img/mo/ho16.gif" iconname="" absModel="STS" devType="701003">
+      <group mosn="99800739" pmosn="99800738" title="STS" icon="img/mo/ho16.gif" iconname="" forward="" id="STS" devType=""/>
+   </type>
+   <type mosn="99800740" pmosn="99800027" title="STS开关" icon="img/mo/ho16.gif" iconname="" absModel="STSKaiGuan" devType="701004">
+      <group mosn="99800741" pmosn="99800740" title="STS" icon="img/mo/ho16.gif" iconname="" forward="" id="STSKaiGuan" devType=""/>
+   </type>
+   <type mosn="99800742" pmosn="99800027" title="电池架" icon="img/mo/ho16.gif" iconname="" absModel="DianChiJia" devType="701005">
+      <group mosn="99800743" pmosn="99800742" title="电池架" icon="img/mo/ho16.gif" iconname="" forward="" id="DianChiJia" devType=""/>
+   </type>
+   <type mosn="99800744" pmosn="99800027" title="列头柜" icon="img/mo/ho16.gif" iconname="" absModel="LieTouGui" devType="701006">
+      <group mosn="99800745" pmosn="99800744" title="列头柜" icon="img/mo/ho16.gif" iconname="" forward="" id="LieTouGui" devType=""/>
+   </type>
+   <type mosn="99800746" pmosn="99800027" title="空调" icon="img/mo/ho16.gif" iconname="" absModel="KongTiao" devType="701007">
+      <group mosn="99800747" pmosn="99800746" title="空调" icon="img/mo/ho16.gif" iconname="" forward="" id="KongTiao" devType=""/>
+   </type>
+   <type mosn="99800748" pmosn="99800027" title="温湿度" icon="img/mo/ho16.gif" iconname="" absModel="WenShiDu" devType="701008">
+      <group mosn="99800749" pmosn="99800748" title="温湿度" icon="img/mo/ho16.gif" iconname="" forward="" id="WenShiDu" devType=""/>
+   </type>
+   <type mosn="99800750" pmosn="99800027" title="防雷检测" icon="img/mo/ho16.gif" iconname="" absModel="FangLei" devType="701009">
+      <group mosn="99800751" pmosn="99800750" title="防雷检测" icon="img/mo/ho16.gif" iconname="" forward="" id="FangLei" devType=""/>
+   </type>
+   <type mosn="99800752" pmosn="99800027" title="漏水" icon="img/mo/ho16.gif" iconname="" absModel="LouShui" devType="701010">
+      <group mosn="99800753" pmosn="99800752" title="漏水" icon="img/mo/ho16.gif" iconname="" forward="" id="LouShui" devType=""/>
+   </type>
+   <type mosn="99800754" pmosn="99800027" title="进水电磁阀" icon="img/mo/ho16.gif" iconname="" absModel="JinShui" devType="701011">
+      <group mosn="99800755" pmosn="99800754" title="进水电磁阀" icon="img/mo/ho16.gif" iconname="" forward="" id="JinShui" devType=""/>
+   </type>
+   <type mosn="99800756" pmosn="99800027" title="新风机" icon="img/mo/ho16.gif" iconname="" absModel="XinFengJi" devType="701012">
+      <group mosn="99800757" pmosn="99800756" title="新风机" icon="img/mo/ho16.gif" iconname="" forward="" id="XinFengJi" devType=""/>
+   </type>
+   <type mosn="99800758" pmosn="99800027" title="消防" icon="img/mo/ho16.gif" iconname="" absModel="XiaoFang" devType="701013">
+      <group mosn="99800759" pmosn="99800758" title="消防" icon="img/mo/ho16.gif" iconname="" forward="" id="XiaoFang" devType=""/>
+   </type>
+   <type mosn="99800760" pmosn="99800027" title="门禁" icon="img/mo/ho16.gif" iconname="" absModel="MenJin" devType="701014">
+      <group mosn="99800761" pmosn="99800760" title="门禁" icon="img/mo/ho16.gif" iconname="" forward="" id="MenJin" devType=""/>
+   </type>
+   <type mosn="99800762" pmosn="99800027" title="报警主机红外" icon="img/mo/ho16.gif" iconname="" absModel="BaoJing" devType="701015">
+      <group mosn="99800763" pmosn="99800762" title="报警主机红外" icon="img/mo/ho16.gif" iconname="" forward="" id="BaoJing" devType=""/>
+   </type>
+
+
+   <type mosn="99800100" pmosn="99800002" title="Cisco" icon="img/vendor/cisco16.jpg" iconname="" absModel="Cisco" devType="101001">
+      <group mosn="99800101" pmosn="99800100" title="通用路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.9" devType=""/>
+      <group mosn="99800523" pmosn="99800100" title="无线路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.9.1.1069" devType=""/>
+   </type>
+   <type mosn="99800102" pmosn="99800003" title="Cisco" icon="img/vendor/cisco16.jpg" iconname="" absModel="Cisco" devType="102001">
+      <group mosn="99800103" pmosn="99800102" title="通用交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.9" devType=""/>
+   </type>
+   <type mosn="99800104" pmosn="99800002" title="Huawei" icon="img/vendor/huawei16.jpg" iconname="" absModel="HuaweiNew" devType="101002">
+      <group mosn="99800106" pmosn="99800104" title="通用路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.2011" devType=""/>
+      <group mosn="99800149" pmosn="99800104" title="NE系列" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.2011.2.62" devType=""/>
+      <group mosn="99800158" pmosn="99800104" title="NE5000系列" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.2011.2.62.ne5000" devType=""/>
+   </type>
+   <type mosn="99800107" pmosn="99800003" title="Huawei" icon="img/vendor/huawei16.jpg" iconname="" absModel="HuaweiNew" devType="102002">
+      <group mosn="99800109" pmosn="99800107" title="通用交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.2011" devType=""/>
+      <group mosn="99800205" pmosn="99800107" title="NE系列" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.2011.2.62" devType=""/>
+      <group mosn="99800206" pmosn="99800107" title="NE5000系列" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.2011.2.62.ne5000" devType=""/>
+   </type>
+   <type mosn="99800139" pmosn="99800002" title="H3C" icon="img/vendor/h3c16.gif" iconname="" absModel="H3C" devType="101003">
+      <group mosn="99800105" pmosn="99800139" title="专有路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.25506.1.height" devType=""/>
+      <group mosn="99800157" pmosn="99800139" title="通用路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.25506.1.low" devType=""/>
+      <group mosn="99800485" pmosn="99800139" title="一般路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.25506" devType=""/>
+   </type>
+   <type mosn="99800138" pmosn="99800003" title="H3C" icon="img/vendor/h3c16.gif" iconname="" absModel="H3C" devType="102003">
+      <group mosn="99800108" pmosn="99800138" title="专有交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.25506.1.height" devType=""/>
+      <group mosn="99800160" pmosn="99800138" title="通用交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.25506.1.low" devType=""/>
+      <group mosn="99800486" pmosn="99800138" title="一般交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.25506" devType=""/>
+   </type>
+   <type mosn="99800461" pmosn="99800002" title="3Com" icon="img/vendor/3com16.jpg" iconname="" absModel="3Com" devType="101017">
+      <group mosn="99800462" pmosn="99800461" title="3Com路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.43" devType=""/>
+   </type>
+   <type mosn="99800463" pmosn="99800003" title="3Com" icon="img/vendor/3com16.jpg" iconname="" absModel="3Com" devType="102022">
+      <group mosn="99800464" pmosn="99800463" title="3Com交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.43" devType=""/>
+   </type>
+   <type mosn="99800142" pmosn="99800002" title="Zte" icon="img/vendor/zte16.jpg" iconname="" absModel="Zte" devType="101006">
+      <group mosn="99800143" pmosn="99800142" title="路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.3902" devType=""/>
+   </type>
+   <type mosn="99800153" pmosn="99800003" title="Zte" icon="img/vendor/zte16.jpg" iconname="" absModel="Zte" devType="102004">
+      <group mosn="99800154" pmosn="99800153" title="交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.3902" devType=""/>
+   </type>
+   <type mosn="99800155" pmosn="99800002" title="Juniper" icon="img/vendor/juniper16.png" iconname="" absModel="Swjuniper" devType="101007">
+      <group mosn="99800156" pmosn="99800155" title="路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.2636" devType=""/>
+   </type>
+   <type mosn="99800140" pmosn="99800003" title="Juniper" icon="img/vendor/juniper16.png" iconname="" absModel="Swjuniper" devType="102007">
+      <group mosn="99800141" pmosn="99800140" title="交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.2636" devType=""/>
+   </type>
+   <type mosn="99800159" pmosn="99800002" title="锐捷" icon="img/vendor/ruijie16.png" iconname="" absModel="Ruijie" devType="101009">
+      <group mosn="99800161" pmosn="99800159" title="路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.4881" devType=""/>
+   </type>
+   <type mosn="99800162" pmosn="99800003" title="锐捷" icon="img/vendor/ruijie16.png" iconname="" absModel="Ruijie" devType="102009">
+      <group mosn="99800174" pmosn="99800162" title="交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.4881" devType=""/>
+   </type>
+   <type mosn="99800147" pmosn="99800002" title="北电" icon="img/vendor/nortel16.jpg" iconname="" absModel="Nortel" devType="101008">
+      <group mosn="99800148" pmosn="99800147" title="2272系列路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.2272" devType=""/>
+      <group mosn="99800173" pmosn="99800147" title="45系列路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.45" devType=""/>
+   </type>
+   <type mosn="99800150" pmosn="99800003" title="北电" icon="img/vendor/nortel16.jpg" iconname="" absModel="Nortel" devType="102008">
+      <group mosn="99800151" pmosn="99800150" title="2272系列交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.2272" devType=""/>
+      <group mosn="99800152" pmosn="99800150" title="45系列交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.45" devType=""/>
+   </type>
+   <type mosn="99800465" pmosn="99800002" title="神州数码" icon="img/vendor/digitalChina16.png" iconname="" absModel="DigitalChina" devType="101018">
+      <group mosn="99800466" pmosn="99800465" title="路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.6339" devType=""/>
+   </type>
+   <type mosn="99800175" pmosn="99800003" title="神州数码" icon="img/vendor/digitalChina16.png" iconname="" absModel="DigitalChina" devType="102019">
+      <group mosn="99800176" pmosn="99800175" title="交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.6339" devType=""/>
+   </type>
+   <type mosn="99800185" pmosn="99800002" title="港湾" icon="img/vendor/harbour16.png" iconname="" absModel="Harbour" devType="101011">
+      <group mosn="99800186" pmosn="99800185" title="路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.8212" devType=""/>
+   </type>
+   <type mosn="99800187" pmosn="99800003" title="港湾" icon="img/vendor/harbour16.jpg" iconname="" absModel="Harbour" devType="102010">
+      <group mosn="99800188" pmosn="99800187" title="交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.8212" devType=""/>
+   </type>
+   <type mosn="99800177" pmosn="99800002" title="迈普" icon="img/vendor/maipu16.png" iconname="" absModel="Maipu" devType="101014">
+      <group mosn="99800178" pmosn="99800177" title="路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.5651" devType=""/>
+   </type>
+   <type mosn="99800179" pmosn="99800002" title="网捷" icon="img/vendor/foundry16.png" iconname="" absModel="Foundry" devType="101012">
+      <group mosn="99800180" pmosn="99800179" title="路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.1991" devType=""/>
+   </type>
+   <type mosn="99800181" pmosn="99800003" title="飞塔" icon="img/vendor/fortinet16.png" iconname="" absModel="Fortinet" devType="102021">
+      <group mosn="99800182" pmosn="99800181" title="交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.12356" devType=""/>
+   </type>
+   <type mosn="99800189" pmosn="99800003" title="惠普" icon="img/vendor/hp16.png" iconname="" absModel="SwHp" devType="102014">
+      <group mosn="99800190" pmosn="99800189" title="交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.11" devType=""/>
+   </type>
+   <type mosn="99800191" pmosn="99800003" title="瑞通" icon="img/vendor/riverstone16.png" iconname="" absModel="Riverstone" devType="102015">
+      <group mosn="99800192" pmosn="99800191" title="交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.52" devType=""/>
+   </type>
+   <type mosn="99800193" pmosn="99800003" title="盛科网络" icon="img/vendor/sancogame16.png" iconname="" absModel="SanCoGame" devType="102020">
+      <group mosn="99800194" pmosn="99800193" title="交换机" icon="img/tree/sancogame16.gif" iconname="" forward="2" id="1.3.6.1.4.1.27975" devType=""/>
+   </type>
+   <type mosn="99800499" pmosn="99800003" title="博达" icon="img/vendor/bdcom16.png" iconname="" absModel="BDCOM" devType="102023">
+      <group mosn="99800500" pmosn="99800499" title="交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.3320" devType=""/>
+   </type>
+   <type mosn="99800446" pmosn="99800003" title="凯创" icon="img/vendor/Enterasys16.png" iconname="" absModel="Enterasys" devType="105001">
+      <group mosn="99800447" pmosn="99800446" title="交换机(5624)" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.5624" devType=""/>
+      <group mosn="99800448" pmosn="99800446" title="交换机(52)" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.52" devType=""/>
+   </type>
+   <type mosn="99800517" pmosn="99800003" title="汉柏" icon="img/vendor/Opzoon16.png" iconname="" absModel="Opzoon" devType="102024">
+      <group mosn="99800518" pmosn="99800517" title="交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.37449" devType=""/>
+   </type>
+   <type mosn="99800519" pmosn="99800003" title="Force10" icon="img/vendor/force10.png" iconname="" absModel="DellForce10" devType="102025">
+      <group mosn="99800520" pmosn="99800519" title="S4800" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.6027.1.3.14" devType=""/>
+      <group mosn="99800546" pmosn="99800519" title="S50" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.6027.1.3.7" devType=""/>
+      <group mosn="99800547" pmosn="99800519" title="E600" icon="img/tree/tMoSeries16.gif" iconname="" forward="2" id="1.3.6.1.4.1.6027.1.1.4" devType=""/>
+   </type>
+   <type mosn="99800195" pmosn="99800018" title="Cisco" icon="img/vendor/cisco16.jpg" iconname="" absModel="WlCisco" devType="104504">
+      <group mosn="99800196" pmosn="99800195" title="Wireless" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="" devType=""/>
+   </type>
+   <type mosn="99800197" pmosn="99800018" title="Huawei" icon="img/vendor/huawei16.jpg" iconname="" absModel="WlHuawei" devType="104505">
+      <group mosn="99800198" pmosn="99800197" title="Wireless" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="" devType=""/>
+   </type>
+   <type mosn="99800199" pmosn="99800018" title="H3C" icon="img/vendor/h3c16.gif" iconname="" absModel="WlH3c" devType="104506">
+      <group mosn="99800200" pmosn="99800199" title="Wireless" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="" devType=""/>
+   </type>
+   <type mosn="99800201" pmosn="99800018" title="锐捷" icon="img/vendor/ruijie16.png" iconname="" absModel="WlRuiJie" devType="104507">
+      <group mosn="99800202" pmosn="99800201" title="Wireless" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="" devType=""/>
+   </type>
+   <type mosn="99800203" pmosn="99800018" title="神州数码" icon="img/vendor/digitalChina16.png" iconname="" absModel="WlDigitalChina" devType="104508">
+      <group mosn="99800204" pmosn="99800203" title="Wireless" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="" devType=""/>
+   </type>
+   <type mosn="99800183" pmosn="99800010" title="深信服" icon="img/vendor/shenxinfu16.png" iconname="" absModel="Shenxinfu" devType="112002">
+      <group mosn="99800184" pmosn="99800183" title="网关" icon="img/mo/gateway16.png" iconname="" forward="" id="1.3.6.1.4.1.33333" devType=""/>
+   </type>
+   <type mosn="99800457" pmosn="99800010" title="侠诺" icon="img/vendor/qno16.png" iconname="" absModel="Qno" devType="112003">
+      <group mosn="99800458" pmosn="99800457" title="网关" icon="img/mo/gateway16.png" iconname="" forward="" id="1.3.6.1.4.1.23871" devType=""/>
+   </type>
+   <type mosn="99800451" pmosn="99800011" title="RadWare" icon="img/vendor/radware16.png" iconname="" absModel="RadWare" devType="103004">
+      <group mosn="99800452" pmosn="99800451" title="负载均衡" icon="img/vendor/tMoSeries16.png" iconname="" forward="" id="1.3.6.1.4.1.89.1.1.62.8" devType=""/>
+   </type>
+   <type mosn="99800438" pmosn="99800011" title="F5" icon="img/vendor/f516.png" iconname="" absModel="F5" devType="103001">
+      <group mosn="99800439" pmosn="99800438" title="负载均衡" icon="img/vendor/tMoSeries16.png" iconname="" forward="" id="1.3.6.1.4.1.3375" devType=""/>
+   </type>
+   <type mosn="99800110" pmosn="99800004" title="Linux" icon="img/vendor/linux16.png" iconname="" absModel="Linux" devType="1206">
+      <group mosn="99800111" pmosn="99800110" title="Linux" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="Linux" devType=""/>
+   </type>
+   <type mosn="99800112" pmosn="99800004" title="Windows" icon="img/vendor/windows16.png" iconname="" absModel="Windows" devType="1208">
+      <group mosn="99800113" pmosn="99800112" title="Windows" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="Windows" devType=""/>
+   </type>
+   <type mosn="99800114" pmosn="99800004" title="Aix" icon="img/vendor/aix16.gif" iconname="" absModel="Aix" devType="1201">
+      <group mosn="99800115" pmosn="99800114" title="Aix" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="IBM-AIX" devType=""/>
+   </type>
+   <type mosn="99800116" pmosn="99800004" title="Solaris" icon="img/vendor/solaris16.png" iconname="" absModel="Solaris" devType="1207">
+      <group mosn="99800117" pmosn="99800116" title="Solaris" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="Solaris" devType=""/>
+   </type>
+   <type mosn="99800118" pmosn="99800004" title="Hp" icon="img/vendor/hp16.png" iconname="" absModel="Hp" devType="1202">
+      <group mosn="99800119" pmosn="99800118" title="Hp" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="Hp" devType=""/>
+   </type>
+   <type mosn="99800120" pmosn="99800006" title="weblogic" icon="img/vendor/weblogic16.gif" iconname="" absModel="weblogic" devType="2101">
+      <group mosn="99800121" pmosn="99800120" title="weblogicV8" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="WebLogicV8" devType=""/>
+      <group mosn="99800137" pmosn="99800120" title="weblogicV9" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="WebLogicV9" devType=""/>
+   </type>
+   <type mosn="99800420" pmosn="99800006" title="websphere" icon="img/vendor/websphere16.gif" iconname="" absModel="websphere" devType="2102">
+      <group mosn="99800421" pmosn="99800420" title="WebsphereV5" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="WebsphereV5" devType=""/>
+      <group mosn="99800437" pmosn="99800420" title="WebsphereV6" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="WebsphereV6" devType=""/>
+   </type>
+   <type mosn="99800220" pmosn="99800006" title="tomcat" icon="img/vendor/tomcat16.gif" iconname="" absModel="tomcat" devType="2103">
+      <group mosn="99800221" pmosn="99800220" title="Tomcat" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="tomcat" devType=""/>
+   </type>
+   <type mosn="99800320" pmosn="99800006" title="Java" icon="img/vendor/solaris16.png" iconname="" absModel="javaProcess" devType="2104">
+      <group mosn="99800321" pmosn="99800320" title="Java进程" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="javaProcess" devType=""/>
+   </type>
+   <type mosn="99800469" pmosn="99800006" title="IIS" icon="img/vendor/windows16.png" iconname="" absModel="IIS" devType="2109">
+      <group mosn="99800470" pmosn="99800469" title="IIS" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="IIS" devType=""/>
+   </type>
+   <type mosn="99800521" pmosn="99800006" title="MQ" icon="img/vendor/websphere16.gif" iconname="" absModel="mq" devType="2105">
+      <group mosn="99800522" pmosn="99800521" title="MQ" icon="img/vendor/websphere16.gif" iconname="" forward="" id="mq" devType=""/>
+   </type>
+   <type mosn="99800122" pmosn="99800005" title="DB2" icon="img/vendor/db216.gif" iconname="" absModel="DB2" devType="2004">
+      <group mosn="99800123" pmosn="99800122" title="DB2v9" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="DB2v9" devType=""/>
+      <group mosn="99800124" pmosn="99800122" title="DB2v9.5" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="DB2v9.5" devType=""/>
+      <group mosn="99800125" pmosn="99800122" title="DB2v9.7" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="DB2v9.7" devType=""/>
+   </type>
+   <type mosn="99800126" pmosn="99800005" title="Oracle" icon="img/vendor/dbo16.jpg" iconname="" absModel="Oracle" devType="2001">
+      <group mosn="99800127" pmosn="99800126" title="Oracle8" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="Oracle8i" devType=""/>
+      <group mosn="99800128" pmosn="99800126" title="Oracle9" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="Oracle9i" devType=""/>
+      <group mosn="99800129" pmosn="99800126" title="Oracle10" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="Oracle10g" devType=""/>
+      <group mosn="99800130" pmosn="99800126" title="Oracle11" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="Oracle11g" devType=""/>
+      <group mosn="99800130" pmosn="99800126" title="rac" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="rac" devType=""/>
+   </type>
+   <type mosn="99800131" pmosn="99800005" title="sybase" icon="img/vendor/dbs16.jpg" iconname="" absModel="sybase" devType="2002">
+      <group mosn="99800132" pmosn="99800131" title="sybase11" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="Sybase11" devType=""/>
+      <group mosn="99800133" pmosn="99800131" title="sybase12" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="Sybase12" devType=""/>
+   </type>
+   <type mosn="99800134" pmosn="99800005" title="SqlServer" icon="img/vendor/dbq16.jpg" iconname="" absModel="SqlServer" devType="2005">
+      <group mosn="99800135" pmosn="99800134" title="SqlServer2000" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="SqlServer2000" devType=""/>
+      <group mosn="99800136" pmosn="99800134" title="SqlServer2005" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="SqlServer2005" devType=""/>
+   </type>
+   <type mosn="99800144" pmosn="99800005" title="mysql" icon="img/vendor/dbm16.jpg" iconname="" absModel="mysql" devType="2006">
+      <group mosn="99800145" pmosn="99800144" title="mysql 4.x" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="mysql4" devType=""/>
+      <group mosn="99800146" pmosn="99800144" title="mysql 5.x" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="mysql5" devType=""/>
+   </type>
+   <type mosn="99800556" pmosn="99800005" title="Informix" icon="img/vendor/dbi16.jpg" iconname="" absModel="Informix" devType="2003">
+      <group mosn="99800557" pmosn="99800556" title="Informix" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="Informix" devType=""/>
+   </type>
+   <type mosn="99800483" pmosn="99800017" title="大金" icon="img/vendor/daikin16.png" iconname="" absModel="Daikin" devType="420501">
+      <group mosn="99800484" pmosn="99800483" title="空调" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="DaikinAir" devType=""/>
+   </type>
+   <type mosn="99800511" pmosn="99800017" title="艾默生" icon="img/vendor/emerson16.png" iconname="" absModel="EmersonAir" devType="420502">
+      <group mosn="99800512" pmosn="99800511" title="EmersonAir" icon="" iconname="" forward="" id="1.3.6.1.4.1.476.1.42" devType=""/>
+   </type>
+   <type mosn="99800455" pmosn="99800016" title="长英新业" icon="img/vendor/changying16.png" iconname="" absModel="TemHumSensor" devType="420101">
+      <group mosn="99800456" pmosn="99800455" title="温湿度传感器" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="ltm-8950d" devType=""/>
+   </type>
+   <type mosn="99800459" pmosn="99800015" title="艾默生" icon="img/vendor/emerson16.png" iconname="" absModel="Emerson" devType="420401">
+      <group mosn="99800460" pmosn="99800459" title="艾默生UPS" icon="" iconname="" forward="" id="1.3.6.1.4.1.13400.2.1" devType=""/>
+   </type>
+   <type mosn="99800471" pmosn="99800015" title="APC" icon="img/vendor/apc16.png" iconname="" absModel="Powernet" devType="420402">
+      <group mosn="99800472" pmosn="99800471" title="Smart-UPS RT 5000 XL" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="1.3.6.1.4.1.318" devType=""/>
+      <group mosn="99800503" pmosn="99800471" title="Smart-UPS VT 30 kVA" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="1.3.6.1.4.1.318.1.3.17.4" devType=""/>
+   </type>
+   <type mosn="99800505" pmosn="99800015" title="科华" icon="img/vendor/kelong16.png" iconname="" absModel="KeLongUps" devType="420403">
+      <group mosn="99800506" pmosn="99800505" title="科华UPS" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="1.3.6.1.4.1.935.1.1.1" devType=""/>
+   </type>
+   <type mosn="99800497" pmosn="99800019" title="IBM" icon="img/vendor/ibm.png" iconname="" absModel="IBMST" devType="1502">
+      <group mosn="99800498" pmosn="99800497" title="IBM存储" icon="" iconname="" forward="" id="IBMST" devType=""/>
+      <group mosn="99800509" pmosn="99800497" title="IBM存储(agent)" icon="" iconname="" forward="" id="IBMST_cmd" devType=""/>
+   </type>
+   <type mosn="99800501" pmosn="99800019" title="HP存储" icon="img/vendor/hp16.png" iconname="" absModel="HPEVA" devType="1503">
+      <group mosn="99800502" pmosn="99800501" title="HP EVA8100" icon="" iconname="" forward="" id="HPEVA8100" devType=""/>
+      <group mosn="99800504" pmosn="99800501" title="HP MSA2000" icon="" iconname="" forward="" id="1.3.6.1.4.1.11.2.51" devType=""/>
+   </type>
+   <type mosn="99800515" pmosn="99800019" title="华赛存储" icon="img/vendor/hs16.png" iconname="" absModel="hwism" devType="1508">
+      <group mosn="99800516" pmosn="99800515" title="hwism" icon="" iconname="" forward="" id="hwism" devType=""/>
+   </type>
+   <type mosn="99800487" pmosn="99800009" title="Cisco" icon="img/vendor/cisco16.jpg" iconname="" absModel="Pix" devType="111001">
+      <group mosn="99800488" pmosn="99800487" title="防火墙" icon="" iconname="" forward="" id="1.3.6.1.4.1.9.1.914" devType=""/>
+   </type>
+   <type mosn="99800467" pmosn="99800009" title="H3C" icon="img/vendor/h3c16.gif" iconname="" absModel="H3CFW" devType="111015">
+      <group mosn="99800468" pmosn="99800467" title="H3C防火墙" icon="" iconname="" forward="" id="1.3.6.1.4.1.2011" devType=""/>
+   </type>
+   <type mosn="99800442" pmosn="99800009" title="Juniper" icon="img/vendor/juniper16.jpg" iconname="" absModel="Juniper" devType="111003">
+      <group mosn="99800443" pmosn="99800442" title="Juniper防火墙" icon="" iconname="" forward="" id="1.3.6.1.4.1.3224" devType=""/>
+   </type>
+   <type mosn="99800444" pmosn="99800009" title="山石" icon="img/vendor/hillston16.png" iconname="" absModel="Hillstone" devType="111014">
+      <group mosn="99800445" pmosn="99800444" title="防火墙" icon="" iconname="" forward="" id="1.3.6.1.4.1.28557" devType=""/>
+   </type>
+   <type mosn="99800490" pmosn="99800009" title="迪普" icon="img/vendor/dptech16.gif" iconname="" absModel="DPtech" devType="111017">
+      <group mosn="99800491" pmosn="99800490" title="防火墙" icon="" iconname="" forward="" id="1.3.6.1.4.1.31648.3" devType=""/>
+   </type>
+   <type mosn="99800440" pmosn="99800009" title="天融信" icon="img/vendor/topsec16.png" iconname="" absModel="Topsec" devType="111004">
+      <group mosn="99800489" pmosn="99800440" title="v2防火墙" icon="img/vendor/tMoSeries16.gif" iconname="" forward="" id="1.3.6.1.4.1.14331.1.2" devType=""/>
+      <group mosn="99800441" pmosn="99800440" title="v3防火墙" icon="img/vendor/tMoSeries16.gif" iconname="" forward="" id="1.3.6.1.4.1.14331" devType=""/>
+   </type>
+   <type mosn="99800485" pmosn="99800009" title="启明星辰" icon="img/vendor/mstar16.png" iconname="" absModel="Venustech" devType="111016">
+      <group mosn="99800486" pmosn="99800485" title="防火墙" icon="img/tree/daikin16.png" iconname="" forward="2" id="1.3.6.1.4.1.15227" devType=""/>
+   </type>
+   <type mosn="99800492" pmosn="99800009" title="卫士通" icon="img/vendor/westone16.gif" iconname="" absModel="Westone" devType="111018">
+      <group mosn="99800493" pmosn="99800492" title="防火墙" icon="" iconname="" forward="" id="1.3.6.1.4.1.28880" devType=""/>
+   </type>
+   <type mosn="99800494" pmosn="99800009" title="信达环宇" icon="img/vendor/xdhy16.png" iconname="" absModel="XDHY" devType="111019">
+      <group mosn="99800495" pmosn="99800494" title="FW300防火墙" icon="" iconname="" forward="" id="1.3.6.1.4.1.14854" devType=""/>
+      <group mosn="99800496" pmosn="99800494" title="FW10防火墙" icon="" iconname="" forward="" id="1.3.6.1.4.1.2021" devType=""/>
+   </type>
+   <type mosn="99800507" pmosn="99800009" title="Array" icon="img/vendor/array.png" iconname="" absModel="Array" devType="111020">
+      <group mosn="99800508" pmosn="99800507" title="防火墙" icon="" iconname="" forward="" id="Array" devType=""/>
+   </type>
+   <type mosn="99800566" pmosn="99800009" title="飞塔" icon="img/vendor/fortinet16.png" iconname="" absModel="FortinetFW" devType="111021">
+      <group mosn="99800567" pmosn="99800566" title="防火墙" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="1.3.6.1.4.1.12356.101" devType=""/>
+   </type>
+   <type mosn="99800453" pmosn="99800012" title="虚对象" icon="img/mo/sef16.gif" iconname="" absModel="VirtualObject" devType="4020">
+      <group mosn="99800454" pmosn="99800453" title="虚对象" icon="" iconname="" forward="" id="VirtualObject" devType=""/>
+   </type>
+   <type mosn="99800473" pmosn="99800002" title="未知" icon="img/mo/nwR16.gif" iconname="" absModel="Other" devType="101011">
+      <group mosn="99800474" pmosn="99800473" title="路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="otherRoute" devType=""/>
+   </type>
+   <type mosn="99800475" pmosn="99800003" title="未知" icon="img/mo/nwS16.gif" iconname="" absModel="Other" devType="102000">
+      <group mosn="99800476" pmosn="99800475" title="交换机" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="otherSwitch" devType=""/>
+   </type>
+   <type mosn="99800477" pmosn="99800004" title="未知" icon="img/mo/ho16.gif" iconname="" absModel="Other" devType="1200">
+      <group mosn="99800478" pmosn="99800477" title="主机" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="otherHost" devType=""/>
+   </type>
+   <type mosn="99800479" pmosn="99800012" title="打印机" icon="img/mo/other16.png" iconname="" absModel="Other" devType="4033">
+      <group mosn="99800480" pmosn="99800479" title="打印机" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="otherPrint" devType=""/>
+   </type>
+   <type mosn="99800481" pmosn="99800012" title="未知设备" icon="img/mo/other16.png" iconname="" absModel="Other" devType="4034">
+      <group mosn="99800482" pmosn="99800481" title="未知" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="otherUnknown" devType=""/>
+   </type>
+   <type mosn="99800513" pmosn="99800020" title="Vmware" icon="img/vendor/vmware16.jpg" iconname="" absModel="Vmware" devType="5001">
+      <group mosn="99800514" pmosn="99800513" title="vCenterServer" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="vCenterServer" devType=""/>
+   </type>
+   <type mosn="99800534" pmosn="99800019" title="EMC存储" icon="img/vendor/emc16.png" iconname="" absModel="EMC" devType="1501">
+      <group mosn="99800535" pmosn="99800534" title="CX系列" icon="" iconname="" forward="" id="naviseccli" devType=""/>
+   </type>
+   <type mosn="99800515" pmosn="99800019" title="华为存储" icon="img/vendor/huawei16.jpg" iconname="" absModel="HuaweiStorage" devType="1508">
+      <group mosn="99800516" pmosn="99800515" title="HuaweiStorage" icon="" iconname="" forward="" id="1.3.6.1.4.1.34774" devType=""/>
+   </type>
+   <type mosn="99800536" pmosn="99800020" title="citrix" icon="img/vendor/citrix.png" iconname="" absModel="citrix" devType="5002">
+      <group mosn="99800537" pmosn="536" title="citrix" icon="" iconname="" forward="" id="1.3.6.1.4.1.5951.1" devType=""/>
+   </type>
+   <type mosn="99800538" pmosn="99800003" title="迈洛思" icon="img/vendor/mellanox16.png" iconname="" absModel="mellanox" devType="102026">
+      <group mosn="99800539" pmosn="99800538" title="交换机" icon="" iconname="" forward="" id="1.3.6.1.4.1.33049.1.1.1.6036" devType=""/>
+   </type>
+   <type mosn="99800540" pmosn="99800003" title="RadWare" icon="img/vendor/radware16.png" iconname="" absModel="SwRadWare" devType="102027">
+      <group mosn="99800541" pmosn="99800540" title="交换机" icon="" iconname="" forward="" id="1.3.6.1.4.1.1872.2.5.1" devType=""/>
+   </type>
+   <type mosn="99800542" pmosn="99800019" title="日立存储" icon="img/vendor/ht16.jpg" iconname="" absModel="HitachiRaid" devType="1507">
+      <group mosn="99800543" pmosn="99800542" title="日立" icon="" iconname="" forward="" id="1.3.6.1.4.1.116" devType=""/>
+   </type>
+   <type mosn="99800544" pmosn="99800016" title="APC" icon="img/vendor/apc16.png" iconname="" absModel="NetBotz" devType="420103">
+      <group mosn="99800545" pmosn="99800544" title="NetBotz" icon="" iconname="" forward="" id="1.3.6.1.4.1.5528.100" devType=""/>
+   </type>
+   <type mosn="99800548" pmosn="99800024" title="IB交换机" icon="img/mo/nwS16.gif" iconname="" absModel="ib-switch" devType="6001">
+      <group mosn="99800549" pmosn="99800548" title="IB交换机" icon="img/mo/nwS16.gif" iconname="" forward="" id="ib-switch" devType=""/>
+   </type>
+   <type mosn="99800550" pmosn="99800024" title="IB节点" icon="img/mo/ho16.gif" iconname="" absModel="ib-node" devType="6002">
+      <group mosn="99800551" pmosn="99800550" title="IB节点" icon="img/mo/ho16.gif" iconname="" forward="" id="ib-node" devType=""/>
+   </type>
+   <type mosn="99800558" pmosn="99800002" title="Netcom" icon="img/vendor/netcom16.jpg" iconname="" absModel="Netcom" devType="101020">
+      <group mosn="99800559" pmosn="99800558" title="路由器" icon="img/tree/tMoSeries16.gif" iconname="" forward="1" id="1.3.6.1.4.1.14988.1" devType=""/>
+   </type>
+   <type mosn="99800560" pmosn="99800003" title="Avaya" icon="img/vendor/avaya16.jpg" iconname="" absModel="Avaya" devType="102029">
+      <group mosn="99800561" pmosn="99800560" title="交换机" icon="" iconname="" forward="2" id="1.3.6.1.4.1.45.3" devType=""/>
+   </type>
+   <type mosn="99800562" pmosn="99800003" title="Netgear" icon="img/vendor/netgear16.jpg" iconname="" absModel="Netgear" devType="102030">
+      <group mosn="99800563" pmosn="99800562" title="交换机" icon="" iconname="" forward="2" id="1.3.6.1.4.1.4526.100" devType=""/>
+   </type>
+   <type mosn="99800564" pmosn="99800006" title="JBoss" icon="img/vendor/jboss16.jpg" iconname="" absModel="JBoss" devType="2106">
+      <group mosn="99800565" pmosn="99800564" title="JBoss" icon="img/tree/tMoSeries16.gif" iconname="" forward="" id="JBoss" devType=""/>
+   </type>
+   
+   <mo mosn="998000016" pmosn="99800710" title="192.168.226.16" icon="" iconname="how" typ="DianChiJia"/>
+   <mo mosn="998000003" pmosn="99800702" title="192.168.226.3" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000012" pmosn="99800706" title="STS" icon="" iconname="how" typ="STS"/>
+   <mo mosn="998000011" pmosn="99800708" title="STS开关" icon="" iconname="how" typ="STSKaiGuan"/>
+   <mo mosn="998000009" pmosn="99800704" title="UPS1" icon="" iconname="how" typ="UPS"/>
+   <mo mosn="998000013" pmosn="99800710" title="UPS1电池架1" icon="" iconname="how" typ="DianChiJia"/>
+   <mo mosn="998000014" pmosn="99800710" title="UPS1电池架2" icon="" iconname="how" typ="DianChiJia"/>
+   <mo mosn="998000005" pmosn="99800702" title="UPS1输入配电柜" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000007" pmosn="99800702" title="UPS1输出配电柜" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000010" pmosn="99800704" title="UPS2" icon="" iconname="how" typ="UPS"/>
+   <mo mosn="998000015" pmosn="99800710" title="UPS2电池架1" icon="" iconname="how" typ="DianChiJia"/>
+   <mo mosn="998000006" pmosn="99800702" title="UPS2输入配电柜" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000008" pmosn="99800702" title="UPS2输出配电柜" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000004" pmosn="99800702" title="市电输出配电柜" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000017" pmosn="99800712" title="小型机间列头柜1" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000018" pmosn="99800712" title="小型机间列头柜2" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000019" pmosn="99800712" title="服务器间列头柜1" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000020" pmosn="99800712" title="服务器间列头柜2" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000021" pmosn="99800712" title="网络间列头柜1" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000022" pmosn="99800712" title="网络间列头柜2" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000023" pmosn="99800721" title="防雷检测" icon="" iconname="how" typ="FangLei"/>
+   <mo mosn="998000024" pmosn="99800714" title="小型机机房空调1" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000025" pmosn="99800714" title="小型机机房空调2" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000026" pmosn="99800714" title="服务器机房空调1" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000027" pmosn="99800714" title="服务器机房空调2" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000028" pmosn="99800714" title="网络机房空调1" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000029" pmosn="99800714" title="网络机房空调2" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000030" pmosn="99800714" title="UPS电源室空调" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000031" pmosn="99800723" title="漏水" icon="" iconname="how" typ="LouShui"/>
+   <mo mosn="998000032" pmosn="99800725" title="进水电磁阀" icon="" iconname="how" typ="JinShui"/>
+   <mo mosn="998000033" pmosn="99800716" title="温湿度" icon="" iconname="how" typ="WenShiDu"/>
+   <mo mosn="998000034" pmosn="99800727" title="新风机" icon="" iconname="how" typ="XinFengJi"/>
+   <mo mosn="998000035" pmosn="99800729" title="消防" icon="" iconname="how" typ="XiaoFang"/>
+   <mo mosn="998000036" pmosn="99800733" title="报警主机红外" icon="" iconname="how" typ="BaoJing"/>
+   <mo mosn="998000037" pmosn="99800731" title="门禁" icon="" iconname="how" typ="MenJin"/>
+   <maxMosn node="99800026" type="99800733" mo="998000037" parttyp="9999" entity="99999" link="998899999"/>
+
+
+   <mo mosn="998000016" pmosn="99800710" title="192.168.226.16" icon="" iconname="how" typ="DianChiJia"/>
+   <mo mosn="998000003" pmosn="99800702" title="192.168.226.3" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000012" pmosn="99800706" title="STS" icon="" iconname="how" typ="STS"/>
+   <mo mosn="998000011" pmosn="99800708" title="STS开关" icon="" iconname="how" typ="STSKaiGuan"/>
+   <mo mosn="998000009" pmosn="99800704" title="UPS1" icon="" iconname="how" typ="UPS"/>
+   <mo mosn="998000013" pmosn="99800710" title="UPS1电池架1" icon="" iconname="how" typ="DianChiJia"/>
+   <mo mosn="998000014" pmosn="99800710" title="UPS1电池架2" icon="" iconname="how" typ="DianChiJia"/>
+   <mo mosn="998000005" pmosn="99800702" title="UPS1输入配电柜" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000007" pmosn="99800702" title="UPS1输出配电柜" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000010" pmosn="99800704" title="UPS2" icon="" iconname="how" typ="UPS"/>
+   <mo mosn="998000015" pmosn="99800710" title="UPS2电池架1" icon="" iconname="how" typ="DianChiJia"/>
+   <mo mosn="998000006" pmosn="99800702" title="UPS2输入配电柜" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000008" pmosn="99800702" title="UPS2输出配电柜" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000004" pmosn="99800702" title="市电输出配电柜" icon="" iconname="how" typ="PeiDianGui"/>
+   <mo mosn="998000017" pmosn="99800712" title="小型机间列头柜1" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000018" pmosn="99800712" title="小型机间列头柜2" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000019" pmosn="99800712" title="服务器间列头柜1" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000020" pmosn="99800712" title="服务器间列头柜2" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000021" pmosn="99800712" title="网络间列头柜1" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000022" pmosn="99800712" title="网络间列头柜2" icon="" iconname="how" typ="LieTouGui"/>
+   <mo mosn="998000023" pmosn="99800721" title="防雷检测" icon="" iconname="how" typ="FangLei"/>
+   <mo mosn="998000024" pmosn="99800714" title="小型机机房空调1" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000025" pmosn="99800714" title="小型机机房空调2" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000026" pmosn="99800714" title="服务器机房空调1" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000027" pmosn="99800714" title="服务器机房空调2" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000028" pmosn="99800714" title="网络机房空调1" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000029" pmosn="99800714" title="网络机房空调2" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000030" pmosn="99800714" title="UPS电源室空调" icon="" iconname="how" typ="KongTiao"/>
+   <mo mosn="998000031" pmosn="99800723" title="漏水" icon="" iconname="how" typ="LouShui"/>
+   <mo mosn="998000032" pmosn="99800725" title="进水电磁阀" icon="" iconname="how" typ="JinShui"/>
+   <mo mosn="998000033" pmosn="99800716" title="温湿度" icon="" iconname="how" typ="WenShiDu"/>
+   <mo mosn="998000034" pmosn="99800727" title="新风机" icon="" iconname="how" typ="XinFengJi"/>
+   <mo mosn="998000035" pmosn="99800729" title="消防" icon="" iconname="how" typ="XiaoFang"/>
+   <mo mosn="998000036" pmosn="99800733" title="报警主机红外" icon="" iconname="how" typ="BaoJing"/>
+   <mo mosn="998000037" pmosn="99800731" title="门禁" icon="" iconname="how" typ="MenJin"/>
+   <maxMosn node="99800027" type="99800733" mo="998000037" parttyp="9999" entity="99999" link="998899999"/>
+
+   <queueMosn node="" type="" mo="" partTyp="" entity="" link=""/>
+</catalog>

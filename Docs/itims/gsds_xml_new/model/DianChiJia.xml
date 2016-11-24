@@ -1,0 +1,51 @@
+<model name="en" desc="STS">
+	<typ name="DianChiJia" desc="电池架" parentName="">
+		<group groupId="DianChiJia" idTyp="version" ref="" priority="1" desc="机房动力 电池架">
+			<allKpiDesc>
+				<partTyp id="dcjInfo" name="电池架"  pname="电池架"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" dbModel="xxx" isPublic="true" dbTable="tc_dianchijia" isMO="false" markKpi=""  >
+					<kpi id="mosn" name="MOSN" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="dmsn" name="域" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="fPartID" name="模拟量" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="A1" name="电池1电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A2" name="电池2电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A3" name="电池3电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A4" name="电池4电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A5" name="电池5电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A6" name="电池6电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A7" name="电池7电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A8" name="电池8电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A9" name="电池9电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A10" name="电池10电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A11" name="电池11电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A12" name="电池12电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A13" name="电池13电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A14" name="电池14电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A15" name="电池15电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A16" name="电池16电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A17" name="电池17电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A18" name="电池18电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A19" name="电池19电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A20" name="电池20电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A21" name="电池21电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A22" name="电池22电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A23" name="电池23电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A24" name="电池24电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A25" name="电池25电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A26" name="电池26电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A27" name="电池27电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A28" name="电池28电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A29" name="电池29电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A30" name="电池30电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A31" name="电池31电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A32" name="电池32电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A35" name="总电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A36" name="充放电电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+				</partTyp>
+			</allKpiDesc>
+			<init />
+			<protocol defaultProtocol="" unreachableProtocol="">
+				<snmp port="12" version="1.21" readCommunity="123" writeCommunity="1231" overTime="13" desc="" usmUser="" authAlogrithm="" authPassword="" privacyAlogrithm="" privacyPassword="" />	 
+			</protocol>
+		</group>
+	</typ>
+</model>

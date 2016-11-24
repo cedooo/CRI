@@ -1,0 +1,49 @@
+<model name="en" desc="配电柜">
+	<typ name="PeiDianGui" desc="配电柜" parentName="">
+		<group groupId="PeiDianGui" idTyp="version" ref="" priority="1" desc="机房动力 配电柜">
+			<allKpiDesc>
+				<partTyp id="atsInfo" name="ATS配电柜"  pname="配电柜"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" dbModel="xxx" isPublic="true" dbTable="tc_peidiangui" isMO="false" markKpi=""  >
+					<kpi id="mosn" name="MOSN" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="dmsn" name="域" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="fPartID" name="ATS配电柜" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="A1" name="相电压Ua" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A2" name="线电压Uca" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A3" name="A相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A4" name="A相有功功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A5" name="A相功率因数" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A6" name="A相无功功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A7" name="A相视在功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A8" name="相电压Ub" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A9" name="线电压Uab" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A10" name="B相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A11" name="B相有功功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A12" name="B相功率因数" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A13" name="B相无功功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A14" name="B相视在功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A15" name="相电压Uc" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A16" name="线电压Ubc" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A17" name="C相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A18" name="C相有功功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A19" name="C相功率因数" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A20" name="C相无功功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A21" name="C相视在功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A23" name="三相平均线电压" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A24" name="三相平均线电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A25" name="频率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A26" name="三相有功功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A27" name="三相总功率因数" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A28" name="三相无功功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A29" name="三相视在功率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A70" name="正向有功电能" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A71" name="负向有功电能" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A72" name="正向无功电能" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A73" name="负向无功电能" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+				</partTyp>
+			</allKpiDesc>
+			<init />
+			<protocol defaultProtocol="" unreachableProtocol="">
+				<snmp port="12" version="1.21" readCommunity="123" writeCommunity="1231" overTime="13" desc="" usmUser="" authAlogrithm="" authPassword="" privacyAlogrithm="" privacyPassword="" />	 
+			</protocol>
+		</group>
+	</typ>
+</model>

@@ -1,0 +1,48 @@
+<model name="en" desc="STS">
+	<typ name="STS" desc="STS" parentName="">
+		<group groupId="STS" idTyp="version" ref="" priority="1" desc="机房动力 STS">
+			<allKpiDesc>
+				<partTyp id="stsInfo" name="STS"  pname="STS"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" dbModel="xxx" isPublic="true" dbTable="tc_sts" isMO="false" markKpi=""  >
+					<kpi id="mosn" name="MOSN" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="dmsn" name="域" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="fPartID" name="STS开关" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="A1" name="输入1线电压Uab" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A2" name="输入1线电压Ubc" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A3" name="输入1线电压Uca" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A4" name="输入1A相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A5" name="输入1B相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A6" name="输入1C相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A7" name="输入1频率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A8" name="输入2线电压Uab" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A9" name="输入2线电压Ubc" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A10" name="输入2线电压Uca" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A11" name="输入2A相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A12" name="输入2B相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A13" name="输入2C相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A14" name="输入2频率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A15" name="输入1与输入2相位差" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A16" name="输出线电压Uab" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A17" name="输出线电压Ubc" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A18" name="输出线电压Uca" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A19" name="输出A相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A20" name="输出B相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A21" name="输出C相电流" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="A22" name="输出频率" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D5" name="主风扇故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D6" name="控制模块故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D11" name="电气控制板故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D29" name="输入1异常" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D34" name="输入2异常" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D40" name="STS备选源供电" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D53" name="变压器过温" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D54" name="紧急关机" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D55" name="变压机风机故障" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+				</partTyp>
+			</allKpiDesc>
+			<init />
+			<protocol defaultProtocol="" unreachableProtocol="">
+				<snmp port="12" version="1.21" readCommunity="123" writeCommunity="1231" overTime="13" desc="" usmUser="" authAlogrithm="" authPassword="" privacyAlogrithm="" privacyPassword="" />	 
+			</protocol>
+		</group>
+	</typ>
+</model>

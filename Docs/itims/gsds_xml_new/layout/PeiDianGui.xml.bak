@@ -1,0 +1,36 @@
+<layout>
+	<group id="PeiDianGui">
+		<atom extensible="1" id="showMoHealth" title="健康度" type="healthInfo" width="20%" height="180" dataColumns="" showColumns="" unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="today" lasthours="" params="{}"/>
+		<atom extensible="1" id="showAlarm" title="告警" type="alarmInfo"  height="180" dataColumns="" showColumns="" unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="today" lasthours="" params="{}"/>
+		<atom extensible="1" id="showBase" title="" type="kvtable" width="100%" height="300" dataColumns="atsInfo$fPartID|A1|A2|A3|A4|A5|A6|A7" showColumns="A1|A2|A3|A4|A5|A6|A7" unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="latest" lasthours="" params="{}"/>
+		<menus>
+				<left>
+				  <menu title="概要信息" url="typNew/layertest/laytestFlex.jsp" rel="1" icon="typNew/img/summary.png"></menu>
+				</left>
+
+				<right>
+
+				  <menu title="采集管理" url="typ/ctmanager/collTaskInfo.action" icon="typ/detail/style/styleB/img/ctm.png"></menu>
+				  <menu title="阀值管理" url="typ/strategy/moStrategy.jsp" icon="typ/detail/style/styleB/img/tsh.png"></menu>
+				  <menu title="协议管理" url="typ/addmo/update.jsp" 
+				  icon="typ/detail/style/styleB/img/protocal.png"></menu>
+				  <menu title="重新初始化" url="typ/addmo/initComponent.jsp" icon="typ/detail/style/styleB/img/reInit.png"></menu>
+				</right>
+
+		</menus>
+		<summary>
+			<area id="1" atomId="" title="" plate="" labelUrl="" type="vbox" width="100%" height="100%" align="center" valign="top" grep="1">
+				<area id="2" atomId="" title="" plate="" labelUrl="" type="hbox" width="100%" height="30%" align="center" valign="top" grep="2">
+					<area id="3" atomId="showMoHealth" title="" palte="" labelUrl="" type="atom" width="100%" height="100%" align="center" valign="" grep="3"></area>
+					<area id="4" atomId="showAlarm" title="" palte="" labelUrl="" type="atom" width="100%" height="100%"  align="center" valign="" grep="4"></area>
+				</area>
+				<area id="5" atomId="" title="配电模拟量" palte="true" labelUrl="" type="hbox" width="100%" height="70%" align="center" valign="" grep="5">
+					<area id="6" atomId="showBase" title="" palte="" labelUrl="" type="atom" width="100%" height="100%" align="center" valign="" grep="6"></area>
+				</area>
+			</area>
+		</summary>
+	</group>
+</layout>
+
+
+   

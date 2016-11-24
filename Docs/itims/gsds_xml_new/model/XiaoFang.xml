@@ -1,0 +1,18 @@
+<model name="en" desc="消防">
+	<typ name="XiaoFang" desc="消防" parentName="">
+		<group groupId="XiaoFang" idTyp="version" ref="" priority="1" desc="机房动力 消防">
+			<allKpiDesc>
+				<partTyp id="xfInfo" name="消防"  pname="消防"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" dbModel="" isPublic="true" dbTable="tc_xiaofang" isMO="false" markKpi=""  >
+					<kpi id="mosn" name="MOSN" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
+					<kpi id="dmsn" name="域" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
+					<kpi id="fPartID" name="基本信息" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
+					<kpi id="D1" name="消防" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+				</partTyp>
+			</allKpiDesc>
+			<init />
+			<protocol defaultProtocol="">
+				<snmp port="161" version="2" readCommunity=" " writeCommunity=" " overTime="13" desc="" usmUser="" authAlogrithm="" authPassword="" privacyAlogrithm="" privacyPassword="" />	 
+			</protocol>
+		</group>
+	</typ>
+</model>

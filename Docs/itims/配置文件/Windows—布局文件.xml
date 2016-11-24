@@ -1,0 +1,137 @@
+<layout>
+	<group id="Windows">
+	
+	 <atom extensible="1" id="showPing" title="ping" type="ping" width="20%" height="180" dataColumns="" showColumns="" unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="today" lasthours="" params="{}"/>			       
+	
+	 <atom extensible="1" id="showAlarm" title="告警" type="alarmInfo"  height="180" dataColumns="" showColumns="" unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="today" lasthours="" params="{}"/>
+	<atom extensible="1" id="showMoHealth" title="ping" type="healthInfo" width="20%" height="180" dataColumns="" showColumns="" unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="today" lasthours="" params="{}"/>
+	 
+	
+	<atom extensible="1" id="showCpuRadar" title="cpu利用率" type="simple_radar" width="20%" height="180" dataColumns="hostCpuPerf$fPartID|fTotalCpu" showColumns="fTotalCpu" 
+	  unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="latest" lasthours="" params="{groupId=&apos;fPartID&apos;}"/>
+	 <atom extensible="1" id="showCpuLine" title="cpu线图" type="sipmle_flex_line" width="20%" height="180" dataColumns="hostCpuPerf$fPartID|fCollectTime|fTotalCpu" showColumns="fTotalCpu" 
+	  unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="history" lasthours="" params="{lineId=&apos;fPartID&apos; time=&apos;fCollectTime&apos;}"/>
+
+	 <atom extensible="1" id="showAttentionTableSpace" title="主机磁盘分区性能信息" type="group_pie"  height="" 
+	 dataColumns="hostDiskPartPerf$fPartID|fUseRadio;hostDiskPartConf$fPartID|fDiskPartSize" showColumns="hostDiskPartConf$fPartID|fPartID"  unit="" unitc="" calculate="" layout="" relation="hostDiskPartPerf$fPartID:hostDiskPartConf$fPartID:EQ" relid="" defTime="latest" lasthours="" params="{groupId=&apos;hostDiskPartConf$fPartID&apos; groupName=&apos;hostDiskPartConf$fPartID&apos; total=&apos;hostDiskPartConf$fDiskPartSize&apos; rate=&apos;hostDiskPartPerf$fUseRadio&apos;}"/>
+	<atom extensible="1" id="showHoInfoLeft" title="" type="kvtable" width="20%" height="180" dataColumns="hostInfo$fPartID|fOsType|fModleSys|fOsInformation" showColumns="fPartID|fOsType|fModleSys|fOsInformation" 
+	  unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="latest" lasthours="" params="{}"/>
+	 
+	 <atom extensible="1" id="showServerConf" title="服务信息" 
+	   type="dataGrid" width="100%" height="100%" 
+	   dataColumns="TsHoServiceStateInfo$fPartID|fState|fCollectTime" showColumns="fPartID,1,100|fState,1,100|fCollectTime,1,100"  relation="" unit="" unitc="" calculate="" layout=""  relid="" defTime="latest" lasthours="" params="{sort=&apos;fPartID&apos;,isASC=&apos;false&apos;,usepager=&apos;false&apos;,rp=&apos;50&apos;,rpoptions=&apos;10,20,30,50,100&apos;}"/>
+
+    <atom extensible="1" id="showBaskInfoConfig" title="" type="kvtable" width="20%" height="250" 
+    dataColumns="hostConfigureInfo$fPartID|fOsType|fOsInformation|fMemSize|fCpuNumber|fHDiskNumber|fIfNumber|fVersion" 
+    showColumns="fPartID|fOsType|fOsInformation|fMemSize|fCpuNumber|fHDiskNumber|fIfNumber|fVersion" 
+	  unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="latest" lasthours="" params="{}"/>
+   
+
+	<menus>
+			<left>
+
+			  <menu title="概要信息" url="typNew/layertest/laytestFlex.jsp" rel="1" icon="typNew/img/summary.png"></menu>
+			  <menu title="文件系统" url="typNew/attention/attentionwindows.jsp" rel="default" icon="typNew/img/state.png"></menu>
+			  <menu title="资源监视" url="typNew/resouceInfo/resViewMain.jsp" rel="default" icon="typNew/img/resv.png"></menu>
+			  <menu title="进程监控" url="typNew/jspIpMacUp/progressAttention.jsp" rel="3" icon="typNew/img/threadpool.png"></menu>
+			  <menu title="服务信息" url="typNew/layertest/laytestFlex.jsp" rel="server" icon="typNew/img/ho16.gif"></menu>
+      </left>
+
+			<right>
+
+			  <menu title="采集管理" url="typ/ctmanager/collTaskInfo.action" icon="typ/detail/style/styleB/img/ctm.png"></menu>
+			  <menu title="阀值管理" url="typ/strategy/moStrategy.jsp" icon="typ/detail/style/styleB/img/tsh.png"></menu>
+			  <menu title="协议管理" url="typ/addmo/update.jsp" icon="typ/detail/style/styleB/img/protocal.png"></menu>
+			  <menu title="重新初始化" url="typ/addmo/initComponent.jsp" icon="typ/detail/style/styleB/img/reInit.png"></menu>
+
+			</right>
+
+  </menus>
+      <detail></detail>
+	    <summary>
+
+			<area id="1" atomId="" title="" plate="" labelUrl="" type="vbox" width="100%" height="100%"  align="center" valign="top" grep="1" >
+
+				<area id="02" atomId="" title="概要" palte="true" labelUrl=""  type="hbox" width="100%" height="180"  align="center" valign="top" grep="2" >
+					<area id="03" atomId="showMoHealth" title="" palte="" labelUrl="" type="atom" width="30%" height="150"  align="" valign="" grep="5" ></area>
+					<area id="04" atomId="showPing" title="" palte="" labelUrl="" type="atom" width="45%" height="150"  align="" valign="" grep="5" ></area>
+				  
+					<area id="06" atomId="showAlarm" title="" palte="" labelUrl="" type="atom" width="25%" height="150"  align="" valign="" grep="5" ></area>
+				</area>
+
+				<area id="7" atomId="" type="hbox" title="" palte="" labelUrl="" width="100%" height="75%"  align="center" valign="top" grep="2" >
+
+					<area id="8" atomId="" type="vbox" title="" palte="" labelUrl="" width="60%" height="100%"  align="center" valign="top" grep="0" >
+
+						<area id="9" atomId="" type="hbox" title="性能" palte="true" labelUrl="" width="100%" height="50%"  align="center" valign="top" grep="2" >
+
+							<area id="10" atomId="showCpuRadar" title="" palte="" labelUrl="" type="atom" width="20%" height="100%"  align="" valign="" grep="" ></area>
+						    
+							<area id="11" atomId="showCpuLine" title="" palte="" labelUrl="" type="atom" width="80%" height="100%"  align="" valign="" grep="" ></area>
+							
+
+				        </area>
+
+					    <area id="12" atomId="" type="vbox" title="关注的文件系统" palte="true" labelUrl="" width="100%" height="50%"  align="center" valign="top" grep="0" >
+								
+								<area id="13" atomId="showAttentionTableSpace" title="" palte="" labelUrl="" type="atom" width="98%" height="98%"  align="" valign="" grep="" ></area>
+				        
+						 </area>
+
+				    </area>
+					<area id="014" atomId="" type="vbox" title="应用关联" palte="true" labelUrl="" width="40%" height="100%"  align="center" valign="top" grep="5" >
+						<area id="055" atomId="showMemPerf" title="" palte="" labelUrl="appview/linkEqu.jsp?isPortal=true&amp;type=linkEqu" type="iframe" width="100%" height="100%"  align="" valign="" grep="" ></area>
+				    </area>
+				</area>
+			</area>
+			 
+		  <area id="server" atomId="" title="" plate="" labelUrl="" type="vbox" width="100%" height="100%"  align="center" valign="top" grep="1" >
+ 	       
+ 	        <area id="110" atomId="" title="服务" plate="true" labelUrl="" type="vbox" width="100%" height="100%"  align="center" valign="top" grep="1" >
+ 	        
+             <area id="113" atomId="showServerConf" title="" palte="" labelUrl="" type="atom" width="100%" height="100%"  align="" valign="" grep="" ></area>
+				          
+			    </area> 
+ 	        
+ 	            
+			</area> 
+			
+		 <area id="baseInfo" atomId="" title="" plate="" labelUrl="" type="vbox" width="100%" height="100%"  align="center" valign="top" grep="1" >
+ 	       
+ 	        <area id="1" atomId="" title="基本信息" plate="true" labelUrl="" type="vbox" width="100%" height="100%"  align="center" valign="top" grep="1" >
+ 	        
+             <area id="2" atomId="showBaskInfoConfig" title="" palte="" labelUrl="" type="atom" width="100%" height="500"  align="" valign="" grep="" ></area>
+				          
+			    </area> 
+ 	        
+ 	            
+		</area> 
+		</summary>
+
+<resource>
+			 <partNav id="default">
+	             <tabs>
+
+				     <item title="资源监视" url="typNew/resouceInfo/resViewControl.jsp" rel="default" icon="typNew/img/res.png"></item>
+                     <item title="基本配置" url="typNew/layertest/laytestFlex.jsp" rel="baseInfo" icon="typNew/img/res.png"></item>
+
+					   
+			     </tabs>
+
+			   <tree>
+				  <node id="fz" title="负载">
+
+					 <parttyp id="cpu" title="CPU"  column="hostCpuPerf$fTotalCpu"/>
+
+					 <parttyp id="mem" title="内存" column="hostMemPerf$fMemRatio|fMemFree|fMemUseSize"/>
+
+				  </node>
+				  <parttyp id="port" title="接口"  column="portPerf$fBwUsage|fTotalOctets|fTotalRate|fTotalDiscards|fDiscardRate|fTotalErrors|fErrorRate"/>
+
+		      </tree>
+
+			</partNav>
+
+		</resource>
+	</group>
+</layout>

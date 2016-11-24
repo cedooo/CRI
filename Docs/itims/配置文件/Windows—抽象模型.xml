@@ -1,0 +1,118 @@
+<model name="ho" desc="主机模型">
+   <typ name="Windows" desc="windows" parentName="">
+      <group groupId="Windows" idTyp="version" ref="" priority="1" desc="windows模型" icon="how">
+         <allKpiDesc>
+            <partTyp id="hostDiskConf" name="主机磁盘配置信息" alias="fPartID" pname="硬盘配置" storageTyp="0:md|1:md" compress="1" extensible="1" ptTyp="c" dbModel="itims.core.model.typ.host.TcHoDiskInfo" dbTable="TcHoDiskInfo" hasDev="false" isMO="false" sync="1" markKpi="">
+               <kpi id="mosn" name="mosn" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="dmsn" name="域" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="objChgStat" name="实体变更记录" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fCollectTime" name="采集时间" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fPartID" name="磁盘ID" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fDiskSize" name="磁盘大小" unit="GB" compress="1" dataTyp="float" sys="1024" meaning="-91:-"/>
+               <kpi id="fVendor" name="厂家" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+            </partTyp>
+            <partTyp id="hostConfigureInfo" name="主机基本配置信息" alias="fPartID" pname="基本信息" storageTyp="0:md|1:md" compress="1" extensible="0" ptTyp="c" dbModel="itims.core.model.typ.host.TcHoHostInfo" dbTable="tcHoHostInfo" hasDev="false" isMO="false" sync="1" markKpi="">
+               <kpi id="mosn" name="mosn" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="dmsn" name="域" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="objChgStat" name="实体变更记录" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fCollectTime" name="采集时间" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fPartID" name="主机名" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fOsType" name="系统类型" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fOsInformation" name="操作系统信息" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fMemSize" name="内存总容量" unit="B" compress="1" dataTyp="float" sys="1024" meaning="-91:不支持|0:不支持"/>
+               <kpi id="fCpuNumber" name="CPU个数" unit="个" compress="1" dataTyp="long" sys="1024" meaning="-91:不支持|0:不支持"/>
+               <kpi id="fHDiskNumber" name="硬盘个数" unit="个" compress="1" dataTyp="long" sys="1024" meaning="-91:不支持|0:不支持"/>
+               <kpi id="fIfNumber" name="接口数" unit="个" compress="1" dataTyp="long" sys="1024" meaning="-91:不支持|0:不支持"/>
+               <kpi id="fVersion" name="系统版本" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+            </partTyp>
+            <partTyp id="hostDiskPartConf" name="主机磁盘分区配置信息" alias="fPartID" pname="磁盘" storageTyp="0:md|1:md" compress="1" extensible="0" ptTyp="c" dbModel="itims.core.model.typ.host.windows.tcHoDiskPartInfo" dbTable="tcHoDiskPartInfo" hasDev="false" isMO="false" sync="1" markKpi="">
+               <kpi id="mosn" name="mosn" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="dmsn" name="域" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="objChgStat" name="实体变更记录" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fCollectTime" name="采集时间" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fPartID" name="盘符" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fVolumeName" name="分区标签" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fDiskPartSize" name="分区容量" unit="GB" compress="1" dataTyp="float" sys="1024" meaning=""/>
+            </partTyp>
+            <partTyp id="hostDiskPartPerf" name="主机磁盘分区性能信息" alias="" pname="磁盘" storageTyp="0:md|1:md" compress="1" extensible="0" ptTyp="p" dbModel="itims.core.model.typ.host.windows.tpHoDiskPartPrefInfo" dbTable="tpHoDiskPartPrefInfo" hasDev="false" isMO="false" sync="1" markKpi="">
+               <kpi id="mosn" name="mosn" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="dmsn" name="dmsn" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="fCollectTime" name="采集时间" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fPartID" name="盘符" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fFreeSize" name="空闲空间" unit="GB" compress="1" dataTyp="float" sys="1024" meaning=""/>
+               <kpi id="fUsedSize" name="使用空间" unit="GB" compress="1" dataTyp="float" sys="1024" meaning=""/>
+               <kpi id="fUseRadio" name="磁盘分区使用率" unit="%" compress="1" dataTyp="float" sys="1024" meaning=""/>
+               <kpi id="fAggregateCnt" name="数据压缩次数" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+            </partTyp>
+            <partTyp id="TcHoServiceConfInfo" name="主机服务配置信息" alias="fPartID" pname="服务" storageTyp="0:md|1:md" compress="1" extensible="0" ptTyp="p" dbModel="itims.core.model.typ.host.windows.TcHoServiceConfInfo" dbTable="tcHoserviceInfo" hasDev="false" isMO="false" sync="1" markKpi="">
+               <kpi id="mosn" name="mosn" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="dmsn" name="dmsn" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="objChgStat" name="实体变更记录" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fCollectTime" name="采集时间" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fPartID" name="服务名" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fDescription" name="服务描述" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fPathName" name="服务执行路径" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fStartMode" name="服务启动模式" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fStartName" name="服务启动用户名" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fStarted" name="服务是否启动" unit="" compress="1" dataTyp="String" sys="1024" meaning="True:是|False:否"/>
+            </partTyp>
+            <partTyp id="TsHoServiceStateInfo" name="主机服务状态信息" alias="" pname="服务" storageTyp="0:md|1:md" compress="1" extensible="0" ptTyp="p" dbModel="itims.core.model.typ.host.windows.TsHoServiceStateInfo" dbTable="TsHoServiceStateInfo " hasDev="false" isMO="false" sync="1" markKpi="">
+               <kpi id="mosn" name="mosn" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="dmsn" name="dmsn" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>
+               <kpi id="objChgStat" name="实体变更记录" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fCollectTime" name="采集时间" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fPartID" name="服务名" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+               <kpi id="fState" name="服务运行状态" unit="" compress="1" dataTyp="String" sys="1024" meaning="1:运行|2:continue-pending|3:pause-pending|4:paused|Running:运行"/>
+            </partTyp>
+         </allKpiDesc>
+         <init vaildAtom="portConf|portStat|portPerf|hostProcListConf|hostConfigureInfo|hostCpuConf|hostDiskConf|hostDiskPartConf|hostMemPerf|hostCpuPerf|hostDiskPerf|hostDiskPartPerf|TcHoServiceConfInfo|TsHoServiceStateInfo"/>
+         <collect>
+            <group id="windows_5M" ref="ping" enabled="true" interval="5M"/>
+            <group id="windows_10M" ref="portStat|portPerf|hostCpuPerf|TsHoServiceStateInfo|hostMemPerf" enabled="true" interval="10M"/>
+            <group id="windows_30M" ref="" enabled="true" interval="30M"/>
+            <group id="windows_1H" ref="hostDiskPerf|hostProcPerf|hostProcConf|hostDiskPartPerf" enabled="true" interval="1H"/>
+            <group id="windows_12H" ref="" enabled="true" interval="12H"/>
+            <group id="windows_24H" ref="TcHoServiceConfInfo|hostCpuConf|hostConfigureInfo|hostDiskConf|portConf|hostDiskPartConf|hostProcListConf" enabled="true" interval="24H"/>
+            <atom id="ping" ref="ping" vref="ping" rref="ping" storageType="sql" storageTime="" desc="连通性" isModify="true" protocol="ping" supportProtocol="ping" state="1" minInterval="5M" timeout="" initTyp="0"/>
+            <atom id="hostMemPerf" ref="MemPref" vref="hostMemPerf" rref="hostMemPerf" storageType="file" storageTime="file" desc="主机内存性能信息" isModify="true" protocol="wmi" supportProtocol="wmi|snmp|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0"/>
+            <atom id="hostConfigureInfo" ref="hostConfigureInfo|cpuNumber" vref="hostConfigureInfo" rref="hostConfigureInfo" storageType="file" storageTime="file" desc="主机基本配置信息" isModify="true" protocol="wmi" supportProtocol="wmi|snmp|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0"/>
+            <atom id="hostCpuConf" ref="cpuConfigerInfo" vref="hostCpuConf" rref="hostCpuConf" storageType="file" storageTime="file" desc="cpu配置信息" isModify="true" protocol="wmi" supportProtocol="wmi|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0"/>
+            <atom id="hostCpuPerf" ref="cpuPerfInfo" vref="hostCpuPerf" rref="hostCpuPerf" storageType="file" storageTime="file" desc="cpu性能信息" isModify="true" protocol="wmi" supportProtocol="wmi|snmp|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0"/>
+            <atom id="hostDiskConf" ref="DiskConfigerInfo" vref="hostDiskConf" rref="hostDiskConf" storageType="file" storageTime="file" desc="磁盘配置信息" isModify="true" protocol="wmi" supportProtocol="wmi|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0"/>
+            <atom id="hostDiskPerf" ref="DiskPerfInfo" vref="hostDiskPerf" rref="winhostDiskPerf" storageType="file" storageTime="file" desc="磁盘性能信息" isModify="true" protocol="wmi" supportProtocol="wmi|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0"/>
+            <atom id="hostDiskPartConf" ref="DiskPartConfigerInfo" vref="hostDiskPartConf" rref="hostDiskPartConf" storageType="file" storageTime="file" desc="磁盘分区配置信息" isModify="true" protocol="wmi" supportProtocol="wmi|snmp|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0"/>
+            <atom id="hostDiskPartPerf" ref="DiskPartPerfInfo" vref="hostDiskPartPerf" rref="hostDiskPartPerf" storageType="file" storageTime="file" desc="磁盘分区性能信息" isModify="true" protocol="wmi" supportProtocol="wmi|snmp|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0"/>
+            <atom id="portConf" ref="ifTableConfInfo" vref="portConf" rref="portConf" storageType="file" storageTime="file" desc="主机接口配置信息" isModify="true" protocol="snmp" supportProtocol="wmi|snmp|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0"/>
+            <atom id="portPerf" ref="IfTablePrefInfo" vref="portPerf" rref="portPerf" storageType="file" storageTime="file" desc="主机接口性能信息" isModify="true" protocol="snmp" supportProtocol="wmi|snmp|telnet" state="1" minInterval="10M" timeout="3h" initTyp="1">
+               <vref id="portPerf" url="aaa">
+                  <ref id="IfTablePrefInfo" name="接口性能" column="">
+                     <picklist showColumns="portConf$fPartAlias|fPartName|fPartID##portStat$fIfStatus##portConf$fIfType|fIfPhysAddress|fIfSpeed|fIfMtu|fBgParentModule|fIfToDevIp|fIfToDevMac|fIfToDevName|fIfToDevDesc|fIsInterdiction" relation="portConf$fPartID##portStat$fPartID##eq" dataColumns="portConf$mosn|fCollectTime|fPartTyp|fPartID|fPartName|fPartAlias|fIfType|fIfMtu|fIfPhysAddress|fIfSpeed|fBgParentModule|fIfToDevIp|fIfToDevMac|fIfToDevName|fIfToDevDesc|fIsInterdiction;portStat$fIfStatus" defTime="latest" pickColumns="portConf$fPartID"/>
+                     <pickinit dataColumns="portConf$mosn|fCollectTime|fPartTyp|fPartID;portStat$mosn|fCollectTime|fPartID|fIfStatus" showColumns="portConf$mosn" relation="portConf$fPartID##portStat$fPartID##eq;portStat$fIfStatus##1##eq" pickColumns="portConf@@portConf$fPartID" defTime="latest"/>
+                  </ref>
+               </vref>
+            </atom>
+            <atom id="portStat" ref="IfTableStateInfo" vref="portStat" rref="portStat" storageType="file" storageTime="file" desc="主机接口状态信息" isModify="true" protocol="snmp" supportProtocol="wmi|snmp|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0">
+               <vref id="portStat" url="aaa">
+                  <ref id="IfTableStateInfo" name="接口状态" column="">
+                     <picklist showColumns="portConf$fPartAlias|fPartID|fPartName##portStat$fIfStatus##portConf$fIfType|fIfPhysAddress|fIfSpeed|fIfMtu|fBgParentModule|fIfToDevIp|fIfToDevMac|fIfToDevName|fIfToDevDesc|fIsInterdiction|fCollectTime" relation="portConf$fPartID##portStat$fPartID##eq" dataColumns="portConf$mosn|fCollectTime|fPartTyp|fPartID|fPartName|fPartAlias|fIfType|fIfMtu|fIfPhysAddress|fIfSpeed|fBgParentModule|fIfToDevIp|fIfToDevMac|fIfToDevName|fIfToDevDesc|fIsInterdiction;portStat$fIfStatus" defTime="latest" pickColumns="portConf$fPartID"/>
+                     <pickinit dataColumns="portConf$mosn|fCollectTime|fPartTyp|fPartID;portStat$mosn|fCollectTime|fPartID|fIfStatus" showColumns="portConf$mosn" relation="portConf$fPartID##portStat$fPartID##eq" pickColumns="portConf@@portConf$fPartID" defTime="latest"/>
+                  </ref>
+               </vref>
+            </atom>
+            <atom id="hostProcListConf" ref="procList" vref="hostProcListConf" rref="hostProcConf" storageType="file" storageTime="file" desc="主机进程列表配置信息" isModify="true" protocol="snmp" supportProtocol="wmi|snmp|telnet" state="1" minInterval="10M" timeout="" initTyp="0"/>
+            <atom id="hostProcPerf" ref="hostProcPerf|memSize4Snmp" vref="hostProcPerf" rref="hostProcessPrefInfo" storageType="file" storageTime="file" desc="主机进程性能信息" isModify="true" protocol="snmp" supportProtocol="wmi|snmp|telnet" state="1" minInterval="" timeout="3h" initTyp="0"/>
+            <atom id="hostProcConf" ref="proc" vref="hostProcConf" rref="hostProcConf" storageType="file" storageTime="file" desc="主机进程配置信息" isModify="true" protocol="snmp" supportProtocol="wmi|snmp|telnet" state="1" minInterval="" timeout="" initTyp="0"/>
+            <atom id="TcHoServiceConfInfo" ref="TcHoServiceConfInfo" vref="TcHoServiceConfInfo" rref="TcHoServiceConfInfo" storageType="file" storageTime="file" desc="主机服务配置信息" isModify="true" protocol="wmi" supportProtocol="wmi|snmp|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0">
+            </atom>
+            <atom id="TsHoServiceStateInfo" ref="TsHoServiceStateInfo" vref="TsHoServiceStateInfo" rref="TsHoServiceStateInfo" storageType="file" storageTime="file" desc="主机服务状态信息" isModify="true" protocol="wmi" supportProtocol="wmi|snmp|telnet" state="1" minInterval="10M" timeout="3h" initTyp="0">
+            </atom>
+            <special ref=""/>
+         </collect>
+         <protocol defaultProtocol="" unreachableProtocol="">
+            <snmp port="161" version="1.21" readCommunity="" writeCommunity="" overTime="13" desc="" usmUser="" authAlogrithm="" authPassword="" privacyAlogrithm="" privacyPassword=""/>
+            <telnet port="43" userName="ddb" password="" prompt="$" userPrompt="" pswPrompt="" deviceTyp="host"/>
+         </protocol>
+      </group>
+      <pubakd/>
+   </typ>
+</model>

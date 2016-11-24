@@ -1,0 +1,38 @@
+<model name="en" desc="STS开关">
+	<typ name="STSKaiGuan" desc="STS开关" parentName="">
+		<group groupId="STSKaiGuan" idTyp="version" ref="" priority="1" desc="机房动力 STS开关">
+			<allKpiDesc>
+				<partTyp id="sts1Info" name="STS开关1"  pname="STS开关1"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" dbModel="xxx" isPublic="true" dbTable="tc_stskaiguan1" isMO="false" markKpi=""  >
+					<kpi id="mosn" name="MOSN" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="dmsn" name="域" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="fPartID" name="STS开关1" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="D1" name="服务器机房列头柜2开关A相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D2" name="服务器机房列头柜2开关B相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D3" name="服务器机房列头柜2开关C相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D4" name="备用A相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D5" name="备用B相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D6" name="备用C相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D7" name="二层配电箱开关A相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D8" name="二层配电箱开关B相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+				</partTyp>
+				<partTyp id="sts2Info" name="STS开关2"  pname="STS开关2"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" dbModel="xxx" isPublic="true" dbTable="tc_stskaiguan2" isMO="false" markKpi=""  >
+					<kpi id="mosn" name="MOSN" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="dmsn" name="域" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="fPartID" name="STS开关2" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" /> 
+					<kpi id="D1" name="二层配电箱开关C相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D2" name="网络机房列头柜2开关A相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D3" name="网络机房列头柜2开关B相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D4" name="网络机房列头柜2开关C相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D5" name="备用A相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D6" name="备用B相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D7" name="备用C相" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+					<kpi id="D8" name="小型机电源开关" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="1024" />
+				</partTyp>
+			</allKpiDesc>
+			<init />
+			<protocol defaultProtocol="" unreachableProtocol="">
+				<snmp port="12" version="1.21" readCommunity="123" writeCommunity="1231" overTime="13" desc="" usmUser="" authAlogrithm="" authPassword="" privacyAlogrithm="" privacyPassword="" />	 
+			</protocol>
+		</group>
+	</typ>
+</model>
