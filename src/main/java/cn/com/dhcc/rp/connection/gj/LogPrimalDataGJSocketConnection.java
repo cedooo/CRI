@@ -44,7 +44,7 @@ public final class LogPrimalDataGJSocketConnection implements Runnable {
 		this.init(isAddr);
 		FileChannel fileChannel = null;
 		try {
-			fileChannel = new FileOutputStream("d:/primal.data").getChannel();
+			fileChannel = new FileOutputStream("d:/primal.extapi").getChannel();
 		} catch (FileNotFoundException e2) {
 			e2.printStackTrace();
 		}

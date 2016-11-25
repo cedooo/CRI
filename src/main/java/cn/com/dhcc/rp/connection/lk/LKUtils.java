@@ -30,13 +30,13 @@ public class LKUtils {
 		return PATTERN_EVENT;
 	}
 	public static void main(String[] args) {
-		/*String data = "A##Agent=10##D=主机房漏水监测##ID=1801027##V=0##T=1##C=漏水定位7##E=##AddrId=##AddrName=##NumCV=##^^";
-		LKData lkdata = parseToLKData(data);
+		/*String extapi = "A##Agent=10##D=主机房漏水监测##ID=1801027##V=0##T=1##C=漏水定位7##E=##AddrId=##AddrName=##NumCV=##^^";
+		LKData lkdata = parseToLKData(extapi);
 		System.out.println(lkdata);
 		
 		String event = "B##Agent=10##D=门禁系统2##ID=1301000##C=通讯##V=91300000##EV=1##T=1##Z=1##U=##M=门禁主机通讯中断##Class=##Alarm=1##AddrId=##AddrName=##MgrObjTypeId=11111111-1111-1111-1111-111111111111##MgrObjTypeName=##";
 		LKData ddata = parseToLKDataEvent("LK", event);
-		System.out.println(data);*/
+		System.out.println(extapi);*/
 		
 		String s = "1号配电柜PART3";
 		Matcher matcher = PATTERN_POWERBOX.matcher(s);

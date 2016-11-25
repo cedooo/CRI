@@ -44,7 +44,7 @@ public final class LogPrimalDataLKSocketConnection implements Runnable {
 		this.init(isAddr);
 		FileChannel fileChannel = null;
 		try {
-			fileChannel = new FileOutputStream("d:/primal-lk.data").getChannel();
+			fileChannel = new FileOutputStream("d:/primal-lk.extapi").getChannel();
 		} catch (FileNotFoundException e2) {
 			e2.printStackTrace();
 		}

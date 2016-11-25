@@ -141,14 +141,14 @@ public final class GJSocketConnection extends SocketConnection{
 		                if(dataArray.length==2 
 		                		&& dataArray[0].endsWith(GJData.ATTR_VALUE_TAG)){
 		                	RealTimeData data = new GJData(dataArray[0], dataArray[1]);
-		                	//this.putRealDataSet(data);
+		                	//this.putRealDataSet(extapi);
 		                	data.setCd(this.companyCode);
 		                	data.setCollectTime(sdf.format(new Date()));
 							//实时数据入库  
 							sess.update("cn.com.dhcc.rp.realtimedata.update_insert_gj_data", data);
 							sess.commit();
-							/*if(((GJData)data).getKey().equals("S0-E6-A1-VA")){
-								log.info(new Date() + "--" + colum + this.companyCode + ",  更新了室外温度: " +((GJData)data).getValue() );
+							/*if(((GJData)extapi).getKey().equals("S0-E6-A1-VA")){
+								log.info(new Date() + "--" + colum + this.companyCode + ",  更新了室外温度: " +((GJData)extapi).getValue() );
 							}*/
 		                }else if(packageType!=Package.TYPE_DATA && dataArray[0].endsWith(GJData.EVENT_TAG)){
 		                	log.info("事件=>" + dataArray[0] + " : " + Arrays.toString(dataArray));

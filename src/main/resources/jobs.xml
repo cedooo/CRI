@@ -346,12 +346,12 @@
 			<job-class>cn.com.dhcc.rp.job.further.impl.ClearDeprecatedDataJob</job-class>
 			<durability>true</durability>
 			<recover>false</recover>	
-			<job-data-map>
+			<job-extapi-map>
 				<entry>
 					<key>deprecatedTime</key>  
 					<value>120000</value>
 				</entry>
-			</job-data-map>
+			</job-extapi-map>
 		</job>
 		<trigger>
 			<cron>

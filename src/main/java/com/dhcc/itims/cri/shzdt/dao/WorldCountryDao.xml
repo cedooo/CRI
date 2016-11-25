@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dhcc.ywp.po">
+    <resultMap type="com.dhcc.ywp.po.Country" id="CountryMap">
+        <result column="code" property="code"/>
+        <result column="name" property="name"/>
+        <result column="continent" property="continent"/>
+        <result column="region" property="region"/>
+        <result column="surfaceArea" property="surfaceArea"/>
+        <result column="indepYear" property="indepYear"/>
+        <result column="population" property="population"/>
+        <result column="lifeExpectancy" property="lifeExpectancy"/>
+        <result column="GNP" property="GNP"/>
+        <result column="GNPOld" property="GNPOld"/>
+        <result column="localName" property="localName"/>
+        <result column="governmentForm" property="governmentForm"/>
+        <result column="headOfState" property="headOfState"/>
+        <result column="capital" property="capital"/>
+        <result column="code2" property="code2"/>
+    </resultMap>
+    <select id="selectAllCountry" resultMap="CountryMap">
+        SELECT code, name, continent, region, surfaceArea,
+          indepYear, population, lifeExpectancy, GNP, GNPOld,
+          localName, governmentForm, headOfState, capital, code2
+        FROM country
+    </select>
+</mapper>
