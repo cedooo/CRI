@@ -1,7 +1,5 @@
 package com.dhcc.itims.cri.component.machineroom.factory;
 
-import cn.com.dhcc.rp.pojo.XmlConfig;
-
 import com.dhcc.itims.cri.component.machineroom.MachineRoom;
 import com.dhcc.itims.cri.component.machineroom.element.NetworkElement;
 import com.dhcc.itims.cri.component.machineroom.element.equipment.Equipment;
@@ -42,18 +40,13 @@ public final class MachineRoomFactory {
     static private MachineRoom getMachineRoom(XmlConfig xmlConfig) {
 
         MachineRoom machineRoom = null;
-
         //XmlConfig xmlConfig = new XmlConfig(jobExeContent);
-
         InputStream input = null;
         try {
             DigesterLoader digesterLoader = DigesterLoader.newLoader(new XmlRules(xmlConfig.getRoomDefRules()));
             Digester digester = digesterLoader.newDigester();
             input = MachineRoomFactory.class.getClassLoader().getResourceAsStream(xmlConfig.getRoomDef());
             machineRoom = digester.parse(input);
-//System.out.println(machineRoom);
-//System.out.println(machineRoom.getNetworkElementList().size() + ">>>>>>>" +machineRoom.getNetworkElementList());
-
 			/*
              * 设备
 			 */

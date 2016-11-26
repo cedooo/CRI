@@ -20,7 +20,7 @@
     <!-- spring task schedule -->
     <!-- 定义核心调度器 -->
     <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
-        <property name="configLocation" value="shzdt/quartz.properties">
+        <property name="configLocation" value="classpath:shzdt/quartz.properties">
         </property>
     </bean>
 

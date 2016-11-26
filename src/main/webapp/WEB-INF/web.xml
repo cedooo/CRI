@@ -10,19 +10,7 @@
     </listener>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <!-- 配置所应用的context -->
-        <param-value>/WEB-INF/shzdtContext.xml</param-value>
+        <param-value>classpath:shzdt/shzdtContext.xml</param-value>
     </context-param>
-
-    <!-- spring-mvc -->
-    <!--<servlet>
-        <servlet-name>spDispatcher</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>spDispatcher</servlet-name>
-        <url-pattern>/spmvc/*</url-pattern>
-    </servlet-mapping>-->
 
 </web-app>
