@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<equipment name="漏水控制器1" type="leakwater" >
+
+ 	<group refTab="txLeakWaterCommPerf" collect="1" type="1">
+		<node id="L1101001" name="状态字" ref="fLeakPosition"  	collect="1" />
+		<node id="L1101002" name="定位电阻" ref="fLineResistance"  	collect="1" />
+		<node id="L1101003" name="检测电阻" collect="1"    grState="是" />
+		<node id="L1101004" name="检测电流" collect="1"    grState="是" />
+		<node id="L1101005" name="红绿电阻" collect="1"    grState="是" />
+		<node id="L1101006" name="黄兰电阻" ref="fLeakPosition"  	collect="1" />
+		<node id="L1101007" name="维护报警" ref="fLineResistance"  	collect="1" />
+		<node id="L1101008" name="漏水报警" collect="1"    grState="是" />
+		<node id="L1101009" name="感应线断裂" collect="1"    grState="是" />
+		<node id="L1101010" name="EEPROM读错" collect="1"    grState="是" />
+		<node id="L1101010" name="漏水位置" collect="1"    grState="是" />
+ 	</group>
+ 	
+</equipment>

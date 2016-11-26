@@ -11,7 +11,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <!-- 配置所应用的context -->
-        <param-value>/WEB-INF/gsltaxContext.xml</param-value>
+        <param-value>/WEB-INF/shzdtContext.xml</param-value>
     </context-param>
 
     <!-- spring-mvc -->
@@ -24,4 +24,5 @@
         <servlet-name>spDispatcher</servlet-name>
         <url-pattern>/spmvc/*</url-pattern>
     </servlet-mapping>-->
+
 </web-app>

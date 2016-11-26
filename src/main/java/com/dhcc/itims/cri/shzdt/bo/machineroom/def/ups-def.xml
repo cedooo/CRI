@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<equipment name="UPS" type="ups" >
+ 	<!-- ref: 映射别名 type: 0.状态型 1，数值型 collect: 0.不采集 1，采集   -->
+ 	
+ 	<group refTab="txUpsCommPerf" collect="1" type="1">
+		<node id="A10" name="直流输入电压（电池电压）" ref="fBatteryVoltage"  	collect="1"    />  
+		<node id="A11" name="输出频率（三相一致）" ref="fFrequencyOut"  	collect="1"    />
+		<node id="A18" name="输入频率（三相一致）" ref="fFrequencyIn"  	collect="1"    /> 
+		<node id="A25" name="旁路频率（三相一致）" ref="fSideFrequency"  	collect="1"    />
+		<node id="A12" name="交流输入线电压AB" ref="fVoltageABOut"  	collect="1"    />  
+		<node id="A13" name="交流输入线电压BC" ref="fVoltageBCOut"  	collect="1"    />
+		<node id="A14" name="交流输入线电压CA" ref="fVoltageCAOut"  	collect="1"    />  
+ 	</group>
+
+</equipment>
