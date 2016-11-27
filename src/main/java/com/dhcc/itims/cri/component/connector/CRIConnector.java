@@ -5,5 +5,5 @@ package com.dhcc.itims.cri.component.connector;
  * 连接器， 是各种API接口对应的client
  * 可能是socket接口/
  */
-public abstract class CRIConnector{
+public abstract class CRIConnector implements Runnable{
 }

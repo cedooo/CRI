@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 抽象 机房动力 客户端
+ * 抽象 机房动力采集客户端
  * @author PCITECC02
  * @author cedo 2016-11-26 11:09:17
  *

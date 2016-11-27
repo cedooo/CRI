@@ -19,10 +19,14 @@ import java.util.Map.Entry;
 
 public final class MachineRoomFactory {
     static private Logger log = Logger.getLogger(MachineRoomFactory.class.getClass());
-    static public Set<MachineRoom> listMachineRoom = new HashSet<MachineRoom>();
+    static private Set<MachineRoom> listMachineRoom = new HashSet<MachineRoom>();
 
     static public MachineRoom getMachineRoomInstance(JobExecutionContext jobExeContent) {
         XmlConfig xmlConfig = new XmlConfig(jobExeContent);
+
+        /**
+         * 查找列表中的机房，如果有，返回
+         */
         Iterator<MachineRoom> iter = listMachineRoom.iterator();
         while (iter.hasNext()) {
             MachineRoom maro = iter.next();
@@ -30,8 +34,9 @@ public final class MachineRoomFactory {
                 return maro;
             }
         }
+
         MachineRoom machineRoom = getMachineRoom(xmlConfig);
-        if (machineRoom != null) {
+        if (machineRoom != null && !listMachineRoom.contains(machineRoom)) {
             listMachineRoom.add(machineRoom);
         }
         return machineRoom;
@@ -141,6 +146,10 @@ public final class MachineRoomFactory {
         }
 
         return machineRoom;
+    }
+
+    public static Set<MachineRoom> getListMachineRoom() {
+        return listMachineRoom;
     }
 }
 

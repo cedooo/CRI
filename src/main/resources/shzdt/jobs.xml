@@ -11,7 +11,7 @@
 			<name>zdt_collector_1</name>
 			<group>zdt_jobs</group>
 			<description>上海中电投 采集任务-1</description>
-			<job-class>com.dhcc.itims.cri.component.job.CommonCRICollectJob</job-class>
+			<job-class>com.dhcc.itims.cri.shzdt.bo.job.SHZDTCRICollectJob</job-class>
 			<durability>true</durability>
 			<recover>false</recover>
 			<job-data-map>
@@ -34,11 +34,14 @@
 				</entry>
 				<entry>
 					<key>code</key>    <!-- 公司&任务 编码 -->
+					<!-- 多个Job时，code的值， 一定不能重复 -->
 					<value>ZDT</value>
 				</entry>
+
+				<!-- 接口连接类 -->
 				<entry>
-					<key>client_class</key>
-					<value>cn.com.dhcc.rp.client.lk.LKClientDataInDB</value>
+					<key>collector_class</key>
+					<value>com.dhcc.itims.cri.shzdt.bo.ZDTConnector|192.168.124.139:8001</value>
 				</entry>
 			</job-data-map>
 		</job>
