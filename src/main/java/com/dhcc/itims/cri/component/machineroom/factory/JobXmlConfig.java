@@ -6,8 +6,8 @@ import org.quartz.JobExecutionContext;
 import java.util.HashMap;
 import java.util.Map;
 
-public class XmlConfig {
-	static final protected Logger log = Logger.getLogger(XmlConfig.class.getClass());
+public class JobXmlConfig {
+	static final protected Logger log = Logger.getLogger(JobXmlConfig.class.getClass());
 	
 	static final public String EQUIPMENT_XML = "equipment";
 	static final public String SUB_SYSTEM_XML = "sub_system";
@@ -17,6 +17,7 @@ public class XmlConfig {
 	static final public String XML_REGEX = "(.)*\\.xml$";
 	
 	static final public String CLIENT_CLASS = "client_class";
+	static final public String CONNECTOR_ADDR = "connector_addr";
 	static final public String CODE = "code";
 	
 	static final public int XML_MIN_LENGTH = 3;
@@ -28,13 +29,14 @@ public class XmlConfig {
 	private String roomDefRules = null;
 	private String roomDef = null;
 	private String clientClass = null;
+	private String connecorAddr = null;
 	private String code = null;
 	
 	/**
 	 * 加载配置xml信息
 	 * @return
 	 */
-	public XmlConfig(JobExecutionContext context){
+	public JobXmlConfig(JobExecutionContext context){
 		String neworkElementXml = context.getMergedJobDataMap().getString(EQUIPMENT_XML);
 		log.debug("加载网元xml" + neworkElementXml.trim() + "<>" +neworkElementXml.trim().matches(XML_REGEX));
 		if(neworkElementXml!=null&& neworkElementXml.length() > XML_MIN_LENGTH){//&&neworkElementXml.trim().matches(XML_REGEX)) {
@@ -61,6 +63,7 @@ public class XmlConfig {
 		roomDef = context.getMergedJobDataMap().getString(MACHINE_ROOM_DEF_XML);
 		clientClass = context.getMergedJobDataMap().getString(CLIENT_CLASS);
 		code = context.getMergedJobDataMap().getString(CODE);
+		connecorAddr = context.getMergedJobDataMap().getString(CONNECTOR_ADDR);
 	}
 
 	
@@ -110,6 +113,12 @@ public class XmlConfig {
 	public Map<String, String[]> getMapSubSystemXml() {
 		return mapSubSystemXml;
 	}
-	
-	
+
+	public String getConnecorAddr() {
+		return connecorAddr;
+	}
+
+	public void setConnecorAddr(String connecorAddr) {
+		this.connecorAddr = connecorAddr;
+	}
 }

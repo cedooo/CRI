@@ -6,4 +6,14 @@ package com.dhcc.itims.cri.component.connector;
  * 可能是socket接口/
  */
 public abstract class CRIConnector implements Runnable{
+    protected String code = null;    //公司编码
+    protected abstract void setCode();
+
+    public String getCode() {
+        return code;
+    }
+
+    public CRIConnector(){
+        this.setCode();
+    }
 }

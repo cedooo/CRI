@@ -1,6 +1,7 @@
 package com.dhcc.itims.cri.component.machineroom;
 
 import com.dhcc.itims.cri.component.machineroom.element.NetworkElement;
+import com.dhcc.itims.cri.component.machineroom.factory.JobXmlConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
  *
  */
 public abstract class MachineRoom {
+	protected JobXmlConfig jobXmlConfig;   //配置
 	protected String name = null;    //名称
 	protected String location = null;    //地点
 	protected String id = null;    //id
@@ -44,6 +46,14 @@ public abstract class MachineRoom {
 	}
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public JobXmlConfig getJobXmlConfig() {
+		return jobXmlConfig;
+	}
+
+	public void setJobXmlConfig(JobXmlConfig jobXmlConfig) {
+		this.jobXmlConfig = jobXmlConfig;
 	}
 
 	@Override

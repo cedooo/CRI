@@ -45,11 +45,11 @@ public final class Main {
 	 */
 	static private void initDBManager(){
 		try {
-			Class.forName("cn.com.dhcc.rp.db.DBDelegate");
-			log.info("加载 cn.com.dhcc.rp.db.DBDelegate 成功");
+			Class.forName("cn.com.dhcc.rp.bo.DBDelegate");
+			log.info("加载 cn.com.dhcc.rp.bo.DBDelegate 成功");
 		} catch (ClassNotFoundException e) {
 			//e.printStackTrace();
-			log.error("加载 cn.com.dhcc.rp.db.DBDelegate 失败");
+			log.error("加载 cn.com.dhcc.rp.bo.DBDelegate 失败");
 		}
 	}
 	/**

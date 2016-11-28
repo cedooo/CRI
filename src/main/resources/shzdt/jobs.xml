@@ -41,8 +41,13 @@
 				<!-- 接口连接类 -->
 				<entry>
 					<key>collector_class</key>
-					<value>com.dhcc.itims.cri.shzdt.bo.ZDTConnector|192.168.124.139:8001</value>
+					<value>com.dhcc.itims.cri.shzdt.bo.ZDTConnector</value>
 				</entry>
+				<entry>
+					<key>connector_addr</key>
+					<value>172.16.102.39:8001</value>
+				</entry>
+
 			</job-data-map>
 		</job>
 		<trigger>

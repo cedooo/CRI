@@ -96,7 +96,6 @@
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
             <version>2.3.4</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- 整合包CGN-RP依赖包 -->

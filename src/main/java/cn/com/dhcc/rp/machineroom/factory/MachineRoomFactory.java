@@ -51,7 +51,7 @@ public final class MachineRoomFactory {
 
 		MachineRoom machineRoom = null;
 		
-		//XmlConfig xmlConfig = new XmlConfig(jobExeContent);
+		//JobXmlConfig xmlConfig = new JobXmlConfig(jobExeContent);
 
 		InputStream input = null;
 		try {

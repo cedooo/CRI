@@ -9,6 +9,9 @@ import org.apache.commons.digester3.binder.DigesterLoader;
 import org.apache.commons.digester3.xmlrules.FromXmlRulesModule;
 import org.apache.log4j.Logger;
 import org.quartz.JobExecutionContext;
+import org.quartz.plugins.xml.XMLSchedulingDataProcessorPlugin;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
@@ -21,8 +24,15 @@ public final class MachineRoomFactory {
     static private Logger log = Logger.getLogger(MachineRoomFactory.class.getClass());
     static private Set<MachineRoom> listMachineRoom = new HashSet<MachineRoom>();
 
+    static {
+
+        XMLSchedulingDataProcessorPlugin xmlSchedulingDataProcessorPlugin =
+                new XMLSchedulingDataProcessorPlugin();
+        //TODO 加载jobs.xml 初始化机房配置
+    }
+
     static public MachineRoom getMachineRoomInstance(JobExecutionContext jobExeContent) {
-        XmlConfig xmlConfig = new XmlConfig(jobExeContent);
+        JobXmlConfig xmlConfig = new JobXmlConfig(jobExeContent);
 
         /**
          * 查找列表中的机房，如果有，返回
@@ -42,17 +52,17 @@ public final class MachineRoomFactory {
         return machineRoom;
     }
 
-    static private MachineRoom getMachineRoom(XmlConfig xmlConfig) {
+    static private MachineRoom getMachineRoom(JobXmlConfig xmlConfig) {
 
         MachineRoom machineRoom = null;
-        //XmlConfig xmlConfig = new XmlConfig(jobExeContent);
+        //JobXmlConfig xmlConfig = new JobXmlConfig(jobExeContent);
         InputStream input = null;
         try {
             DigesterLoader digesterLoader = DigesterLoader.newLoader(new XmlRules(xmlConfig.getRoomDefRules()));
             Digester digester = digesterLoader.newDigester();
             input = MachineRoomFactory.class.getClassLoader().getResourceAsStream(xmlConfig.getRoomDef());
             machineRoom = digester.parse(input);
-			/*
+            /*
              * 设备
 			 */
             Map<String, String[]> mapNetworkEle = xmlConfig.getMapNetworkEleXml(); //网元 map<'定义规则xml'， 定义xml[]>
@@ -144,11 +154,11 @@ public final class MachineRoomFactory {
                 }
             }
         }
-
+        machineRoom.setJobXmlConfig(xmlConfig);
         return machineRoom;
     }
 
-    public static Set<MachineRoom> getListMachineRoom() {
+    public static Set<MachineRoom> getMachineRooms() {
         return listMachineRoom;
     }
 }
