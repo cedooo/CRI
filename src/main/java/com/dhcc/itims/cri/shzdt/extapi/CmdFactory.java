@@ -12,14 +12,12 @@ public class CmdFactory {
 
     public static String equipmentListRequest(){
         String strCmd = "{\"cmd\":6001,\"flg\":1,\"rst\":1,\"seq\":1,\"val\":null,\"ver\":1}";
-        log.info(strCmd);
         return strCmd;
     }
 
     public static String equipmentAllParametersRequest(String equipmenetId){
-        String strCmd = "{\"cmd\":6002,\"flg\":1,\"rst\":1,\"seq\":1,\"val\":null,\"ver\":1}";
+        String strCmd = "{\"cmd\":6002,\"flg\":1,\"rst\":1,\"seq\":2,\"val\":null,\"ver\":1}";
         JSONObject jsonObject = new JSONObject(strCmd);
-
         String valJsonStr = "{\"eqid\":\"\"}";
         JSONObject valJosnObject = new JSONObject(valJsonStr);
         valJosnObject.put("eqid", equipmenetId);
@@ -31,9 +29,8 @@ public class CmdFactory {
 
 
     public static String  equipmentStateRequest(String equipmenetId){
-        String strCmd = "{\"cmd\":6003,\"flg\":1,\"rst\":1,\"seq\":1,\"val\":null,\"ver\":1}";
+        String strCmd = "{\"cmd\":6003,\"flg\":1,\"rst\":1,\"seq\":3,\"val\":null,\"ver\":1}";
         JSONObject jsonObject = new JSONObject(strCmd);
-
         String valJsonStr = "{\"eqid\":\"\"}";
         JSONObject valJosnObject = new JSONObject(valJsonStr);
         valJosnObject.put("eqid", equipmenetId);
@@ -44,9 +41,8 @@ public class CmdFactory {
     }
 
     public static String equipmentParametersValRequest(String equipmenetId){
-        String strCmd = "{\"cmd\":6004,\"flg\":1,\"rst\":1,\"seq\":1,\"val\":null,\"ver\":1}";
+        String strCmd = "{\"cmd\":6004,\"flg\":1,\"rst\":1,\"seq\":4,\"val\":null,\"ver\":1}";
         JSONObject jsonObject = new JSONObject(strCmd);
-
         String valJsonStr = "{\"eqid\":\"\"}";
         JSONObject valJosnObject = new JSONObject(valJsonStr);
         valJosnObject.put("eqid", equipmenetId);
@@ -57,9 +53,8 @@ public class CmdFactory {
     }
 
     public static String  parametersValRequest(String parameterId){
-        String strCmd = "{\"cmd\":6005,\"flg\":1,\"rst\":1,\"seq\":1,\"val\":null,\"ver\":1}";
+        String strCmd = "{\"cmd\":6005,\"flg\":1,\"rst\":1,\"seq\":5,\"val\":null,\"ver\":1}";
         JSONObject jsonObject = new JSONObject(strCmd);
-
         String valJsonStr = "{\"paid\":\"\"}";
         JSONObject valJosnObject = new JSONObject(valJsonStr);
         valJosnObject.put("paid", parameterId);
@@ -70,9 +65,8 @@ public class CmdFactory {
     }
 
     public static String alarmInfoRequest(){
-        String strCmd = "{\"cmd\":6006,\"flg\":1,\"rst\":1,\"seq\":1,\"val\":null,\"ver\":1}";
+        String strCmd = "{\"cmd\":6006,\"flg\":1,\"rst\":1,\"seq\":6,\"val\":null,\"ver\":1}";
         JSONObject jsonObject = new JSONObject(strCmd);
-
         String rtCmd = jsonObject.toString();
         log.info(rtCmd);
         return rtCmd;

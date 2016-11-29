@@ -60,5 +60,27 @@
 				<cron-expression>0/15 * * * * ?</cron-expression>
 			</cron>
 		</trigger>
+
+
+		<!--系统任务  -->
+		<job>
+			<name>CONNECTOR_CHECK</name>
+			<group>SYSTEM_TASK</group>
+			<description>检查接口连接是否有效，如果断开连接，重新连接。</description>
+			<job-class>cn.com.dhcc.itims.cri.component.job.CheckConnectorAliveJob</job-class>
+			<durability>true</durability>
+			<recover>false</recover>
+		</job>
+		<trigger>
+			<cron>
+				<name>CONNECTOR_CHECK_TRRI</name>
+				<group>SYSTEM_TASK_TRRI</group>
+				<job-name>CONNECTOR_CHECK</job-name>
+				<job-group>SYSTEM_TASK</job-group>
+				<priority>5</priority>
+				<cron-expression>0 * * * * ?</cron-expression>
+			</cron>
+		</trigger>
 	</schedule>
+
 </job-scheduling-data>

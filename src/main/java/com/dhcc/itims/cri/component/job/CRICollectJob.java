@@ -16,6 +16,5 @@ import java.util.Set;
  *
  */
 public abstract class CRICollectJob extends CRIJob{
-	static protected final Logger log = Logger.getLogger(CRICollectJob.class.getClass());
 
 }

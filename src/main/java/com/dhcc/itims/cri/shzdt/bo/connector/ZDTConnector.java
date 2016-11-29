@@ -30,6 +30,11 @@ public class ZDTConnector extends CRIConnector {
         init();
         //TODO 连接接口获取原始数据,并存入数据库中
         log.info("创建接口连接线程" + ip + ":" + port);
+        try {
+            Thread.sleep(555555);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void init(){
@@ -65,5 +70,22 @@ public class ZDTConnector extends CRIConnector {
         this.code = "ZDT";
     }
 
+    @Override
+    protected boolean stop() {
+        log.info("断开接口连接:" + this.toString());
+        return false;
+    }
 
+    @Override
+    protected boolean valid() {
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "ZDTConnector{" +
+                "ip='" + ip + '\'' +
+                ", port=" + port +
+                '}';
+    }
 }

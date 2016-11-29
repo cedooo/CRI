@@ -1,5 +1,8 @@
 package com.dhcc.itims.cri.component.connector;
 
+import com.dhcc.itims.cri.component.bo.DBService;
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * Created by Administrator on 2016/11/26.
  * 连接器， 是各种API接口对应的client
@@ -7,7 +10,7 @@ package com.dhcc.itims.cri.component.connector;
  */
 public abstract class CRIConnector implements Runnable{
     protected String code = null;    //公司编码
-    protected abstract void setCode();
+    protected DBService dbService;
 
     public String getCode() {
         return code;
@@ -16,4 +19,13 @@ public abstract class CRIConnector implements Runnable{
     public CRIConnector(){
         this.setCode();
     }
+    @Autowired
+    public void setDbService(DBService dbService) {
+        this.dbService = dbService;
+    }
+
+
+    protected abstract void setCode();
+    protected abstract boolean stop();
+    protected abstract boolean valid();
 }

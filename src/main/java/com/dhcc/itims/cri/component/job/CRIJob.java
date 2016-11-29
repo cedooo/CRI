@@ -1,5 +1,6 @@
 package com.dhcc.itims.cri.component.job;
 
+import org.apache.log4j.Logger;
 import org.quartz.Job;
 import org.quartz.JobDetail;
 import org.quartz.JobExecutionContext;
@@ -12,6 +13,7 @@ import java.util.Date;
  * cri任务父类
  */
 public abstract class CRIJob implements Job {
+    static protected final Logger log = Logger.getLogger(CRIJob.class.getClass());
 
     /**
      * 打印采集基本信息
