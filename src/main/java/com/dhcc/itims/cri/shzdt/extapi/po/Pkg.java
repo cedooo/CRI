@@ -8,11 +8,18 @@ import java.util.List;
  */
 public class Pkg {
     private int cmd;
-    private int ver;
-    private int seq;
-    private int flg;
-    private int rst;
-    private List<Val> val;
+    private int ver = 1;
+    private int seq = 1;
+    private int flg = 1;
+    private int rst = 1;
+    private List<Val> val = null;
+
+    public static final int CMD_EQUIPS = 6001;
+    public static final int CMD_EQUIP_PARAS = 6002;
+    public static final int CMD_EQUIP_STATE = 6003;
+    public static final int CMD_EQUIP_PARAS_VALUE = 6004;
+    public static final int CMD_PARA_VALUE = 6005;
+    public static final int CMD_ALARM = 6006;
 
     public int getCmd() {
         return cmd;
