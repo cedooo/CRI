@@ -108,12 +108,13 @@ public class ZDTConnector extends CRIConnector {
                     log.info(strValue);
                     strValue = inSock.readLine();
                 }
-                stopSend = true;
 
             }catch(Exception e){
-
+                log.warn(e);
             }finally {
                 try {
+                    stopSend = true;
+                    inSock.close();
                     socket.close();
                     log.warn("socket连接断开:" + socket);
                 } catch (IOException e) {
