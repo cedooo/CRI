@@ -23,13 +23,25 @@
 				<alias attr-name="type" prop-name="type" />
 			</set-properties-rule>
 			<set-next-rule methodname="addNetworkElement" />
-		</pattern>		
-		<set-properties-rule>
-			<alias attr-name="location" prop-name="location" />
-			<alias attr-name="name" prop-name="name" />
-			<alias attr-name="id" prop-name="id" />
-			<alias attr-name="code" prop-name="code" />
-		</set-properties-rule>
+		</pattern>
+		<pattern value="metadata">
+			<object-create-rule classname="com.dhcc.itims.cri.component.machineroom.MachineRoomMetaData" />
+			<set-properties-rule>
+				<alias attr-name="equipmentsXml" prop-name="equipmentsXml" />
+				<alias attr-name="subSystemsXml" prop-name="subSystemsXml" />
+				<alias attr-name="machineRoomXml" prop-name="machineRoomXml" />
+				<alias attr-name="ip" prop-name="ip" />
+				<alias attr-name="port" prop-name="port" />
+                <alias attr-name="connectorClass" prop-name="connectorClass" />
+			</set-properties-rule>
+            <set-next-rule methodname="setMachineRoomMetaData" />
+		</pattern>
+        <set-properties-rule>
+            <alias attr-name="location" prop-name="location" />
+            <alias attr-name="name" prop-name="name" />
+            <alias attr-name="id" prop-name="id" />
+            <alias attr-name="type" prop-name="type" />
+        </set-properties-rule>
 	</pattern>
 </digester-rules>  
 

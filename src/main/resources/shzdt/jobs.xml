@@ -15,7 +15,14 @@
 			<durability>true</durability>
 			<recover>false</recover>
 			<job-data-map>
-				<entry>    <!-- 设备-->
+				<entry>
+					<key>id</key>   <!-- 公司&任务 ID -->
+					<!--多个Job时，ID的值， 一定不能重复 -->
+					<value>ZDT</value>
+				</entry>
+			</job-data-map>
+			<!--<job-data-map>
+				<entry>    &lt;!&ndash; 设备&ndash;&gt;
 					<key>equipment</key>
 					<value>
 						com/dhcc/itims/cri/component/machineroom/element/equipment/equipment-def-rules.xml:com/dhcc/itims/cri/shzdt/bo/machineroom/def/temp-humi1-def.xml,
@@ -24,21 +31,21 @@
 							com/dhcc/itims/cri/shzdt/bo/machineroom/def/ups-def.xml
 					</value>
 				</entry>
-				<entry>    <!-- 机房设备解析规则 -->
+				<entry>    &lt;!&ndash; 机房设备解析规则 &ndash;&gt;
 					<key>machineroom_rules_xml</key>
 					<value>com/dhcc/itims/cri/component/machineroom/machineroom-rules.xml</value>
 				</entry>
-				<entry>    <!-- 机房设备 -->
+				<entry>    &lt;!&ndash; 机房设备 &ndash;&gt;
 					<key>machineroom_xml</key>
 					<value>com/dhcc/itims/cri/shzdt/bo/machineroom/machineroom.xml</value>
 				</entry>
 				<entry>
-					<key>code</key>    <!-- 公司&任务 编码 -->
-					<!-- 多个Job时，code的值， 一定不能重复 -->
+					<key>code</key>    &lt;!&ndash; 公司&任务 编码 &ndash;&gt;
+					&lt;!&ndash; 多个Job时，code的值， 一定不能重复 &ndash;&gt;
 					<value>ZDT</value>
 				</entry>
 
-				<!-- 接口连接类 -->
+				&lt;!&ndash; 接口连接类 &ndash;&gt;
 				<entry>
 					<key>collector_class</key>
 					<value>com.dhcc.itims.cri.shzdt.bo.ZDTConnector</value>
@@ -48,7 +55,7 @@
 					<value>172.16.102.39:8001</value>
 				</entry>
 
-			</job-data-map>
+			</job-data-map>-->
 		</job>
 		<trigger>
 			<cron>
@@ -62,12 +69,12 @@
 		</trigger>
 
 
-		<!--系统任务  -->
+		<!--系统任务-->
 		<job>
 			<name>CONNECTOR_CHECK</name>
 			<group>SYSTEM_TASK</group>
 			<description>检查接口连接是否有效，如果断开连接，重新连接。</description>
-			<job-class>cn.com.dhcc.itims.cri.component.job.CheckConnectorAliveJob</job-class>
+			<job-class>com.dhcc.itims.cri.component.job.CheckConnectorAliveJob</job-class>
 			<durability>true</durability>
 			<recover>false</recover>
 		</job>
@@ -81,6 +88,7 @@
 				<cron-expression>0 * * * * ?</cron-expression>
 			</cron>
 		</trigger>
+
 	</schedule>
 
 </job-scheduling-data>

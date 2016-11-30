@@ -2,7 +2,7 @@ package com.dhcc.itims.cri.shzdt.bo.job;
 
 import com.dhcc.itims.cri.component.job.CRICollectJob;
 import com.dhcc.itims.cri.component.machineroom.MachineRoom;
-import com.dhcc.itims.cri.component.machineroom.factory.MachineRoomFactory;
+import com.dhcc.itims.cri.component.machineroom.MachineRoomBuilder;
 import com.dhcc.itims.cri.shzdt.service.SHZDTService;
 import org.apache.log4j.Logger;
 import org.quartz.JobExecutionContext;
@@ -19,6 +19,12 @@ import org.springframework.stereotype.Component;
 public class SHZDTCRICollectJob extends CRICollectJob {
     private static Logger log = Logger.getLogger(SHZDTCRICollectJob.class.getClass());
     private SHZDTService shzdtService;
+    private MachineRoomBuilder machineRoomBuilder;
+    @Autowired
+    public void setMachineRoomBuilder(MachineRoomBuilder machineRoomBuilder) {
+        this.machineRoomBuilder = machineRoomBuilder;
+    }
+
     @Autowired
     public void setShzdtService(SHZDTService shzdtService) {
         this.shzdtService = shzdtService;
@@ -27,8 +33,11 @@ public class SHZDTCRICollectJob extends CRICollectJob {
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
         log.debug(jobExecutionContext);
-        MachineRoom machineRoom = MachineRoomFactory.getMachineRoomInstance(jobExecutionContext);
-        log.info(jobInfo(jobExecutionContext) + machineRoom);
+        log.info("===============执行机房数据采集任务===============");
+        log.info(jobInfo(jobExecutionContext));
+        String code = (String) jobExecutionContext.getMergedJobDataMap().get("code");
+        MachineRoom machineRoom = machineRoomBuilder.getMachineRoomById(code);
+        log.info(machineRoom);
         //TODO 调用接口获取数据 并转存到数据库中
         log.info(shzdtService.allData());
     }

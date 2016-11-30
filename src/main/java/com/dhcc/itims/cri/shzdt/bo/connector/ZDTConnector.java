@@ -2,72 +2,79 @@ package com.dhcc.itims.cri.shzdt.bo.connector;
 
 import com.dhcc.itims.cri.component.connector.CRIConnector;
 import com.dhcc.itims.cri.component.machineroom.MachineRoom;
-import com.dhcc.itims.cri.component.machineroom.factory.JobXmlConfig;
-import com.dhcc.itims.cri.component.machineroom.factory.MachineRoomFactory;
+import com.dhcc.itims.cri.component.machineroom.MachineRoomBuilder;
+import com.dhcc.itims.cri.component.machineroom.element.NetworkElement;
+import com.dhcc.itims.cri.shzdt.extapi.CmdFactory;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Set;
+import java.io.*;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/11/27.
+ * 与socket接口连接
  */
-@Component(value = "zdtConnector")
+@Component("com.dhcc.itims.cri.shzdt.bo.connector.ZDTConnector")
 public class ZDTConnector extends CRIConnector {
     static private Logger log = Logger.getLogger(ZDTConnector.class.getClass());
-
-    public String ip = null;
-    public int port = -1;
-
+    private Socket socket;
+    private MachineRoomBuilder machineRoomBuilder;
+    @Autowired
+    public void setMachineRoomBuilder(MachineRoomBuilder machineRoomBuilder) {
+        this.machineRoomBuilder = machineRoomBuilder;
+    }
 
     @Override
-    public void run() {
-        try {
-            Thread.sleep(20000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        init();
-        //TODO 连接接口获取原始数据,并存入数据库中
+    public void run()  {
         log.info("创建接口连接线程" + ip + ":" + port);
         try {
-            Thread.sleep(555555);
-        } catch (InterruptedException e) {
+            this.socket = new Socket(ip, port);
+        } catch (IOException e) {
             e.printStackTrace();
         }
-    }
 
-    public void init(){
+        List<String> listCmdStr = getCmdsFromMachineRoom(machineRoomBuilder.getMachineRoomById(this.getMachineRoomId()));
+        try {
+           Thread reciver =  new Thread(new Recive(socket.getInputStream()));
+            reciver.start();
+            Thread sender = new Thread(new Sender(socket.getOutputStream(), listCmdStr));
+            sender.start();
 
-        Set<MachineRoom> machineRooms = MachineRoomFactory.getMachineRooms();
-        for (MachineRoom machineRoom :
-                machineRooms) {
-            JobXmlConfig jobXmlConfig = machineRoom.getJobXmlConfig();
-            if(this.code.equals(jobXmlConfig.getCode())){
-                log.debug(jobXmlConfig);
-                String addr = jobXmlConfig.getConnecorAddr();
-                log.info(addr);
-                try {
-                    if (addr != null)
-                        addr = addr.trim();
-                    if (addr.matches("^.*:\\d*$")) {
-                        String[] addrs = addr.split(":");
-                        this.ip = addrs[0];
-                        this.port = Integer.parseInt(addrs[1]);
-                    } else {
-                        log.error("连接外部接口配置网络地址错误:" + addr);
-                    }
-                }catch (Exception e){
-                    log.error(e);
+
+            reciver.join();
+            sender.join();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(socket!=null){
+                    socket.close();
                 }
-                break;
-            }else{continue;}
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
     }
 
-    @Override
-    protected void setCode() {
-        this.code = "ZDT";
+    private List<String> getCmdsFromMachineRoom(MachineRoom machineRoom){
+        if(machineRoom!=null){
+            List<NetworkElement> networkElementList = machineRoom.getNetworkElementList();
+            List<String> cmdList = new ArrayList<String>();
+            for (NetworkElement networkElement:networkElementList) {
+                cmdList.add(CmdFactory.equipmentParametersValRequest(networkElement.getId()));
+            }
+
+            return cmdList ;
+        }
+        return null;
     }
 
     @Override
@@ -88,4 +95,43 @@ public class ZDTConnector extends CRIConnector {
                 ", port=" + port +
                 '}';
     }
+    class Recive implements Runnable{
+        private BufferedReader inSock;
+        public Recive(InputStream inputStream){
+            inSock =new BufferedReader(new InputStreamReader(inputStream));
+        }
+        @Override
+        public void run() {
+            try{
+                String strValue = inSock.readLine();
+                while(strValue!=null){
+                    log.info("recv:");
+                    log.info(strValue);
+                    strValue = inSock.readLine();
+                }
+            }catch(Exception e){}
+        }
+    }
+    class Sender implements Runnable{
+        private  PrintWriter outSock = null;
+        private List<String> listCmds;
+        public Sender(OutputStream outputStream, List<String> listCmds){
+            outSock = new PrintWriter(new BufferedWriter(new OutputStreamWriter(outputStream)), true);
+            this.listCmds = listCmds;
+        }
+        @Override
+        public void run() {
+            for(String strCmd : listCmds) {
+                log.info("send:"+strCmd);
+                outSock.println(strCmd);
+                outSock.flush();
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }
+

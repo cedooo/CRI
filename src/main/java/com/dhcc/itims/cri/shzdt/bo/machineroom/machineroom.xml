@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- 科技大厦23楼 -->
-<machineroom location="中电投" name="中电投机房" id="ZDT" code="ZDT">
+<machineroom location="中电投" name="中电投机房" id="ZDT" type="ZDT">
+	<metadata equipmentsXml="com/dhcc/itims/cri/component/machineroom/element/equipment/equipment-def-rules.xml:
+			  				com/dhcc/itims/cri/shzdt/bo/machineroom/def/temp-humi1-def.xml,
+							com/dhcc/itims/cri/shzdt/bo/machineroom/def/temp-humi2-def.xml,
+							com/dhcc/itims/cri/shzdt/bo/machineroom/def/leak-water-def.xml,
+							com/dhcc/itims/cri/shzdt/bo/machineroom/def/ups-def.xml"
+			  subSystemsXml=""
+			  machineRoomXml="com/dhcc/itims/cri/shzdt/bo/machineroom/machineroom.xml"
+			  ip = "192.168.0.101" port="8001"
+		connectorClass="com.dhcc.itims.cri.shzdt.bo.connector.ZDTConnector">
+	</metadata>
 	<equipment id="L1101" name="漏水控制器1" type="leakwater" />
 	<equipment id="U5801" name="UPS1" type="ups" />
 	<equipment id="W1101" name="温湿度1" type="temphumi1" />

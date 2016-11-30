@@ -1,8 +1,6 @@
 package com.dhcc.itims.cri.component.machineroom;
 
-import com.dhcc.itims.cri.component.machineroom.MachineRoom;
 import com.dhcc.itims.cri.component.machineroom.element.NetworkElement;
-import com.dhcc.itims.cri.component.machineroom.factory.MachineRoomFactory;
 import org.apache.commons.digester3.Digester;
 import org.apache.commons.digester3.binder.DigesterLoader;
 import org.apache.commons.digester3.xmlrules.FromXmlRulesModule;
