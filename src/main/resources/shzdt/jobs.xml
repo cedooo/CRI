@@ -64,7 +64,7 @@
 				<job-name>zdt_collector_1</job-name>
 				<job-group>zdt_jobs</job-group>
 				<priority>5</priority>
-				<cron-expression>0/15 * * * * ?</cron-expression>
+				<cron-expression>0 0/5 * * * ?</cron-expression>
 			</cron>
 		</trigger>
 

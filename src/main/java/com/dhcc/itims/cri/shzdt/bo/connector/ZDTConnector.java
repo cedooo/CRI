@@ -30,6 +30,7 @@ public class ZDTConnector extends CRIConnector {
 
     @Override
     public void run()  {
+        this.stopSend = false;
         log.info("创建接口连接线程" + ip + ":" + port);
         try {
             this.socket = new Socket(ip, port);
@@ -43,10 +44,8 @@ public class ZDTConnector extends CRIConnector {
             reciver.start();
             Thread sender = new Thread(new Sender(socket.getOutputStream(), listCmdStr));
             sender.start();
-
-
+            //sender.join();
             reciver.join();
-            sender.join();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -109,9 +108,22 @@ public class ZDTConnector extends CRIConnector {
                     log.info(strValue);
                     strValue = inSock.readLine();
                 }
-            }catch(Exception e){}
+                stopSend = true;
+
+            }catch(Exception e){
+
+            }finally {
+                try {
+                    socket.close();
+                    log.warn("socket连接断开:" + socket);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
+    private volatile boolean stopSend = false;
+
     class Sender implements Runnable{
         private  PrintWriter outSock = null;
         private List<String> listCmds;
@@ -121,15 +133,26 @@ public class ZDTConnector extends CRIConnector {
         }
         @Override
         public void run() {
-            for(String strCmd : listCmds) {
-                log.info("send:"+strCmd);
-                outSock.println(strCmd);
-                outSock.flush();
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+            try {
+                while (!stopSend) {
+                    for (String strCmd : listCmds) {
+                        log.info("send:" + strCmd);
+                        outSock.println(strCmd);
+                        outSock.flush();
+                        try {
+                            Thread.sleep(3000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    try {
+                        Thread.sleep(10 * 1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
+            }finally {
+                outSock.close();
             }
         }
     }
