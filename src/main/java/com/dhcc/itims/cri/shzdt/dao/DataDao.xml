@@ -30,4 +30,34 @@
 		   collectTime
         FROM shzdt_data
     </select>
+
+    <!-- 保存paramterValue对象-->
+    <update id="saveParmeterValue" parameterType="com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue">
+        <![CDATA[
+	   		UPDATE shzdt_parameter_value
+	   		SET pastate=#{state},padate = #{date},pavalue=#{value}
+	   		WHERE  paid = #{paid}
+
+	   		IF @@ROWCOUNT = 0
+
+	   		INSERT INTO shzdt_parameter_value (
+				pastate ,padate ,pavalue,paid
+			)
+			VALUES(
+				#{state}, #{date}, #{value},#{paid}
+			)
+		]]>
+    </update>
+
+    <resultMap type="com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue" id="ParameterValueMap">
+        <result column="id" property="id"/>
+        <result column="pastate" property="state"/>
+        <result column="padate" property="date"/>
+        <result column="pavalue" property="value"/>
+        <result column="paid" property="paid"/>
+    </resultMap>
+    <select id="selectAllParameterValue" resultMap="ProtypeDataMap">
+        SELECT id, pastate ,padate ,pavalue,paid
+        FROM shzdt_parameter_value
+    </select>
 </mapper>

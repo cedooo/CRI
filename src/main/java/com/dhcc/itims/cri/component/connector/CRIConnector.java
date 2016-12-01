@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public abstract class CRIConnector implements Runnable{
     protected String machineRoomId = null;    //公司编码
-    protected DBService dbService;
     protected String ip = null;
     protected int port = -1;
 
@@ -18,10 +17,6 @@ public abstract class CRIConnector implements Runnable{
 
     public CRIConnector(){
 
-    }
-    @Autowired
-    public void setDbService(DBService dbService) {
-        this.dbService = dbService;
     }
 
     public String getIp() {

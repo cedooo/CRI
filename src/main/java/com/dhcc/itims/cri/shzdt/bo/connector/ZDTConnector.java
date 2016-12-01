@@ -5,13 +5,20 @@ import com.dhcc.itims.cri.component.machineroom.MachineRoom;
 import com.dhcc.itims.cri.component.machineroom.MachineRoomBuilder;
 import com.dhcc.itims.cri.component.machineroom.element.NetworkElement;
 import com.dhcc.itims.cri.shzdt.extapi.CmdFactory;
+import com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue;
+import com.dhcc.itims.cri.shzdt.service.SHZDTService;
 import org.apache.log4j.Logger;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PreDestroy;
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -19,10 +26,17 @@ import java.util.List;
  * 与socket接口连接
  */
 @Component("com.dhcc.itims.cri.shzdt.bo.connector.ZDTConnector")
-public class ZDTConnector extends CRIConnector {
+public class ZDTConnector extends CRIConnector  {
     static private Logger log = Logger.getLogger(ZDTConnector.class.getClass());
     private Socket socket;
     private MachineRoomBuilder machineRoomBuilder;
+    private SHZDTService shzdtService;
+
+    @Autowired
+    public void setShzdtService(SHZDTService shzdtService) {
+        this.shzdtService = shzdtService;
+    }
+
     @Autowired
     public void setMachineRoomBuilder(MachineRoomBuilder machineRoomBuilder) {
         this.machineRoomBuilder = machineRoomBuilder;
@@ -40,7 +54,7 @@ public class ZDTConnector extends CRIConnector {
 
         List<String> listCmdStr = getCmdsFromMachineRoom(machineRoomBuilder.getMachineRoomById(this.getMachineRoomId()));
         try {
-           Thread reciver =  new Thread(new Recive(socket.getInputStream()));
+           Thread reciver =  new Thread(new Reciver(socket.getInputStream()));
             reciver.start();
             Thread sender = new Thread(new Sender(socket.getOutputStream(), listCmdStr));
             sender.start();
@@ -76,9 +90,16 @@ public class ZDTConnector extends CRIConnector {
         return null;
     }
 
+    @PreDestroy
     @Override
     protected boolean stop() {
         log.info("断开接口连接:" + this.toString());
+        this.stopSend = true;
+        try {
+            this.socket.close();
+        } catch (IOException e) {
+            log.warn("断开接口连接出现异常:" + e);
+        }
         return false;
     }
 
@@ -94,9 +115,41 @@ public class ZDTConnector extends CRIConnector {
                 ", port=" + port +
                 '}';
     }
-    class Recive implements Runnable{
+
+
+    /**
+     * 测试解析字符串
+     * TODO 应该删除
+     * @param args
+     */
+    public static void main(String[] args){
+        String strValue = "{\"cmd\":6004,\"flg\":0,\"rst\":1,\"seq\":38,\"val\":[{\"date\":\"2016-12-01 11:16:09.000\",\"paid\":\"W1102001\",\"state\":0,\"value\":22.50},{\"date\":\"2016-12-01 11:16:09.000\",\"paid\":\"W1102002\",\"state\":0,\"value\":31.39999961853027}],\"ver\":1}";
+        if(strValue.length()>0) {
+            JSONObject jsnObj = new JSONObject(strValue);
+            JSONArray jsonArray = (JSONArray) jsnObj.get("val");
+            int cmd = jsnObj.getInt("cmd");
+            if (6004 == cmd) {
+                Iterator<Object> iterator = jsonArray.iterator();
+                List<ParameterValue> listParaValue = new ArrayList<ParameterValue>();
+                while (iterator.hasNext()) {
+                    JSONObject jsnPara = (JSONObject) iterator.next();
+                    ParameterValue parameterValue = new ParameterValue();
+                    parameterValue.setDate(jsnPara.getString("date"));
+                    parameterValue.setValue(jsnPara.getDouble("value"));
+                    parameterValue.setState(jsnPara.getInt("state"));
+                    parameterValue.setPaid(jsnPara.getString("paid"));
+                    listParaValue.add(parameterValue);
+                }
+                log.info(listParaValue);
+
+            }
+        }else{
+            //do nothing
+        }
+    }
+    class Reciver implements Runnable{
         private BufferedReader inSock;
-        public Recive(InputStream inputStream){
+        public Reciver(InputStream inputStream){
             inSock =new BufferedReader(new InputStreamReader(inputStream));
         }
         @Override
@@ -106,6 +159,34 @@ public class ZDTConnector extends CRIConnector {
                 while(strValue!=null){
                     log.info("recv:");
                     log.info(strValue);
+                    try {
+                        if(strValue.length()>0) {
+                            JSONObject jsnObj = new JSONObject(strValue);
+                            JSONArray jsonArray = (JSONArray) jsnObj.get("val");
+                            int cmd = jsnObj.getInt("cmd");
+                            if (6004 == cmd) {
+                                Iterator<Object> iterator = jsonArray.iterator();
+                                List<ParameterValue> listParaValue = new ArrayList<ParameterValue>();
+                                while (iterator.hasNext()) {
+                                    JSONObject jsnPara = (JSONObject) iterator.next();
+                                    ParameterValue parameterValue = new ParameterValue();
+                                    parameterValue.setDate(jsnPara.getString("date"));
+                                    parameterValue.setValue(jsnPara.getDouble("value"));
+                                    parameterValue.setState(jsnPara.getInt("state"));
+                                    parameterValue.setPaid(jsnPara.getString("paid"));
+                                    listParaValue.add(parameterValue);
+                                }
+                                log.info(listParaValue);
+                                shzdtService.persistenceParameterValue(listParaValue);
+                            }
+                        }else{
+                            //do nothing
+                        }
+                    }catch (JSONException e){
+                        log.warn("返回对象错误:\n" + e );
+                    }catch (Exception e){
+                        log.warn(e);
+                    }
                     strValue = inSock.readLine();
                 }
 
@@ -146,6 +227,9 @@ public class ZDTConnector extends CRIConnector {
                             e.printStackTrace();
                         }
                     }
+                    log.info("===================数据库中所有实时数据====================");
+                    log.info(shzdtService.allParameterValue());
+                    log.info("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
                     try {
                         Thread.sleep(10 * 1000);
                     } catch (InterruptedException e) {
@@ -157,5 +241,7 @@ public class ZDTConnector extends CRIConnector {
             }
         }
     }
+
+
 }
 

@@ -25,4 +25,13 @@ create table shzdt_data
    primary key (id)
 );
 
+CREATE  TABLE shzdt_parameter_value
+(
+id int not null,
+paid varchar(24),
+pastate int ,
+pavalue DOUBLE ,
+padate VARCHAR(64),
+  PRIMARY  KEY (id)
+);
 

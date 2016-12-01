@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- 温湿度计定义 -->
-<equipment name="温湿度1" type="temphumi2" >
+<equipment name="温湿度2" type="temphumi2" >
 
  	<group refTab="" collect="1" type="1">
 		<node id="W1102001" name="温度" ref="fTemperature"  	collect="1" />

@@ -7,7 +7,7 @@
 							com/dhcc/itims/cri/shzdt/bo/machineroom/def/ups-def.xml"
 			  subSystemsXml=""
 			  machineRoomXml="com/dhcc/itims/cri/shzdt/bo/machineroom/machineroom.xml"
-			  ip = "192.168.0.101" port="8001"
+			  ip = "192.168.0.101" port="8002"
 		connectorClass="com.dhcc.itims.cri.shzdt.bo.connector.ZDTConnector">
 	</metadata>
 	<equipment id="L1101" name="漏水控制器1" type="leakwater" />

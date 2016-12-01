@@ -41,4 +41,14 @@ public class ParameterValue extends Val {
     public void setState(int state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "ParameterValue{" +
+                "paid='" + paid + '\'' +
+                ", date='" + date + '\'' +
+                ", value=" + value +
+                ", state=" + state +
+                '}';
+    }
 }

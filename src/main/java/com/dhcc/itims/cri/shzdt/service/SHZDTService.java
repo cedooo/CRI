@@ -2,6 +2,7 @@ package com.dhcc.itims.cri.shzdt.service;
 
 import com.dhcc.itims.cri.component.bo.DBService;
 import com.dhcc.itims.cri.shzdt.dao.ProtypeData;
+import com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,9 @@ public interface SHZDTService extends DBService {
      * @return 原始数据集合
      */
     public List<ProtypeData> allData();
+
+    public int persistenceParameterValue(List<ParameterValue> parameterValueList);
+
+    public List<ParameterValue> allParameterValue();
 
 }

@@ -1,6 +1,7 @@
 package com.dhcc.itims.cri.shzdt.service;
 
 import com.dhcc.itims.cri.shzdt.dao.ProtypeData;
+import com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,40 @@ public class SHZDTServiceImpl implements SHZDTService{
             }
         }
         return listCountry;
+    }
+
+    @Override
+    public int persistenceParameterValue(List<ParameterValue> parameterValueList) {
+        SqlSession sess = sqlSessionFactory.openSession(true);
+        int insertCount = 0;
+        try{
+            for(ParameterValue parameterValue: parameterValueList) {
+                insertCount += sess.update("com.dhcc.itims.cri.shzdt.saveParmeterValue", parameterValue);
+            }
+        }finally{
+            if(sess!=null){
+                sess.commit();
+                sess.close();
+            }
+        }
+        return insertCount;
+    }
+
+    @Override
+    public List<ParameterValue> allParameterValue() {
+        SqlSession sess = sqlSessionFactory.openSession(true);
+        List<ParameterValue> parameterValueList = new ArrayList<ParameterValue>();
+        try{
+            List<ParameterValue> parameterValueInDB = sess.selectList("com.dhcc.itims.cri.shzdt.selectAllParameterValue");
+            if(parameterValueInDB!=null && parameterValueInDB.size()>0){
+                parameterValueList.addAll(parameterValueInDB);
+            }
+        }finally{
+            if(sess!=null){
+                sess.commit();
+                sess.close();
+            }
+        }
+        return parameterValueList;
     }
 }
