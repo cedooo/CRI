@@ -35,8 +35,8 @@ public class SHZDTCRICollectJob extends CRICollectJob {
         log.debug(jobExecutionContext);
         log.info("===============执行机房数据采集任务===============");
         log.info(jobInfo(jobExecutionContext));
-        String code = (String) jobExecutionContext.getMergedJobDataMap().get("code");
-        MachineRoom machineRoom = machineRoomBuilder.getMachineRoomById(code);
+        String machineId = (String) jobExecutionContext.getMergedJobDataMap().get("machineId");
+        MachineRoom machineRoom = machineRoomBuilder.getMachineRoomById(machineId);
         log.info(machineRoom);
         //TODO 调用接口获取数据 并转存到数据库中
         log.info(shzdtService.allData());
