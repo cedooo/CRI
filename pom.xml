@@ -150,8 +150,8 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <excludes>
-                    <exclude>Docs/</exclude>
-                    <exclude>**/*.doc</exclude>
+                    <exclude>shzdt/docs/</exclude>
+                    <exclude>shzdt/database/</exclude>
                 </excludes>
                 <filtering>false</filtering>
             </resource>
