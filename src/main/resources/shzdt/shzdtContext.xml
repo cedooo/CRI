@@ -49,7 +49,7 @@
     <bean name="machineRoomBuilder" class="com.dhcc.itims.cri.component.machineroom.MachineRoomBuilder" scope="singleton">
         <constructor-arg name="machineRoomXmls" >
             <list>
-                <value>com/dhcc/itims/cri/shzdt/bo/machineroom/machineroom.xml</value>
+                <value>shzdt/machineRoomDefinition/machineroom.xml</value>
             </list>
         </constructor-arg>
     </bean>
@@ -69,8 +69,8 @@
 
     <beans profile="dev">
         <jdbc:embedded-database id="dataSource" type="HSQL">
-            <jdbc:script location="classpath:shzdt/crebas.sql"/>
-            <jdbc:script location="classpath:shzdt/testdata.sql"/>
+            <jdbc:script location="classpath:shzdt/database/crebas.sql"/>
+            <jdbc:script location="classpath:shzdt/database/testdata.sql"/>
         </jdbc:embedded-database>
     </beans>
     <beans profile="production">

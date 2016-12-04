@@ -40,10 +40,10 @@ public class SubSystem extends NetworkElement {
 	public static void main(String[] args) {
 		InputStream input = null;
 		DigesterLoader  digesterLoader = DigesterLoader.newLoader(
-				new XmlRules("rebuild/machineroom/networkele/subsystem/subsystem-def-rules.xml"));
+				new XmlRules("rebuild/machineroom/networkele/subsystem/subsystem-equipment-rules.xml"));
 		Digester digester = digesterLoader.newDigester();
 		input = SubSystem.class.getClassLoader()
-				.getResourceAsStream("rebuild/machineroom/networkele/def/lk/caiwu/sub-temp-humi-def.xml");
+				.getResourceAsStream("rebuild/machineroom/networkele/equipment/lk/caiwu/sub-temp-humi-equipment.xml");
 		try {
 			SubSystem subSys = digester.parse(input);
 			//System.out.println(subSys.getListEquip());

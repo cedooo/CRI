@@ -20,7 +20,7 @@ public class Test {
 						new XmlRules("rebuild/machineroom/lk/machineroom-rules.xml"));
 		Digester digester = digesterLoader.newDigester();
 		input = Test.class.getClassLoader()
-				.getResourceAsStream("rebuild/machineroom/networkele/def/lk/zero11/emerson-ups-def.xml");
+				.getResourceAsStream("rebuild/machineroom/networkele/equipment/lk/zero11/emerson-ups-equipment.xml");
 		try {
 			NetworkElement modDef = digester.parse(input);
 			System.out.println(modDef);

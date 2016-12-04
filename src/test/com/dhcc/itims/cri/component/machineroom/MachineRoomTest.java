@@ -43,10 +43,10 @@ public class MachineRoomTest {
     public void equipmentBuildTest(){
         String rulesPath = "com/dhcc/itims/cri/component/machineroom/element/equipment/equipment-def-rules.xml";
         String[] defPath = {
-                "com/dhcc/itims/cri/shzdt/bo/machineroom/def/temp-humi1-def.xml",
-                "com/dhcc/itims/cri/shzdt/bo/machineroom/def/temp-humi2-def.xml",
-                "com/dhcc/itims/cri/shzdt/bo/machineroom/def/leak-water-def.xml",
-                "com/dhcc/itims/cri/shzdt/bo/machineroom/def/ups-def.xml"
+                "com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/temp-humi1-equipment.xml",
+                "com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/temp-humi2-equipment.xml",
+                "com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/leak-water-equipment.xml",
+                "com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/ups-equipment.xml"
         };
         InputStream input = null;
         DigesterLoader  digesterLoader =

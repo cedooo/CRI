@@ -25,10 +25,10 @@
 				<entry>    &lt;!&ndash; 设备&ndash;&gt;
 					<key>equipment</key>
 					<value>
-						com/dhcc/itims/cri/component/machineroom/element/equipment/equipment-def-rules.xml:com/dhcc/itims/cri/shzdt/bo/machineroom/def/temp-humi1-def.xml,
-							com/dhcc/itims/cri/shzdt/bo/machineroom/def/temp-humi2-def.xml,
-							com/dhcc/itims/cri/shzdt/bo/machineroom/def/leak-water-def.xml,
-							com/dhcc/itims/cri/shzdt/bo/machineroom/def/ups-def.xml
+						com/dhcc/itims/cri/component/machineroom/element/equipment/equipment-equipment-rules.xml:com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/temp-humi1-equipment.xml,
+							com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/temp-humi2-equipment.xml,
+							com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/leak-water-equipment.xml,
+							com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/ups-equipment.xml
 					</value>
 				</entry>
 				<entry>    &lt;!&ndash; 机房设备解析规则 &ndash;&gt;
