@@ -152,6 +152,7 @@
                 <excludes>
                     <exclude>shzdt/docs/</exclude>
                     <exclude>shzdt/database/</exclude>
+                    <exclude>itims/</exclude>
                 </excludes>
                 <filtering>false</filtering>
             </resource>
