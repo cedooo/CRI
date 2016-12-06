@@ -1,0 +1,14 @@
+<!--
+	新加配置项：要确保mosn不出现重复
+-->
+
+<node mosn="99800027" pmosn="0" title="IDC365-CMS机房" icon="img/mo/en16.gif" iconname="" devType="70"/>
+<type mosn="99802715" pmosn="99800027" title="温湿度[IDC365]" icon="img/mo/ho16.gif" iconname="" absModel="Humiture" devType="70701">
+  <group mosn="99802716" pmosn="99802715" title="温湿度[IDC365]" icon="img/mo/ho16.gif" iconname="" forward="" id="Humiture" devType=""/>
+</type>
+<type mosn="99802717" pmosn="99800027" title="UPS[IDC365]" icon="img/mo/ho16.gif" iconname="" absModel="Humiture" devType="70201">
+  <group mosn="99802718" pmosn="99802717" title="UPS[IDC365]" icon="img/mo/ho16.gif" iconname="" forward="" id="Humiture" devType=""/>
+</type>
+<type mosn="99802719" pmosn="99800027" title="漏水控制器[IDC365]" icon="img/mo/ho16.gif" iconname="" absModel="Humiture" devType="708002">
+  <group mosn="99802720" pmosn="99802719" title="漏水控制器[IDC365]" icon="img/mo/ho16.gif" iconname="" forward="" id="Humiture" devType=""/>
+</type>
