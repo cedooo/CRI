@@ -1,4 +1,4 @@
-<model name="en" desc="温湿度">
+<model name="hm" desc="温湿度">
 	<typ name="Humiture" desc="温湿度" parentName="">
 		<group groupId="Humiture" idTyp="version" ref="" priority="1" desc="机房动力温湿度">
 			<allKpiDesc>

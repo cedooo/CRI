@@ -5,10 +5,19 @@ package com.dhcc.itims.cri.shzdt.extapi.po;
  * 参数值
  */
 public class ParameterValue extends Val {
+    private String id;    //id
     private String paid;    //参数编号
-    private String date;    //日期时间
-    private double value;    //参数值
-    private int state;    //状态（0,正常;1,高报警;2,低报警;3,高预警;4,低预警;）
+    private String padate;    //日期时间
+    private String pavalue;    //参数值
+    private String pastate;    //状态（0,正常;1,高报警;2,低报警;3,高预警;4,低预警;）
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getPaid() {
         return paid;
@@ -18,37 +27,37 @@ public class ParameterValue extends Val {
         this.paid = paid;
     }
 
-    public String getDate() {
-        return date;
+    public String getPadate() {
+        return padate;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setPadate(String padate) {
+        this.padate = padate;
     }
 
-    public double getValue() {
-        return value;
+    public String getPavalue() {
+        return pavalue;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setPavalue(String pavalue) {
+        this.pavalue = pavalue;
     }
 
-    public int getState() {
-        return state;
+    public String getPastate() {
+        return pastate;
     }
 
-    public void setState(int state) {
-        this.state = state;
+    public void setPastate(String pastate) {
+        this.pastate = pastate;
     }
 
     @Override
     public String toString() {
         return "ParameterValue{" +
                 "paid='" + paid + '\'' +
-                ", date='" + date + '\'' +
-                ", value=" + value +
-                ", state=" + state +
+                ", padate='" + padate + '\'' +
+                ", pavalue='" + pavalue + '\'' +
+                ", pastate='" + pastate + '\'' +
                 '}';
     }
 }

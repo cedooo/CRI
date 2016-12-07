@@ -2,9 +2,9 @@
 <!-- 温湿度计定义 -->
 <equipment name="温湿度1" type="temphumi1" >
 
- 	<group refTab="" collect="1" type="1">
-		<node id="W1101001" name="温度" ref="fTemperature"  	collect="1" />
-		<node id="W1101002" name="湿度" ref="fHuminity"  	collect="1" />
+ 	<group refTab="shzdt_humiture" collect="1" type="1">
+		<node id="W1101001" name="温度" ref="temp"  	collect="1" />
+		<node id="W1101002" name="湿度" ref="humi"  	collect="1" />
  	</group>
  	
 </equipment>

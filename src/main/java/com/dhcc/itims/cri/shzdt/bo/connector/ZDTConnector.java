@@ -117,36 +117,6 @@ public class ZDTConnector extends CRIConnector  {
     }
 
 
-    /**
-     * 测试解析字符串
-     * TODO 应该删除
-     * @param args
-     */
-    public static void main(String[] args){
-        String strValue = "{\"cmd\":6004,\"flg\":0,\"rst\":1,\"seq\":38,\"val\":[{\"date\":\"2016-12-01 11:16:09.000\",\"paid\":\"W1102001\",\"state\":0,\"value\":22.50},{\"date\":\"2016-12-01 11:16:09.000\",\"paid\":\"W1102002\",\"state\":0,\"value\":31.39999961853027}],\"ver\":1}";
-        if(strValue.length()>0) {
-            JSONObject jsnObj = new JSONObject(strValue);
-            JSONArray jsonArray = (JSONArray) jsnObj.get("val");
-            int cmd = jsnObj.getInt("cmd");
-            if (6004 == cmd) {
-                Iterator<Object> iterator = jsonArray.iterator();
-                List<ParameterValue> listParaValue = new ArrayList<ParameterValue>();
-                while (iterator.hasNext()) {
-                    JSONObject jsnPara = (JSONObject) iterator.next();
-                    ParameterValue parameterValue = new ParameterValue();
-                    parameterValue.setDate(jsnPara.getString("date"));
-                    parameterValue.setValue(jsnPara.getDouble("value"));
-                    parameterValue.setState(jsnPara.getInt("state"));
-                    parameterValue.setPaid(jsnPara.getString("paid"));
-                    listParaValue.add(parameterValue);
-                }
-                log.info(listParaValue);
-
-            }
-        }else{
-            //do nothing
-        }
-    }
     class Reciver implements Runnable{
         private BufferedReader inSock;
         public Reciver(InputStream inputStream){
@@ -170,9 +140,9 @@ public class ZDTConnector extends CRIConnector  {
                                 while (iterator.hasNext()) {
                                     JSONObject jsnPara = (JSONObject) iterator.next();
                                     ParameterValue parameterValue = new ParameterValue();
-                                    parameterValue.setDate(jsnPara.getString("date"));
-                                    parameterValue.setValue(jsnPara.getDouble("value"));
-                                    parameterValue.setState(jsnPara.getInt("state"));
+                                    parameterValue.setPadate(jsnPara.getString("date"));
+                                    parameterValue.setPavalue(jsnPara.getString("value"));
+                                    parameterValue.setPastate(jsnPara.getString("state"));
                                     parameterValue.setPaid(jsnPara.getString("paid"));
                                     listParaValue.add(parameterValue);
                                 }
@@ -227,9 +197,7 @@ public class ZDTConnector extends CRIConnector  {
                             e.printStackTrace();
                         }
                     }
-                    log.info("===================数据库中所有实时数据====================");
-                    log.info(shzdtService.allParameterValue());
-                    log.info("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+
                     try {
                         Thread.sleep(10 * 1000);
                     } catch (InterruptedException e) {

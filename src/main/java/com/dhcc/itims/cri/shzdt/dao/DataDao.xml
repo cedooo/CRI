@@ -51,13 +51,42 @@
 
     <resultMap type="com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue" id="ParameterValueMap">
         <result column="id" property="id"/>
-        <result column="pastate" property="state"/>
-        <result column="padate" property="date"/>
-        <result column="pavalue" property="value"/>
+        <result column="pastate" property="pastate"/>
+        <result column="padate" property="padate"/>
+        <result column="pavalue" property="pavalue"/>
         <result column="paid" property="paid"/>
     </resultMap>
-    <select id="selectAllParameterValue" resultMap="ProtypeDataMap">
-        SELECT id, pastate ,padate ,pavalue,paid
+    <select id="selectAllParameterValue" resultMap="ParameterValueMap">
+        <![CDATA[
+        SELECT id, pastate , padate ,pavalue,paid
         FROM shzdt_parameter_value
+		]]>
     </select>
+
+    <insert id="insertNewRow" parameterType="com.dhcc.itims.cri.shzdt.dao.parameter.TwoParameterCondition" >
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+            SELECT LAST_INSERT_ID() as id
+        </selectKey>
+          insert into   ${one} ( mosn, fCollectTime, fPartID, dmsn, objChgStat, fAggregateCnt )
+          select
+                (select mosn from shzdt_equip_mosn_map where equipCode = #{two} )  as mosn,
+                padate as fCollectTime, -92 as fPartID,
+                998 as dmsn, '' as objChgSta,0 as fAggregateCnt
+          from shzdt_parameter_value
+          where paid LIKE concat(#{two}, '%')
+          order by padate desc limit 1
+    </insert>
+
+    <update id="updateParameterValue" parameterType="com.dhcc.itims.cri.shzdt.dao.parameter.FourParameterCondition" >
+      update ${one} set ${two} =
+         (
+          select  pavalue
+          from shzdt_parameter_value
+          where paid = #{three}
+          order by padate desc limit 1
+          )
+       where  id = #{four}
+    </update>
+
+
 </mapper>

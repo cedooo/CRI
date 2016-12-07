@@ -1,14 +1,11 @@
 package com.dhcc.itims.cri.shzdt.service;
 
 import com.dhcc.itims.cri.component.bo.DBService;
+import com.dhcc.itims.cri.shzdt.dao.parameter.FourParameterCondition;
 import com.dhcc.itims.cri.shzdt.dao.ProtypeData;
+import com.dhcc.itims.cri.shzdt.dao.parameter.TwoParameterCondition;
 import com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,5 +23,21 @@ public interface SHZDTService extends DBService {
     public int persistenceParameterValue(List<ParameterValue> parameterValueList);
 
     public List<ParameterValue> allParameterValue();
+
+    //begin
+
+    /**
+     * 向表中插入新的一行
+     * @return 插入行的id
+     */
+    public long insertNewRow(TwoParameterCondition parameters);
+
+    /**
+     * 更新表中值
+     * @param listFP 参数队列
+     * @return 受影响行数
+     */
+    public int updateTableValue(List<FourParameterCondition> listFP);
+    //end
 
 }

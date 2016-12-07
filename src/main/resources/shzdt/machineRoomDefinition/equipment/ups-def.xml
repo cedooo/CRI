@@ -2,7 +2,7 @@
 <equipment name="UPS" type="ups" >
  	<!-- ref: 映射别名 type: 0.状态型 1，数值型 collect: 0.不采集 1，采集   -->
  	
- 	<group refTab="txUpsCommPerf" collect="1" type="1">
+ 	<group refTab="txUpsCommPerf" collect="0" type="1">
 		<node id="A10" name="直流输入电压（电池电压）" ref="fBatteryVoltage"  	collect="1"    />  
 		<node id="A11" name="输出频率（三相一致）" ref="fFrequencyOut"  	collect="1"    />
 		<node id="A18" name="输入频率（三相一致）" ref="fFrequencyIn"  	collect="1"    /> 
