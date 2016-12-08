@@ -1,5 +1,6 @@
 package com.dhcc.itims.cri.shzdt.service;
 
+import com.dhcc.itims.cri.shzdt.dao.parameter.FiveParameterCondition;
 import com.dhcc.itims.cri.shzdt.dao.parameter.FourParameterCondition;
 import com.dhcc.itims.cri.shzdt.dao.ProtypeData;
 import com.dhcc.itims.cri.shzdt.dao.parameter.TwoParameterCondition;
@@ -26,23 +27,6 @@ public class SHZDTServiceImpl implements SHZDTService{
         this.sqlSessionFactory = sqlSessionFactory;
     }
 
-    public List<ProtypeData> allData(){
-        SqlSession sess = sqlSessionFactory.openSession(true);
-        List<ProtypeData> listCountry = new ArrayList<ProtypeData>();
-        try{
-            List<ProtypeData> listCountryDB = sess.selectList("com.dhcc.itims.cri.shzdt.selectAllData");
-            if(listCountryDB!=null && listCountryDB.size()>0){
-                listCountry.addAll(listCountryDB);
-            }
-        }finally{
-            if(sess!=null){
-                sess.commit();
-                sess.close();
-            }
-        }
-        return listCountry;
-    }
-
     @Override
     public int persistenceParameterValue(List<ParameterValue> parameterValueList) {
         SqlSession sess = sqlSessionFactory.openSession(true);
@@ -61,24 +45,6 @@ public class SHZDTServiceImpl implements SHZDTService{
     }
 
     @Override
-    public List<ParameterValue> allParameterValue() {
-        SqlSession sess = sqlSessionFactory.openSession(true);
-        List<ParameterValue> parameterValueList = new ArrayList<ParameterValue>();
-        try{
-            List<ParameterValue> parameterValueInDB = sess.selectList("com.dhcc.itims.cri.shzdt.selectAllParameterValue");
-            if(parameterValueInDB!=null && parameterValueInDB.size()>0){
-                parameterValueList.addAll(parameterValueInDB);
-            }
-        }finally{
-            if(sess!=null){
-                sess.commit();
-                sess.close();
-            }
-        }
-        return parameterValueList;
-    }
-
-    @Override
     public long insertNewRow(TwoParameterCondition parameters) {
         SqlSession sess = sqlSessionFactory.openSession(true);
         try{
@@ -94,11 +60,11 @@ public class SHZDTServiceImpl implements SHZDTService{
     }
 
     @Override
-    public int updateTableValue(List<FourParameterCondition> listFP) {
+    public int updateTableValue(List<FiveParameterCondition> listFP) {
         SqlSession sess = sqlSessionFactory.openSession(ExecutorType.BATCH, true);
         try{
             int updatedCnt = 0;
-            for (FourParameterCondition fp:
+            for (FiveParameterCondition fp:
                     listFP) {
                 updatedCnt+= sess.update("com.dhcc.itims.cri.shzdt.updateParameterValue", fp);
             }

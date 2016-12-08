@@ -1,0 +1,32 @@
+send:{"cmd":6001,"flg":1,"rst":1,"seq":1,"val":null,"ver":1}
+recv:
+{"cmd":6001,"flg":0,"rst":1,"seq":14,"val":[{"addr":"中心机房","eqid":"L1101","flag":1,"name":"漏水控制器1"},{"addr":"中心机房","eqid":"U5801","flag":1,"name":"UPS1"},{"addr":"中心机房","eqid":"W1101","flag":1,"name":"温湿度1"},{"addr":"中心机房","eqid":"W1102","flag":1,"name":"温湿度2"}],"ver":1}
+recv:
+
+send:{"flg":1,"val":{"eqid":"L1101"},"rst":1,"ver":1,"cmd":6002,"seq":2}
+recv:
+{"cmd":6002,"flg":0,"rst":1,"seq":15,"val":[{"eqid":"L1101","name":"状态字","paid":"L1101001","unit":""},{"eqid":"L1101","name":"定位电阻","paid":"L1101002","unit":""},{"eqid":"L1101","name":"检测电阻","paid":"L1101003","unit":""},{"eqid":"L1101","name":"检测电流","paid":"L1101004","unit":""},{"eqid":"L1101","name":"红绿电阻","paid":"L1101005","unit":""},{"eqid":"L1101","name":"黄兰电阻","paid":"L1101006","unit":""},{"eqid":"L1101","name":"维护报警","paid":"L1101007","unit":""},{"eqid":"L1101","name":"漏水报警","paid":"L1101008","unit":""},{"eqid":"L1101","name":"感应线断裂","paid":"L1101009","unit":""},{"eqid":"L1101","name":"EEPROM读错","paid":"L1101010","unit":""},{"eqid":"L1101","name":"漏水位置","paid":"L1101011","unit":""}],"ver":1}
+recv:
+
+send:{"flg":1,"val":{"eqid":"L1101"},"rst":1,"ver":1,"cmd":6003,"seq":3}
+recv:
+{"cmd":6003,"flg":0,"rst":1,"seq":16,"val":{"date":"2016-12-07 11:41:11.000","eqid":"L1101","state":0},"ver":1}
+recv:
+
+send:{"flg":1,"val":{"eqid":"L1101"},"rst":1,"ver":1,"cmd":6004,"seq":4}
+recv:
+{"cmd":6004,"flg":0,"rst":1,"seq":17,"val":[
+{"date":"2016-12-07 11:41:14.000","paid":"L1101001","state":0,"value":1024.0},
+{"date":"2016-12-07 11:41:14.000","paid":"L1101002","state":0,"value":61439.0},
+{"date":"2016-12-07 11:41:14.000","paid":"L1101003","state":0,"value":61439.0},
+{"date":"2016-12-07 11:41:14.000","paid":"L1101004","state":0,"value":0.0},
+{"date":"2016-12-07 11:41:14.000","paid":"L1101005","state":0,"value":201.0},
+{"date":"2016-12-07 11:41:14.000","paid":"L1101006","state":0,"value":201.0},
+{"date":"2016-12-07 11:41:14.000","paid":"L1101007","state":0,"value":0.0},
+{"date":"2016-12-07 11:41:14.000","paid":"L1101008","state":0,"value":0.0},
+{"date":"2016-12-07 11:41:14.000","paid":"L1101009","state":0,"value":0.0},
+{"date":"2016-12-07 11:41:14.000","paid":"L1101010","state":0,"value":0.0},
+{"date":"2016-12-07 11:41:14.000","paid":"L1101011","state":0,"value":0.0}],"ver":1}
+recv:
+
+send:{"flg":1,"val":{"paid":"L1101"},"rst":1,"ver":1,"cmd":6005,"seq":5}

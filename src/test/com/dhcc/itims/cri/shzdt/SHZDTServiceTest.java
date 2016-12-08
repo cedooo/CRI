@@ -8,10 +8,5 @@ import org.junit.Test;
  */
 public class SHZDTServiceTest {
 
-    @Test
-    public void allPrototypeData(){
-        SHZDTService shzdtService = TestContext.testContextByXml.getBean(SHZDTService.class);
-        System.out.println("=========================所有数据=================\n" + shzdtService.allData());
-    }
 
 }

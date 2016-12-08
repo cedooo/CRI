@@ -8,7 +8,7 @@ import org.junit.Test;
  */
 public class ZDTConnectorTest {
 
-    @Test
+    //@Test
     public void testConnect(){
         ZDTConnector zdtConnector = new ZDTConnector();
         zdtConnector.setIp("192.168.0.101");

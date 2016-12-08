@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 温湿度计定义 -->
+<equipment name="温湿度1" type="temphumi" >
+
+ 	<group refTab="shzdt_humiture" collect="1" type="1">
+		<node id="001" name="温度" ref="temp"  	collect="1" />
+		<node id="002" name="湿度" ref="humi"  	collect="1" />
+ 	</group>
+ 	
+</equipment>

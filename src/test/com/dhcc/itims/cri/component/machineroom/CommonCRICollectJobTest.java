@@ -10,7 +10,7 @@ import org.quartz.impl.StdSchedulerFactory;
  */
 public class CommonCRICollectJobTest {
 
-    @Test
+    //@Test
     public void exe(){
         try {
             Scheduler sch = new StdSchedulerFactory("shzdt/quartz.properties").getScheduler();

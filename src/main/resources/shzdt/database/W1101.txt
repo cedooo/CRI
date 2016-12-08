@@ -1,0 +1,25 @@
+send:{"cmd":6001,"flg":1,"rst":1,"seq":1,"val":null,"ver":1}
+recv:
+{"cmd":6001,"flg":0,"rst":1,"seq":43,"val":[{"addr":"中心机房","eqid":"L1101","flag":1,"name":"漏水控制器1"},{"addr":"中心机房","eqid":"U5801","flag":1,"name":"UPS1"},{"addr":"中心机房","eqid":"W1101","flag":1,"name":"温湿度1"},{"addr":"中心机房","eqid":"W1102","flag":1,"name":"温湿度2"}],"ver":1}
+recv:
+
+send:{"flg":1,"val":{"eqid":"W1101"},"rst":1,"ver":1,"cmd":6002,"seq":2}
+recv:
+{"cmd":6002,"flg":0,"rst":1,"seq":44,"val":[{"eqid":"W1101","name":"温度","paid":"W1101001","unit":"℃"},{"eqid":"W1101","name":"湿度","paid":"W1101002","unit":"%"}],"ver":1}
+recv:
+
+send:{"flg":1,"val":{"eqid":"W1101"},"rst":1,"ver":1,"cmd":6003,"seq":3}
+recv:
+{"cmd":6003,"flg":0,"rst":1,"seq":45,"val":{"date":"2016-12-08 14:24:51.000","eqid":"W1101","state":0},"ver":1}
+recv:
+
+send:{"flg":1,"val":{"eqid":"W1101"},"rst":1,"ver":1,"cmd":6004,"seq":4}
+recv:
+{"cmd":6004,"flg":0,"rst":1,"seq":46,"val":[{"date":"2016-12-08 14:24:54.000","paid":"W1101001","state":0,"value":20.60000038146973},{"date":"2016-12-08 14:24:54.000","paid":"W1101002","state":0,"value":42.29999923706055}],"ver":1}
+recv:
+
+send:{"flg":1,"val":{"paid":"W1101001"},"rst":1,"ver":1,"cmd":6005,"seq":5}
+recv:
+{"cmd":6005,"flg":0,"rst":1,"seq":47,"val":{"date":"2016-12-08 14:24:57.000","paid":"W1101001","state":0,"value":20.60000038146973},"ver":1}
+recv:
+

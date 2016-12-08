@@ -23,7 +23,7 @@
 					<kpi id="leakAlarm" name="漏水报警" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
 					<kpi id="lineCut" name="感应线断裂" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
 					<kpi id="EEPROM" name="EEPROM读错" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="leakPosition" name="漏水位置" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="0:未漏水" valid="true" isStat="true" sys="" /> 
+					<kpi id="leakPosition" name="漏水位置('0'代表当前未漏水)" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
 				</partTyp>
 				 <partTyp id="LeakWaterConf" name="温湿度配置信息" alias="fPartID" pname="基本信息" storageTyp="0:i|1:i" compress="1"
                          extensible="0" ptTyp="c" dbModel="" dbTable="shzdt_equipment_attr_conf" hasDev="false" isMO="false" sync="1" markKpi="">

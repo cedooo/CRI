@@ -7,6 +7,7 @@ import com.dhcc.itims.cri.component.machineroom.element.NetworkElement;
 import com.dhcc.itims.cri.component.machineroom.element.equipment.Equipment;
 import com.dhcc.itims.cri.component.machineroom.element.equipment.EquipmentNode;
 import com.dhcc.itims.cri.component.machineroom.element.equipment.Group;
+import com.dhcc.itims.cri.shzdt.dao.parameter.FiveParameterCondition;
 import com.dhcc.itims.cri.shzdt.dao.parameter.FourParameterCondition;
 import com.dhcc.itims.cri.shzdt.dao.parameter.TwoParameterCondition;
 import com.dhcc.itims.cri.shzdt.service.SHZDTService;
@@ -46,7 +47,7 @@ public class SHZDTCRICollectJob extends CRICollectJob {
         log.info(jobInfo(jobExecutionContext));
         String machineId = (String) jobExecutionContext.getMergedJobDataMap().get("machineId");
         MachineRoom machineRoom = machineRoomBuilder.getMachineRoomById(machineId);
-        //log.info(machineRoom);
+        log.info(machineRoom);
 
         List<NetworkElement> networkElementList = machineRoom.getNetworkElementList();
         for (NetworkElement ne:
@@ -60,9 +61,11 @@ public class SHZDTCRICollectJob extends CRICollectJob {
             for (Group group:
                  groupSet) {
                 String tableName = group.getRefTab();
-                String collect = group.getCollect();
+                boolean needCollect = "1".equals(group.getCollect());
+                String valueColumn = "0".equals(group.getType())?"pastate":"pavalue";
+
                 if(tableName!=null && tableName!=null &&
-                        "1".equals(collect)) {
+                        needCollect) {
 
                     //插入不含数据值的记录 然后插入数据值
                     TwoParameterCondition twoPC = new TwoParameterCondition();
@@ -73,21 +76,21 @@ public class SHZDTCRICollectJob extends CRICollectJob {
                     long newRowID = shzdtService.insertNewRow(twoPC);
                     log.info("插入的行id=" + newRowID);
                     if(newRowID>0) {
-                        List<FourParameterCondition> listParams = new ArrayList<FourParameterCondition>();
+                        List<FiveParameterCondition> listParams = new ArrayList<FiveParameterCondition>();
                         List<EquipmentNode> equipNodeList = group.getListNode();
                         for (EquipmentNode equipmentNode :
                                 equipNodeList) {
-                            FourParameterCondition fourParam = new FourParameterCondition();
-                            fourParam.setOne(tableName);
-
-                            fourParam.setTwo(equipmentNode.getRef());
-                            fourParam.setThree(equipmentNode.getId());
-
-                            fourParam.setFour(newRowID+"");
-                            listParams.add(fourParam);
+                            FiveParameterCondition fiveParam = new FiveParameterCondition();
+                            fiveParam.setOne(tableName);
+                            fiveParam.setTwo(equipmentNode.getRef());
+                            fiveParam.setThree(valueColumn);
+                            fiveParam.setFour(ne.getId() + equipmentNode.getId());
+                            fiveParam.setFive(newRowID+"");
+                            listParams.add(fiveParam);
                         }
                         log.debug(listParams);
                         int updateCnt = shzdtService.updateTableValue(listParams);
+                        log.info("更新数据影响条数:" + updateCnt);
                     }else{
                         //log.info("采集数据出错:在向表【" + tableName +"】中插入数据时候出现错误.参数为:" + twoPC);
                         log.info("采集数据时， 不存在数据");

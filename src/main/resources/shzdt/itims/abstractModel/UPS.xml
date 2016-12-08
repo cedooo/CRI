@@ -2,73 +2,83 @@
 	<typ name="IDCUPS" desc="IDCUPS" parentName="">
 		<group groupId="IDCUPS" idTyp="version" ref="" priority="1" desc="机房动力 UPS">
 			<allKpiDesc>
-				<partTyp id="upsInfo" name="基础信息"  pname="UPS"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" dbModel="" 
+				<partTyp id="upsState" name="状态信息"  pname="UPS"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" dbModel="" 
+					isPublic="true" dbTable="shzdt_ups_state" isMO="false" markKpi=""  >
+					<kpi id="mosn" name="MOSN" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
+					<kpi id="dmsn" name="域" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+                    <kpi id="fCollectTime" name="采集时间" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+					<kpi id="fPartID" name="状态信息" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+                    <kpi id="objChgStat" name="实体变更记录" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/> 
+					<kpi id="fAggregateCnt" name="数据压缩次数" unit="" compress="1" dataTyp="int" sys="" meaning=""/>
+					
+					
+					<kpi id="inState" name="输入状态"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警" valid="true" isStat="true" sys="" />
+					<kpi id="batteryLevelState" name="电池电量状态"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="chargState" name="充电状态"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="outChargeState" name="放电状态"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="outputState" name="输出状态"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="hardwareError" name="硬件故障"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="battleNeedChange" name="电池需要更换"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="overload" name="过载"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="shudownNow" name="立即关机"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="compatibility" name="兼容性故障"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="parameterError" name="参数错误"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="shutdownEmergency" name="紧急关机"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="fan" name="风扇故障"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+					<kpi id="tempTooHigh" name="温度过高"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警"  valid="true" isStat="true" sys="" />
+				</partTyp>
+				<partTyp id="upsInfo" name="基础指标信息"  pname="UPS"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" dbModel="" 
 				isPublic="true" dbTable="shzdt_ups" isMO="false" markKpi=""  >
 					<kpi id="mosn" name="MOSN" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
 					<kpi id="dmsn" name="域" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
                     <kpi id="fCollectTime" name="采集时间" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
-					<kpi id="fPartID" name="温湿度" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="fPartID" name="基础指标信息" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
                     <kpi id="objChgStat" name="实体变更记录" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/> 
 					<kpi id="fAggregateCnt" name="数据压缩次数" unit="" compress="1" dataTyp="int" sys="" meaning=""/>
 					
-					<kpi id="inState" name="输入状态"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警" valid="true" isStat="true" sys="" />
-					<kpi id="batteryLevelState" name="电池电量状态"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="chargState" name="充电状态"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="outChargeState" name="放电状态"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="outputState" name="输出状态"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="hardwareError" name="硬件故障"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="battleNeedChange" name="电池需要更换"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="overload" name="过载"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="shudownNow" name="立即关机"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="compatibility" name="兼容性故障"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="parameterError" name="参数错误"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="shutdownEmergency" name="紧急关机"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="fan" name="风扇故障"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="tempTooHigh" name="温度过高"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					
-					<kpi id="A1" name="剩余电量"  unit="%"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="剩余时间"  unit="m"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="电池电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出负载"  unit="%"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="内部温度"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="电池电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="有功功率"  unit="kW"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="视在功率"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输入电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输入频率"  unit="Hz"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="功率因数"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="电压"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输入A相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输入A相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输入AB线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输入B相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输入B相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输入BC线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输入C相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输入C相电压"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输入CA线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="旁路A相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="旁路A相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="旁路AB线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="旁路B相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="旁路B相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="旁路BC线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="旁路C相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="旁路C相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="旁路CA线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="旁路功率因数"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出A相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出A相负载"  unit="%"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出A相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出AB线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出B相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出B相负载"  unit="%"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出B相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出BC线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出C相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出C相负载"  unit="%"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出C相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="A1" name="输出CA线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="leftBattery" name="剩余电量"  unit="%"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="leftTime" name="剩余时间"  unit="m"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="batteryI" name="电池电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
+					<kpi id="outOverload" name="输出负载"  unit="%"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="innerTemp" name="内部温度"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="batteryV" name="电池电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
+					<kpi id="powerRate" name="有功功率"  unit="kW"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="viewRate" name="视在功率"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputI" name="输入电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputHz" name="输入频率"  unit="Hz"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputFactor" name="功率因数"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="voltage" name="电压"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputAI" name="输入A相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputAV" name="输入A相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputABV" name="输入AB线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputBI" name="输入B相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputBV" name="输入B相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputBCV" name="输入BC线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputCI" name="输入C相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputCV" name="输入C相电压"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="inputCAV" name="输入CA线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="bypathAI" name="旁路A相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="bypathAV" name="旁路A相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="bypathABV" name="旁路AB线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="bypathBI" name="旁路B相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="bypathBV" name="旁路B相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="bypathBCV" name="旁路BC线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="bypathCI" name="旁路C相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="bypathCV" name="旁路C相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="bypathCAV" name="旁路CA线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="bypathRate" name="旁路功率因数"  unit=""  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputAI" name="输出A相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputAOverload" name="输出A相负载"  unit="%"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputAV" name="输出A相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputABV" name="输出AB线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputBI" name="输出B相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputBOverload" name="输出B相负载"  unit="%"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputBV" name="输出B相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputBCV" name="输出BC线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputCI" name="输出C相电流"  unit="A"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputCOverload" name="输出C相负载"  unit="%"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputCV" name="输出C相电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					<kpi id="outputCAV" name="输出CA线电压"  unit="V"  dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
 							
  
 				</partTyp>

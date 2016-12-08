@@ -8,7 +8,7 @@ import org.junit.Test;
 public class MachineRoomBuilderTest {
     @Test
     public void build(){
-        String[] machineRoomXml = {"com/dhcc/itims/cri/shzdt/bo/machineroom/machineroom.xml"};
+        String[] machineRoomXml = {"shzdt/machineRoomDefinition/machineroom.xml"};
         System.out.println(new MachineRoomBuilder(machineRoomXml).getMachineRooms());
     }
 }

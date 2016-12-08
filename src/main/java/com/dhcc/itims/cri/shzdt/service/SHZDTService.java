@@ -1,6 +1,7 @@
 package com.dhcc.itims.cri.shzdt.service;
 
 import com.dhcc.itims.cri.component.bo.DBService;
+import com.dhcc.itims.cri.shzdt.dao.parameter.FiveParameterCondition;
 import com.dhcc.itims.cri.shzdt.dao.parameter.FourParameterCondition;
 import com.dhcc.itims.cri.shzdt.dao.ProtypeData;
 import com.dhcc.itims.cri.shzdt.dao.parameter.TwoParameterCondition;
@@ -14,15 +15,9 @@ import java.util.List;
  */
 public interface SHZDTService extends DBService {
 
-    /**
-     * 所有原始数据
-     * @return 原始数据集合
-     */
-    public List<ProtypeData> allData();
 
     public int persistenceParameterValue(List<ParameterValue> parameterValueList);
 
-    public List<ParameterValue> allParameterValue();
 
     //begin
 
@@ -37,7 +32,7 @@ public interface SHZDTService extends DBService {
      * @param listFP 参数队列
      * @return 受影响行数
      */
-    public int updateTableValue(List<FourParameterCondition> listFP);
+    public int updateTableValue(List<FiveParameterCondition> listFP);
     //end
 
 }

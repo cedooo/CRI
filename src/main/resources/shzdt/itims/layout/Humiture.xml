@@ -25,7 +25,9 @@
 		<menus>
 				<left>
 					<menu title="概要信息" url="typNew/layertest/laytestFlex.jsp" rel="1" icon="typNew/img/summary.png"></menu>
+					<!--
 					<menu title="配置信息" url="typNew/layertest/laytestFlex.jsp" rel="bc" icon="typNew/img/config.png"></menu>
+					-->
 				</left>
 
 				<right>

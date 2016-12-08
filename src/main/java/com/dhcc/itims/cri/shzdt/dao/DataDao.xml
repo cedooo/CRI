@@ -3,54 +3,23 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dhcc.itims.cri.shzdt">
-    <resultMap type="com.dhcc.itims.cri.shzdt.dao.ProtypeData" id="ProtypeDataMap">
-        <result column="id" property="id"/>
-        <result column="parameterCode" property="parameterCode"/>
-        <result column="parameterName" property="parameterName"/>
-        <result column="value" property="value"/>
-        <result column="unit" property="unit"/>
-        <result column="state" property="state"/>
-        <result column="alarmTop" property="alarmTop"/>
-        <result column="alarmBottom" property="alarmBottom"/>
-        <result column="alertTop" property="alertTop"/>
-        <result column="alertBottom" property="alertBottom"/>
-        <result column="collectTime" property="collectTime"/>
-    </resultMap>
-    <select id="selectAllData" resultMap="ProtypeDataMap">
-        SELECT id,
-		   parameterCode,
-		   parameterName,
-		   value,
-		   unit,
-		   state,
-		   alarmTop,
-		   alarmBottom,
-		   alertTop,
-		   alertBottom,
-		   collectTime
-        FROM shzdt_data
-    </select>
 
     <!-- 保存paramterValue对象-->
     <update id="saveParmeterValue" parameterType="com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue">
-        <![CDATA[
-	   		UPDATE shzdt_parameter_value
-	   		SET pastate=#{state},padate = #{date},pavalue=#{value}
-	   		WHERE  paid = #{paid}
 
-	   		IF @@ROWCOUNT = 0
+             INSERT INTO shzdt_parameter_value (
+                pastate ,  padate ,   pavalue,    paid,  doCollectTime, machineID
+                )
+                VALUES(
+                #{pastate}, #{padate}, #{pavalue},#{paid},now(), 'ZDT'
+                )
+                ON DUPLICATE KEY UPDATE
+                pastate=#{pastate},padate = #{padate},pavalue=#{pavalue}, doCollectTime=now()
 
-	   		INSERT INTO shzdt_parameter_value (
-				pastate ,padate ,pavalue,paid
-			)
-			VALUES(
-				#{state}, #{date}, #{value},#{paid}
-			)
-		]]>
+
     </update>
 
     <resultMap type="com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue" id="ParameterValueMap">
-        <result column="id" property="id"/>
         <result column="pastate" property="pastate"/>
         <result column="padate" property="padate"/>
         <result column="pavalue" property="pavalue"/>
@@ -58,7 +27,7 @@
     </resultMap>
     <select id="selectAllParameterValue" resultMap="ParameterValueMap">
         <![CDATA[
-        SELECT id, pastate , padate ,pavalue,paid
+        SELECT  pastate , padate ,pavalue,paid
         FROM shzdt_parameter_value
 		]]>
     </select>
@@ -77,15 +46,15 @@
           order by padate desc limit 1
     </insert>
 
-    <update id="updateParameterValue" parameterType="com.dhcc.itims.cri.shzdt.dao.parameter.FourParameterCondition" >
+    <update id="updateParameterValue" parameterType="com.dhcc.itims.cri.shzdt.dao.parameter.FiveParameterCondition" >
       update ${one} set ${two} =
          (
-          select  pavalue
+          select  ${three}
           from shzdt_parameter_value
-          where paid = #{three}
+          where paid = #{four}
           order by padate desc limit 1
           )
-       where  id = #{four}
+       where  id = #{five}
     </update>
 
 

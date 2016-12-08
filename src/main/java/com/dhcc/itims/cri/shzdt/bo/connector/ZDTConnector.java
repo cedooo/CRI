@@ -17,6 +17,9 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PreDestroy;
 import java.io.*;
 import java.net.Socket;
+import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -140,14 +143,32 @@ public class ZDTConnector extends CRIConnector  {
                                 while (iterator.hasNext()) {
                                     JSONObject jsnPara = (JSONObject) iterator.next();
                                     ParameterValue parameterValue = new ParameterValue();
-                                    parameterValue.setPadate(jsnPara.getString("date"));
-                                    parameterValue.setPavalue(jsnPara.getString("value"));
-                                    parameterValue.setPastate(jsnPara.getString("state"));
+
+                                    String padate = jsnPara.getString("date");
+                                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                                    try {
+                                        padate = sdf.format(sdf.parse(padate));
+                                    } catch (ParseException e) {
+                                        e.printStackTrace();
+                                    }
+                                    parameterValue.setPadate(padate);
+
+                                    double value = jsnPara.getDouble("value");
+                                    DecimalFormat decimalFormat = new DecimalFormat("0.0");
+                                    String svalue = decimalFormat.format(value);
+                                    parameterValue.setPavalue(svalue);
+
+                                    parameterValue.setPastate(jsnPara.getInt("state")+"");
                                     parameterValue.setPaid(jsnPara.getString("paid"));
                                     listParaValue.add(parameterValue);
                                 }
                                 log.info(listParaValue);
                                 shzdtService.persistenceParameterValue(listParaValue);
+                            }else if (6005 == cmd){
+                                //TODO 处理传过来的告警
+                                log.info("接口接收到告警:" + jsnObj);
+                            }else{
+                                log.warn("接收到未知命令数据:" + jsnObj);
                             }
                         }else{
                             //do nothing
@@ -199,7 +220,7 @@ public class ZDTConnector extends CRIConnector  {
                     }
 
                     try {
-                        Thread.sleep(10 * 1000);
+                        Thread.sleep(20 * 1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

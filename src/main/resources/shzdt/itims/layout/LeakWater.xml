@@ -7,7 +7,7 @@
 		
 		<atom extensible="1" id="showLeakWaterBase" title="漏水控制器" type="sipmle_flex_line" width="20%" height="180" 
 		dataColumns="LeakWaterInfo$state|positionR|checkR|checkI|redGreenR|yellowBlueR|mainAlarm|leakAlarm|lineCut|EEPROM|leakPosition|fCollectTime"
-		showColumns="state|positionR|checkR|checkI|redGreenR|yellowBlueR|mainAlarm|leakAlarm|lineCut|EEPROM|leakPosition" 
+		showColumns="state|positionR|checkR|checkI|redGreenR|yellowBlueR|mainAlarm|leakAlarm|lineCut|EEPROM" 
 		unit="" unitc="" calculate="" layout="" 
 		relation="" relid="" defTime="history" lasthours="48"
 		params="{time=&apos;fCollectTime&apos;}" /> 
@@ -26,7 +26,9 @@
 		<menus>
 				<left>
 					<menu title="概要信息" url="typNew/layertest/laytestFlex.jsp" rel="1" icon="typNew/img/summary.png"></menu>
+					<!--
 					<menu title="配置信息" url="typNew/layertest/laytestFlex.jsp" rel="bc" icon="typNew/img/config.png"></menu>
+					-->
 				</left>
 
 				<right>
@@ -47,8 +49,8 @@
 					<area id="4" atomId="showAlarm" title="" palte="" labelUrl="" type="atom" width="100%" height="100%"  align="center" valign="" grep="4"></area>
 				</area>
 				<area id="5" atomId="" title="漏水检测" palte="true" labelUrl="" type="vbox" width="100%" height="70%" align="center" valign="" grep="5">
-					<area id="7" atomId="showLeakPosition" title="" palte="" labelUrl="" type="atom" width="100%" height="100%" align="center" valign="" grep="7"></area> 
-					<area id="6" atomId="showLeakWaterBase" title="" palte="" labelUrl="" type="atom" width="100%" height="100%" align="center" valign="" grep="6"></area>    
+					<area id="7" atomId="showLeakPosition" title="" palte="" labelUrl="" type="atom" width="100%" height="20%" align="center" valign="" grep="7"></area> 
+					<area id="6" atomId="showLeakWaterBase" title="" palte="" labelUrl="" type="atom" width="100%" height="80%" align="center" valign="" grep="6"></area>    
 				</area>
 			</area> 
 			 <area id="bc" atomId="" title="" plate="" labelUrl="" type="vbox" width="100%" height="100%"  align="center" valign="top" grep="1" >
