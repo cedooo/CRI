@@ -61,7 +61,7 @@ public class SHZDTServiceImpl implements SHZDTService{
 
     @Override
     public int updateTableValue(List<FiveParameterCondition> listFP) {
-        SqlSession sess = sqlSessionFactory.openSession(ExecutorType.BATCH, true);
+        SqlSession sess = sqlSessionFactory.openSession(ExecutorType.BATCH, false);
         try{
             int updatedCnt = 0;
             for (FiveParameterCondition fp:

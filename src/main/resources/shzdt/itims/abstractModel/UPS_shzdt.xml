@@ -1,6 +1,6 @@
-<model name="en" desc="UPS">
-	<typ name="IDCUPS" desc="IDCUPS" parentName="">
-		<group groupId="IDCUPS" idTyp="version" ref="" priority="1" desc="机房动力 UPS">
+<model name="upsshzdt" desc="UPS_shzdt">
+	<typ name="UPS_shzdt" desc="上海中电投UPS" parentName="">
+		<group groupId="UPS_shzdt" idTyp="version" ref="" priority="1" desc="机房动力 UPS">
 			<allKpiDesc>
 				<partTyp id="upsState" name="状态信息"  pname="UPS"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" dbModel="" 
 					isPublic="true" dbTable="shzdt_ups_state" isMO="false" markKpi=""  >

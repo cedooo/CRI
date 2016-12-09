@@ -7,16 +7,22 @@
 		
 		<atom extensible="1" id="showLeakWaterBase" title="漏水控制器" type="sipmle_flex_line" width="20%" height="180" 
 		dataColumns="LeakWaterInfo$state|positionR|checkR|checkI|redGreenR|yellowBlueR|mainAlarm|leakAlarm|lineCut|EEPROM|leakPosition|fCollectTime"
-		showColumns="state|positionR|checkR|checkI|redGreenR|yellowBlueR|mainAlarm|leakAlarm|lineCut|EEPROM" 
+		showColumns="state|positionR|checkR|checkI|redGreenR|yellowBlueR" 
 		unit="" unitc="" calculate="" layout="" 
 		relation="" relid="" defTime="history" lasthours="48"
 		params="{time=&apos;fCollectTime&apos;}" /> 
 		
-		<atom extensible="1" id="showLeakPosition" title="" type="kvtable" width="20%" height="50" 
+		<atom extensible="1" id="showLeakPosition" title="漏水位置" type="kvtable" width="20%" height="50" 
 		dataColumns="LeakWaterInfo$leakPosition|fCollectTime" 
 		showColumns="leakPosition" 
 		unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="latest" lasthours="" params="{}"/>
 		 
+		 <atom extensible="1" id="showLeakWaterState" title="漏水控制器状态" type="kvtable" width="20%" height="500" 
+		dataColumns="LeakWaterState$mainAlarm|leakAlarm|lineCut|EEPROM|fCollectTime"
+		showColumns="mainAlarm|leakAlarm|lineCut|EEPROM" 
+		unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="latest" lasthours="" params="{}"/>
+		  
+		
 		 <atom extensible="1" id="showConf" title="告警配置 " type="dataGrid" width="" height="" 
 	    dataColumns="LeakWaterConf$parameterName|alarmTop|alarmBottom|alertTop|alertBottom|fCollectTime" 
 	    showColumns="parameterName,1,100|alarmTop,1,100|alarmBottom,1,100|alertTop,1,100|alertBottom,1,100|fCollectTime,1,100"  
@@ -26,6 +32,7 @@
 		<menus>
 				<left>
 					<menu title="概要信息" url="typNew/layertest/laytestFlex.jsp" rel="1" icon="typNew/img/summary.png"></menu>
+					<menu title="漏水控制器状态" url="typNew/layertest/laytestFlex.jsp" rel="bc" icon="typNew/img/summary.png"></menu>
 					<!--
 					<menu title="配置信息" url="typNew/layertest/laytestFlex.jsp" rel="bc" icon="typNew/img/config.png"></menu>
 					-->
@@ -55,8 +62,8 @@
 			</area> 
 			 <area id="bc" atomId="" title="" plate="" labelUrl="" type="vbox" width="100%" height="100%"  align="center" valign="top" grep="1" >
   
-				<area id="bc1" atomId="" title="告警配置" palte="true" labelUrl=""  type="vbox" width="100%" height="100%"  align="center" valign="top" grep="2" >
-                      <area id="bc11" atomId="showConf" title="" palte="" labelUrl="" type="atom" width="100%" height="100%"  align="" valign="" grep="5" ></area>
+				<area id="bc1" atomId="" title="控制器状态" palte="true" labelUrl=""  type="vbox" width="100%" height="100%"  align="center" valign="top" grep="2" >
+                      <area id="bc11" atomId="showLeakWaterState" title="" palte="" labelUrl="" type="atom" width="100%" height="100%"  align="" valign="" grep="5" ></area>
 				</area>
 				 
 			</area>

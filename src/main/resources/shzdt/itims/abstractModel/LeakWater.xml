@@ -11,20 +11,32 @@
 					<kpi id="fAggregateCnt" name="数据压缩次数" unit="" compress="1" dataTyp="int" sys="" meaning=""/>
                     <kpi id="fCollectTime" name="采集时间" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
                     <kpi id="objChgStat" name="实体变更记录" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/> 
-					
-					<kpi id="equipCode" name="设备编号" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
+					 
 					<kpi id="state" name="状态字" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
 					<kpi id="positionR" name="定位电阻" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
 					<kpi id="checkR" name="检测电阻" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
 					<kpi id="checkI" name="检测电流" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
 					<kpi id="redGreenR" name="红绿电阻" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="yellowBlueR" name="黄兰电阻" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="mainAlarm" name="维护报警" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="leakAlarm" name="漏水报警" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="lineCut" name="感应线断裂" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="EEPROM" name="EEPROM读错" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" />
-					<kpi id="leakPosition" name="漏水位置('0'代表当前未漏水)" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
+					<kpi id="yellowBlueR" name="黄兰电阻" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
+					<kpi id="leakPosition" name="漏水位置(零代表当前未漏水)" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
 				</partTyp>
+				
+				
+				<partTyp id="LeakWaterState" name="漏水检测状态"  pname="漏水"  storageTyp="0:i|1:i" point="F" ptTyp="s" icon="" entityIcon="" isHealth="false" hasDev="false" 
+					dbModel="" isPublic="true" dbTable="shzdt_leak_water_state" isMO="false" markKpi=""  >
+					<kpi id="mosn" name="MOSN" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
+					<kpi id="dmsn" name="域" unit="" dataTyp="int" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
+					<kpi id="fPartID" name="基本信息" unit="" dataTyp="String" kpiTyp="p" expressions="" meaning="" valid="true" isStat="true" sys="" /> 
+					<kpi id="fAggregateCnt" name="数据压缩次数" unit="" compress="1" dataTyp="int" sys="" meaning=""/>
+                    <kpi id="fCollectTime" name="采集时间" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>
+                    <kpi id="objChgStat" name="实体变更记录" unit="" compress="1" dataTyp="String" sys="1024" meaning=""/>  
+					
+					<kpi id="mainAlarm" name="维护报警" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警" valid="true" isStat="true" sys="" />
+					<kpi id="leakAlarm" name="漏水报警" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警" valid="true" isStat="true" sys="" />
+					<kpi id="lineCut" name="感应线断裂" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警" valid="true" isStat="true" sys="" />
+					<kpi id="EEPROM" name="EEPROM读错" unit="" dataTyp="float" kpiTyp="p" expressions="" meaning="0:正常|1:高报警|2:低报警|3:高预警|4:低预警" valid="true" isStat="true" sys="" /> 
+				</partTyp>
+				
 				 <partTyp id="LeakWaterConf" name="温湿度配置信息" alias="fPartID" pname="基本信息" storageTyp="0:i|1:i" compress="1"
                          extensible="0" ptTyp="c" dbModel="" dbTable="shzdt_equipment_attr_conf" hasDev="false" isMO="false" sync="1" markKpi="">
                     <kpi id="mosn" name="mosn" unit="" compress="1" dataTyp="int" sys="1024" meaning=""/>

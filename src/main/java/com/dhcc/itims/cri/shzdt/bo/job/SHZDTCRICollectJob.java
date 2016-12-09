@@ -74,7 +74,7 @@ public class SHZDTCRICollectJob extends CRICollectJob {
 
                     log.debug(twoPC);
                     long newRowID = shzdtService.insertNewRow(twoPC);
-                    log.info("插入的行id=" + newRowID);
+                    log.info("插入的行id = " + newRowID);
                     if(newRowID>0) {
                         List<FiveParameterCondition> listParams = new ArrayList<FiveParameterCondition>();
                         List<EquipmentNode> equipNodeList = group.getListNode();
@@ -88,7 +88,7 @@ public class SHZDTCRICollectJob extends CRICollectJob {
                             fiveParam.setFive(newRowID+"");
                             listParams.add(fiveParam);
                         }
-                        log.debug(listParams);
+                        log.debug("更新熟悉数量 [" + listParams.size() + "] 参数 = " + listParams);
                         int updateCnt = shzdtService.updateTableValue(listParams);
                         log.info("更新数据影响条数:" + updateCnt);
                     }else{

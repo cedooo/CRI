@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/12/8 21:02:21                           */
+/* Created on:     2016/12/9 20:15:58                           */
 /*==============================================================*/
 
 
@@ -11,6 +11,8 @@ drop table if exists shzdt_equipment_attr_conf;
 drop table if exists shzdt_humiture;
 
 drop table if exists shzdt_leak_water;
+
+drop table if exists shzdt_leak_water_state;
 
 drop table if exists shzdt_parameter_value;
 
@@ -83,14 +85,30 @@ create table shzdt_leak_water
    checkI               varchar(16),
    redGreenR            varchar(16),
    yellowBlueR          varchar(16),
-   mainAlarm            varchar(16),
-   leakAlarm            varchar(16),
-   lineCut              varchar(16),
-   EEPROM               varchar(16),
    leakPosition         varchar(16),
    dmsn                 int(3),
    objChgStat           varchar(11),
    fAggregateCnt        int,
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: shzdt_leak_water_state                                */
+/*==============================================================*/
+create table shzdt_leak_water_state
+(
+   id                   int not null auto_increment,
+   mosn                 int(11),
+   fCollectTime         char(19),
+   fPartID              varchar(21),
+   state                varchar(16),
+   dmsn                 int(3),
+   objChgStat           varchar(11),
+   fAggregateCnt        int,
+   mainAlarm            varchar(16),
+   leakAlarm            varchar(16),
+   lineCut              varchar(16),
+   EEPROM               varchar(16),
    primary key (id)
 );
 
@@ -191,6 +209,7 @@ create table shzdt_ups_state
    shutdownEmergency    int(1),
    fan                  int(1),
    tempTooHigh          int(1),
+   dmsn                 int(3),
    primary key (id)
 );
 

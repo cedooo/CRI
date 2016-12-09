@@ -1,0 +1,96 @@
+<layout>
+	<group id="UPS_shzdt">
+		<atom extensible="1" id="showMoHealth" title="健康度" type="healthInfo" width="20%" height="180" dataColumns="" showColumns="" unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="today" lasthours="" params="{}"/>
+		<atom extensible="1" id="showAlarm" title="告警" type="alarmInfo"  height="180" dataColumns="" showColumns="" unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="today" lasthours="" params="{}"/>   
+		
+		 
+		
+		<atom extensible="1" id="showI" title="电流" type="sipmle_flex_line" width="20%" height="550" 
+		dataColumns="upsInfo$batteryI|inputAI|inputBI|inputCI|outputAI|outputBI|outputCI|bypathAI|bypathBI|bypathCI|fCollectTime"
+		showColumns="batteryI|inputAI|inputBI|inputCI|outputAI|outputBI|outputCI|bypathAI|bypathBI|bypathCI" 
+		unit="" unitc="" calculate="" layout="" 
+		relation="" relid="" defTime="history" lasthours="48"
+		params="{time=&apos;fCollectTime&apos;}" /> 
+		
+		<atom extensible="1" id="showV" title="电压" type="sipmle_flex_line" width="20%" height="550" 
+		dataColumns="upsInfo$batteryV|inputAV|inputBV|inputCV|outputAV|outputBV|outputCV|bypathAV|bypathBV|outputCV|fCollectTime"
+		showColumns="batteryV|inputAV|inputBV|inputCV|outputAV|outputBV|outputCV|bypathAV|bypathBV|outputCV" 
+		unit="" unitc="" calculate="" layout="" 
+		relation="" relid="" defTime="history" lasthours="48"
+		params="{time=&apos;fCollectTime&apos;}" /> 
+		
+		<atom extensible="1" id="showHz" title="输入频率" type="sipmle_flex_line" width="20%" height="550" 
+		dataColumns="upsInfo$inputHz|fCollectTime"
+		showColumns="inputHz" 
+		unit="" unitc="" calculate="" layout="" 
+		relation="" relid="" defTime="history" lasthours="48"
+		params="{time=&apos;fCollectTime&apos;}" /> 
+		
+		<atom extensible="1" id="showTime" title="剩余时间" type="sipmle_flex_line" width="20%" height="550" 
+		dataColumns="upsInfo$leftTime|fCollectTime"
+		showColumns="leftTime" 
+		unit="" unitc="" calculate="" layout="" 
+		relation="" relid="" defTime="history" lasthours="48"
+		params="{time=&apos;fCollectTime&apos;}" /> 
+		
+		<atom extensible="1" id="showB" title="剩余电量" type="sipmle_flex_line" width="20%" height="550" 
+		dataColumns="upsInfo$leftBattery|fCollectTime"
+		showColumns="leftBattery" 
+		unit="" unitc="" calculate="" layout="" 
+		relation="" relid="" defTime="history" lasthours="48"
+		params="{time=&apos;fCollectTime&apos;}" /> 
+		
+		<atom extensible="1" id="showUPSState" title="" type="kvtable" width="20%" height="500" 
+		dataColumns="upsState$inState|batteryLevelState|chargState|outChargeState|outputState|hardwareError|battleNeedChange|overload|shudownNow|compatibility|parameterError|shutdownEmergency|fan|tempTooHigh|fCollectTime" 
+		showColumns="inState|batteryLevelState|chargState|outChargeState|outputState|hardwareError|battleNeedChange|overload|shudownNow|compatibility|parameterError|shutdownEmergency|fan|tempTooHigh" 
+		unit="" unitc="" calculate="" layout="" relation="" relid="" defTime="latest" lasthours="" params="{}"/>
+		 
+		 
+		
+		<menus>
+				<left>
+					<menu title="概要信息" url="typNew/layertest/laytestFlex.jsp" rel="1" icon="typNew/img/summary.png"></menu>
+					<menu title="详细信息" url="typNew/layertest/laytestFlex.jsp" rel="upsv" icon="typNew/img/summary.png"></menu> 
+					<menu title="UPS状态" url="typNew/layertest/laytestFlex.jsp" rel="bc" icon="typNew/img/summary.png"></menu>
+				</left>
+
+				<right>
+
+				  <!--
+				  <menu title="采集管理" url="typ/ctmanager/collTaskInfo.action" icon="typ/detail/style/styleB/img/ctm.png"></menu>
+				  <menu title="阀值管理" url="typ/strategy/moStrategy.jsp" icon="typ/detail/style/styleB/img/tsh.png"></menu>
+				  <menu title="协议管理" url="typ/addmo/update.jsp"  icon="typ/detail/style/styleB/img/protocal.png"></menu>
+				  -->
+				  <menu title="重新初始化" url="typ/addmo/initComponent.jsp" icon="typ/detail/style/styleB/img/reInit.png"></menu>
+				</right>
+
+		</menus>
+		<summary>
+			<area id="1" atomId="" title="" plate="" labelUrl="" type="vbox" width="100%" height="100%" align="center" valign="top" grep="1">
+				<area id="2" atomId="" title="" plate="" labelUrl="" type="hbox" width="100%" height="30%" align="center" valign="top" grep="2">
+					<area id="3" atomId="showMoHealth" title="" palte="" labelUrl="" type="atom" width="100%" height="100%" align="center" valign="" grep="3"></area>
+					<area id="4" atomId="showAlarm" title="" palte="" labelUrl="" type="atom" width="100%" height="100%"  align="center" valign="" grep="4"></area>
+				</area>
+				<area id="5" atomId="" title="UPS指标" palte="true" labelUrl="" type="vbox" width="100%" height="100%" align="center" valign="" grep="5">
+					<area id="6" atomId="showB" title="" palte="" labelUrl="" type="atom" width="100%" height="50%" align="center" valign="" grep="6"></area> 
+					<area id="7" atomId="showTime" title="" palte="" labelUrl="" type="atom" width="100%" height="50%" align="center" valign="" grep="7"></area>    
+					<!--<area id="8" atomId="showHz" title="" palte="" labelUrl="" type="atom" width="100%" height="33%" align="center" valign="" grep="8"></area>-->    
+				</area>
+			</area>  
+			<area id="upsv" atomId="" title="UPS指标" palte="true" labelUrl="" type="vbox" width="100%" height="100%" align="center" valign="" grep="9">
+				<area id="10" atomId="showI" title="" palte="" labelUrl="" type="atom" width="100%" height="50%" align="center" valign="" grep="10"></area> 
+				<area id="11" atomId="showV" title="" palte="" labelUrl="" type="atom" width="100%" height="50%" align="center" valign="" grep="11"></area>     
+			</area>
+			 <area id="bc" atomId="" title="" plate="" labelUrl="" type="vbox" width="100%" height="100%"  align="center" valign="top" grep="1" >
+  
+				<area id="bc1" atomId="" title="设备状态" palte="true" labelUrl=""  type="vbox" width="100%" height="100%"  align="center" valign="top" grep="2" >
+                      <area id="bc11" atomId="showUPSState" title="" palte="" labelUrl="" type="atom" width="100%" height="100%"  align="" valign="" grep="5" ></area>
+				</area>
+				 
+			</area>
+		</summary>
+	</group>
+</layout>
+
+
+   

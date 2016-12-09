@@ -7,12 +7,14 @@
 		<node id="003" name="检测电阻" ref="checkR" collect="1"    grState="是" />
 		<node id="004" name="检测电流" ref="checkI" collect="1"    grState="是" />
 		<node id="005" name="红绿电阻" ref="redGreenR" collect="1"    grState="是" />
-		<node id="006" name="黄兰电阻" ref="yellowBlueR"  	collect="1" />
+		<node id="006" name="黄兰电阻" ref="yellowBlueR"  	collect="1" /> 
+		<node id="011" name="漏水位置" ref="leakPosition" collect="1"    grState="是" />
+ 	</group>
+ 	<group refTab="shzdt_leak_water_state" collect="1" type="0">
 		<node id="007" name="维护报警" ref="mainAlarm"  	collect="1" />
 		<node id="008" name="漏水报警" ref="leakAlarm" collect="1"    grState="是" />
 		<node id="009" name="感应线断裂" ref="lineCut" collect="1"    grState="是" />
-		<node id="010" name="EEPROM读错" ref="EEPROM"  collect="1"    grState="是" />
-		<node id="011" name="漏水位置" ref="leakPosition" collect="1"    grState="是" />
+		<node id="010" name="EEPROM读错" ref="EEPROM"  collect="1"    grState="是" /> 
  	</group>
  	
 </equipment>
