@@ -17,8 +17,7 @@
 			<job-data-map>
 				<entry>
 					<key>machineId</key>   <!-- 公司&任务 ID -->
-					<!--多个Job时，ID的值， 一定不能重复 -->
-					<value>ZDT</value>
+					<value>ZDT</value>    <!--多个Job时，ID的值， 一定不能重复 -->
 				</entry>
 			</job-data-map>
 		</job>
@@ -29,12 +28,12 @@
 				<job-name>zdt_collector_1</job-name>
 				<job-group>zdt_jobs</job-group>
 				<priority>5</priority>
-				<cron-expression>5 * * * * ?</cron-expression>
+				<cron-expression>25 0/3 * * * ?</cron-expression>
 			</cron>
 		</trigger>
 
 
-		<!--系统任务-->
+		<!--维护任务-->
 		<job>
 			<name>CONNECTOR_CHECK</name>
 			<group>SYSTEM_TASK</group>
@@ -50,7 +49,32 @@
 				<job-name>CONNECTOR_CHECK</job-name>
 				<job-group>SYSTEM_TASK</job-group>
 				<priority>5</priority>
-				<cron-expression>0 * * * * ?</cron-expression>
+				<cron-expression>0 0/2 * * * ?</cron-expression>
+			</cron>
+		</trigger>
+
+		<job>
+			<name>DELETE_OUTDATED_DATA</name>
+			<group>SYSTEM_TASK</group>
+			<description>删除原始数据表中 采集时间距离现在超过__秒的过期数据。</description>
+			<job-class>com.dhcc.itims.cri.shzdt.bo.job.DeleteOutdatedRawDataJob</job-class>
+			<durability>true</durability>
+			<recover>false</recover>
+			<job-data-map>
+				<entry>
+					<key>outdatedSecond</key>
+					<value>100</value>    <!-- 过期时间(单位：s) -->
+				</entry>
+			</job-data-map>
+		</job>
+		<trigger>
+			<cron>
+				<name>DELETE_OUTDATED_DATA_TRRI</name>
+				<group>SYSTEM_TASK_TRRI</group>
+				<job-name>DELETE_OUTDATED_DATA</job-name>
+				<job-group>SYSTEM_TASK</job-group>
+				<priority>5</priority>
+				<cron-expression>10 0/5 * * * ?</cron-expression>
 			</cron>
 		</trigger>
 

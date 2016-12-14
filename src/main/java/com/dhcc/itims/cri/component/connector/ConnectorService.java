@@ -91,6 +91,7 @@ public class ConnectorService implements ApplicationContextAware{
         Iterator<CRIConnector> connector = mapCT.keySet().iterator();
         while(connector.hasNext()){
             CRIConnector criConnector = connector.next();
+            log.info("接口连接状态有效性：" + criConnector.valid());
             if(!criConnector.valid()) {
                 criConnector.stop();
                 try {
@@ -99,6 +100,8 @@ public class ConnectorService implements ApplicationContextAware{
                     threadPoolTaskExecutor.execute(mapCT.get(criConnector));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                } catch (Exception e){
+                    log.warn("重连时发生异常：" + e);
                 }
             }else {continue;}
         }

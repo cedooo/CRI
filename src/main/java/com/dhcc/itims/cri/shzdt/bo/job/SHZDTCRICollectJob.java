@@ -47,12 +47,12 @@ public class SHZDTCRICollectJob extends CRICollectJob {
         log.info(jobInfo(jobExecutionContext));
         String machineId = (String) jobExecutionContext.getMergedJobDataMap().get("machineId");
         MachineRoom machineRoom = machineRoomBuilder.getMachineRoomById(machineId);
-        log.info(machineRoom);
+        log.debug(machineRoom);
 
         List<NetworkElement> networkElementList = machineRoom.getNetworkElementList();
         for (NetworkElement ne:
              networkElementList) {
-            log.info(ne);
+            log.debug(ne);
             Equipment eq = (Equipment)ne;
             List<Group> groupSet = eq.getGroupSet();
 
@@ -74,7 +74,7 @@ public class SHZDTCRICollectJob extends CRICollectJob {
 
                     log.debug(twoPC);
                     long newRowID = shzdtService.insertNewRow(twoPC);
-                    log.info("插入的行id = " + newRowID);
+                    log.debug("插入的行id = " + newRowID);
                     if(newRowID>0) {
                         List<FiveParameterCondition> listParams = new ArrayList<FiveParameterCondition>();
                         List<EquipmentNode> equipNodeList = group.getListNode();
@@ -93,7 +93,7 @@ public class SHZDTCRICollectJob extends CRICollectJob {
                         log.info("更新数据影响条数:" + updateCnt);
                     }else{
                         //log.info("采集数据出错:在向表【" + tableName +"】中插入数据时候出现错误.参数为:" + twoPC);
-                        log.info("采集数据时， 不存在数据");
+                        log.info("采集设备【" + ne.getName() +  "】的数据时， 不存在数据");
                     }
 
                 }else{

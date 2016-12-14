@@ -39,7 +39,7 @@
         <property name="maxPoolSize" value="5" />
         <property name="WaitForTasksToCompleteOnShutdown" value="true" />
     </bean>
-    <!-- 连接器 -->
+    <!-- 接口连接器 -->
     <bean id="connectorService" class="com.dhcc.itims.cri.component.connector.ConnectorService" scope="singleton"
            init-method="init">
         <property name="threadPoolTaskExecutor" ref="taskExecutor"></property>

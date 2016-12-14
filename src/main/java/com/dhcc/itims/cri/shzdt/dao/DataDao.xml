@@ -57,5 +57,14 @@
        where  id = #{five}
     </update>
 
+    <!-- 当接口断开时， 删除__秒之前的无效数据-->
+    <delete id="deleteOutdatedRawData" parameterType="long" >
+        delete from shzdt_parameter_value
+        where (UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(doCollectTime)) > #{outdatedSecond}
+    </delete>
+    <!-- 得到设备的Mosn -->
+    <select id="selectMosnByCode" parameterType="String" resultType="String">
+        select mosn from shzdt_equip_mosn_map where equipCode=#{equipCode} limit 1
+    </select>
 
 </mapper>
