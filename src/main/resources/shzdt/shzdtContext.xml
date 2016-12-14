@@ -78,4 +78,22 @@
         <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/dmsn998"/>
     </beans>
 
+
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
+                    <property name="marshaller" ref="xStreamMarshaller"/>
+                    <property name="unmarshaller" ref="xStreamMarshaller"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="xStreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+        <property name="annotatedClasses">
+            <array></array>
+        </property>
+    </bean>
+
 </beans>

@@ -4,7 +4,7 @@ import com.dhcc.itims.cri.component.connector.CRIConnector;
 import com.dhcc.itims.cri.component.machineroom.MachineRoom;
 import com.dhcc.itims.cri.component.machineroom.MachineRoomBuilder;
 import com.dhcc.itims.cri.component.machineroom.element.NetworkElement;
-import com.dhcc.itims.cri.component.webservice.po.AlarmInfo;
+import com.dhcc.itims.cri.component.rest.po.AlarmInfo;
 import com.dhcc.itims.cri.shzdt.extapi.CmdFactory;
 import com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue;
 import com.dhcc.itims.cri.shzdt.service.SHZDTService;
@@ -219,7 +219,7 @@ public class ZDTConnector extends CRIConnector  {
                                 boolean sendAlarm = shzdtService.sendAlarmToITIMS(alarmInfos);
                                 log.info("发送告警" + (sendAlarm?"成功":"失败"));
                             }else{
-                                log.warn("接收到未知命令数据:" + jsnObj);
+                                log.warn("接收到未知/不需要处理的命令:" + jsnObj);
                             }
                         }else{
                             //do nothing

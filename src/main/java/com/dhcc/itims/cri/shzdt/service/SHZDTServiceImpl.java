@@ -1,11 +1,8 @@
 package com.dhcc.itims.cri.shzdt.service;
 
-import com.dhcc.itims.cri.component.job.CRIJob;
-import com.dhcc.itims.cri.component.webservice.ITIMSService;
-import com.dhcc.itims.cri.component.webservice.po.AlarmInfo;
+import com.dhcc.itims.cri.component.rest.ITIMSService;
+import com.dhcc.itims.cri.component.rest.po.AlarmInfo;
 import com.dhcc.itims.cri.shzdt.dao.parameter.FiveParameterCondition;
-import com.dhcc.itims.cri.shzdt.dao.parameter.FourParameterCondition;
-import com.dhcc.itims.cri.shzdt.dao.ProtypeData;
 import com.dhcc.itims.cri.shzdt.dao.parameter.TwoParameterCondition;
 import com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue;
 import org.apache.ibatis.session.ExecutorType;
@@ -15,7 +12,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

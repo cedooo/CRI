@@ -1,4 +1,4 @@
-package com.dhcc.itims.cri.component.webservice.po;
+package com.dhcc.itims.cri.component.rest.po;
 
 /**
  * Created by Administrator on 2016/12/14.
@@ -120,5 +120,17 @@ public class AlarmInfo {
                 ", serverity='" + serverity + '\'' +
                 ", status='" + status + '\'' +
                 '}';
+    }
+
+    public String urlString(){
+        return
+                "mosn='" + mosn +
+                "&addinfo='" + addinfo +
+                "&cause='" + cause +
+                "&origininfo='" + origininfo +
+                "&detail='" + detail +
+                "&occurtime='" + occurtime +
+                "&serverity='" + serverity +
+                "&status='" + status ;
     }
 }

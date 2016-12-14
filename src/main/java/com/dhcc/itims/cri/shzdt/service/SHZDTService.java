@@ -1,7 +1,7 @@
 package com.dhcc.itims.cri.shzdt.service;
 
 import com.dhcc.itims.cri.component.bo.DBService;
-import com.dhcc.itims.cri.component.webservice.po.AlarmInfo;
+import com.dhcc.itims.cri.component.rest.po.AlarmInfo;
 import com.dhcc.itims.cri.shzdt.dao.parameter.FiveParameterCondition;
 import com.dhcc.itims.cri.shzdt.dao.parameter.TwoParameterCondition;
 import com.dhcc.itims.cri.shzdt.extapi.po.ParameterValue;
