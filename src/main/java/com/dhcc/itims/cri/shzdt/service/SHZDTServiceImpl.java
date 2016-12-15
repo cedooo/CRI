@@ -1,6 +1,6 @@
 package com.dhcc.itims.cri.shzdt.service;
 
-import com.dhcc.itims.cri.component.rest.ITIMSService;
+import com.dhcc.itims.cri.component.rest.ITIMSClient;
 import com.dhcc.itims.cri.component.rest.po.AlarmInfo;
 import com.dhcc.itims.cri.shzdt.dao.parameter.FiveParameterCondition;
 import com.dhcc.itims.cri.shzdt.dao.parameter.TwoParameterCondition;
@@ -29,10 +29,10 @@ public class SHZDTServiceImpl implements SHZDTService{
         this.sqlSessionFactory = sqlSessionFactory;
     }
 
-    private ITIMSService itimsService;
+    private ITIMSClient itimsService;
 
     @Autowired
-    public void setItimsService(ITIMSService itimsService) {
+    public void setItimsService(ITIMSClient itimsService) {
         this.itimsService = itimsService;
     }
 

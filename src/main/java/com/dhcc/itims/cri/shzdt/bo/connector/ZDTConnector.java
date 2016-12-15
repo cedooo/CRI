@@ -196,7 +196,7 @@ public class ZDTConnector extends CRIConnector  {
                                         alarmInfo.setEquipCode(eqid);
                                         int level = jsnPara.getInt("level");
                                         String itimsLevel = (5-level)+"";
-                                        alarmInfo.setServerity(itimsLevel);
+                                        alarmInfo.setSeverity(itimsLevel);
                                         int type = jsnPara.getInt("type");
                                         String itimsStatus = type==0?"发生":"清除";
 

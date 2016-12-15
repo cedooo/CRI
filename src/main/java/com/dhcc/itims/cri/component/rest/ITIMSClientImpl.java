@@ -17,7 +17,7 @@ public class ITIMSClientImpl implements ITIMSClient {
     static protected final Logger log = Logger.getLogger(ITIMSClientImpl.class.getClass());
 
     private RestTemplate template;
-    private final static String url = "http://192.168.241.129:7981";
+    private final static String url = "http://192.168.40.128:7981//event";
     @Autowired
     public void setTemplate(RestTemplate template) {
         this.template = template;
@@ -31,10 +31,12 @@ public class ITIMSClientImpl implements ITIMSClient {
             boolean sendSuccess = false;
             int sendedCnt = 0;
             for (AlarmInfo alarmInfo : alarmInfosList) {
-                String success = template.postForObject(url
-                                + "?params=" + alarmInfo.urlString(),
+                String urlP = url+ "?params=" + alarmInfo.urlString();
+                log.info("事件参数 :  " + urlP);
+                String success = template.postForObject(urlP,
                         null, String.class);
                 sendedCnt += "success".equals(success) ? 1 : 0;
+                log.info("发送告警结果:" +  success);
             }
             sendSuccess = sendedCnt == alarmInfosList.size();
             return sendSuccess;

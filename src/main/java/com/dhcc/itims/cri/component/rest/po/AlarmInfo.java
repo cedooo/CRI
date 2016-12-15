@@ -1,5 +1,8 @@
 package com.dhcc.itims.cri.component.rest.po;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 /**
  * Created by Administrator on 2016/12/14.
  * 告警信息pojo
@@ -31,7 +34,7 @@ public class AlarmInfo {
     private String origininfo;
     private String detail;
     private String occurtime;
-    private String serverity;
+    private String severity;
     private String status;
 
 
@@ -91,12 +94,12 @@ public class AlarmInfo {
         this.occurtime = occurtime;
     }
 
-    public String getServerity() {
-        return serverity;
+    public String getSeverity() {
+        return severity;
     }
 
-    public void setServerity(String serverity) {
-        this.serverity = serverity;
+    public void setSeverity(String severity) {
+        this.severity = severity;
     }
 
     public String getStatus() {
@@ -117,20 +120,27 @@ public class AlarmInfo {
                 ", origininfo='" + origininfo + '\'' +
                 ", detail='" + detail + '\'' +
                 ", occurtime='" + occurtime + '\'' +
-                ", serverity='" + serverity + '\'' +
+                ", severity='" + severity + '\'' +
                 ", status='" + status + '\'' +
                 '}';
     }
 
     public String urlString(){
-        return
-                "mosn='" + mosn +
-                "&addinfo='" + addinfo +
-                "&cause='" + cause +
-                "&origininfo='" + origininfo +
-                "&detail='" + detail +
-                "&occurtime='" + occurtime +
-                "&serverity='" + serverity +
-                "&status='" + status ;
+        String str   = "mosn=" +  mosn  +
+                    "&status=" +  status  +
+                    "&occurtime=" +  occurtime  +
+                    "&severity=" + severity  +
+                    "&cause=" +  cause+
+
+                    "&addinfo=" +  addinfo  +
+                    "&origininfo=" + origininfo  +
+                    "&detail=" + detail ;
+
+       /* try {
+            return URLEncoder.encode(str,"utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }*/
+        return str;
     }
 }

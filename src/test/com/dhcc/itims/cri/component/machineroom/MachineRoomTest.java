@@ -12,6 +12,7 @@ import java.io.InputStream;
 
 /**
  * Created by Administrator on 2016/11/26.
+ * 机房构建-模块测试
  */
 public class MachineRoomTest {
     /**
@@ -20,7 +21,7 @@ public class MachineRoomTest {
     @Test
     public void digesterBuild(){
         String rulesPath = "com/dhcc/itims/cri/component/machineroom/machineroom-rules.xml";
-        String defPath = "com/dhcc/itims/cri/shzdt/bo/machineroom/machineroom.xml";
+        String defPath = "shzdt/machineRoomDefinition/machineroom.xml";
         InputStream input = null;
         DigesterLoader  digesterLoader =
                 DigesterLoader.newLoader(
@@ -43,10 +44,9 @@ public class MachineRoomTest {
     public void equipmentBuildTest(){
         String rulesPath = "com/dhcc/itims/cri/component/machineroom/element/equipment/equipment-def-rules.xml";
         String[] defPath = {
-                "com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/temp-humi1-equipment.xml",
-                "com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/temp-humi2-equipment.xml",
-                "com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/leak-water-equipment.xml",
-                "com/dhcc/itims/cri/shzdt/bo/machineroom/equipment/ups-equipment.xml"
+                "shzdt/machineRoomDefinition/equipment/temp-humi-def.xml",
+                "shzdt/machineRoomDefinition/equipment/leak-water-def.xml",
+                "shzdt/machineRoomDefinition/equipment/ups-def.xml"
         };
         InputStream input = null;
         DigesterLoader  digesterLoader =

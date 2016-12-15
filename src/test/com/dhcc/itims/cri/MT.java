@@ -1,5 +1,7 @@
 package com.dhcc.itims.cri;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -22,5 +24,15 @@ public class MT {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+
+        String s = "清除";
+        try {
+            System.out.println(URLEncoder.encode(s,"UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
+
+
 }
