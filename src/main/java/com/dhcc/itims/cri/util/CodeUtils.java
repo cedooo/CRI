@@ -8,7 +8,7 @@ import java.io.UnsupportedEncodingException;
 public class CodeUtils {
     public static void main(String[] args){
         try {
-            System.out.println(new String(hexToString(bs).getBytes(), "gbk"));
+            System.out.println(new String(hexToString(bs).getBytes(), "GBK"));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

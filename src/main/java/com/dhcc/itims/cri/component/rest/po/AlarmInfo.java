@@ -21,7 +21,7 @@ import java.net.URLEncoder;
  * 各个字段的长度为：mosn 数字9位，
  * addinfo，cause，origininfo，detail 都是字符512位，
  * 告警状态只能是发生或者清除，
- * 发生时间是时间格式(ISO-8601)"2014-06-05 12:34:21"这样，
+ * 发生时间是时间格式"2014-06-05 12:34:21"这样，
  * severity数字1位1到5
  */
 public class AlarmInfo {
@@ -126,21 +126,31 @@ public class AlarmInfo {
     }
 
     public String urlString(){
-        String str   = "mosn=" +  mosn  +
-                    "&status=" +  status  +
+        String urlStr   = "mosn=" +  mosn  +
+                    "&status=" +   decode(status)   +
                     "&occurtime=" +  occurtime  +
                     "&severity=" + severity  +
-                    "&cause=" +  cause+
+                    "&cause=" +  decode(cause) +
 
-                    "&addinfo=" +  addinfo  +
-                    "&origininfo=" + origininfo  +
-                    "&detail=" + detail ;
+                    "&addinfo=" +  decode(addinfo)  +
+                    "&origininfo=" + decode(origininfo)  +
+                    "&detail=" + decode(detail)
+                ;
 
+        urlStr = urlStr.replace("&", "%26");
        /* try {
             return URLEncoder.encode(str,"utf-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }*/
-        return str;
+        return urlStr;
+    }
+    private String decode(String s){
+        try {
+            return s!=null?URLEncoder.encode(s, "GBK"):null;
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

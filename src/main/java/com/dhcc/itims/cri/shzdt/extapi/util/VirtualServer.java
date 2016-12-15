@@ -6,6 +6,8 @@ import org.json.JSONObject;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 
 /**
@@ -74,6 +76,14 @@ class ServerThread implements Runnable{
                                 wr.flush();
                                 System.out.println("发送数据: " + jsnAns.toString());
                             }
+
+                            Thread.sleep(500);
+
+                            String dateS = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+                            String event = "{\"cmd\":6006,\"flg\":0,\"rst\":1,\"seq\":2,\"val\":{\"date\":\"2016-12-16 02:08:03\",\"enid\":\"ZDW1101001\",\"eqid\":\"W1101\",\"info\":\"wenshidugaojing\",\"level\":0,\"name\":\"WS1\",\"type\":0},\"ver\":1}";
+                            JSONObject evtJsn = new JSONObject(event);
+                            wr.println(evtJsn.toString());
+                            wr.flush();
                         }
                     }catch (Exception e){
                         e.printStackTrace();

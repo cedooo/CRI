@@ -133,9 +133,9 @@ public class ZDTConnector extends CRIConnector  {
                     try {
                         if(strValue.length()>0) {
                             JSONObject jsnObj = new JSONObject(strValue);
-                            JSONArray jsonArray = (JSONArray) jsnObj.get("val");
                             int cmd = jsnObj.getInt("cmd");
                             if (6004 == cmd) {
+                                JSONArray jsonArray = (JSONArray) jsnObj.get("val");
                                 Iterator<Object> iterator = jsonArray.iterator();
                                 List<ParameterValue> listParaValue = new ArrayList<ParameterValue>();
                                 while (iterator.hasNext()) {
@@ -181,40 +181,41 @@ public class ZDTConnector extends CRIConnector  {
                                  * date	字符串	日期时间
                                  *
                                  */
-                                Iterator<Object> iterator = jsonArray.iterator();
+                                JSONObject jsnPara = (JSONObject) jsnObj.getJSONObject("val");
                                 List<AlarmInfo> alarmInfos = new ArrayList<AlarmInfo>();
-                                while (iterator.hasNext()) {
-                                    JSONObject jsnPara = (JSONObject) iterator.next();
-                                    String padate = jsnPara.getString("date");
-                                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                                    try {
-                                        padate = sdf.format(sdf.parse(padate));
+                                String padate = jsnPara.getString("date");
+                                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                                try {
+                                    padate = sdf.format(sdf.parse(padate));
 
-                                        AlarmInfo alarmInfo = new AlarmInfo();
-                                        alarmInfo.setOccurtime(padate);
-                                        String eqid = jsnPara.getString("eqid");
-                                        alarmInfo.setEquipCode(eqid);
-                                        int level = jsnPara.getInt("level");
-                                        String itimsLevel = (5-level)+"";
-                                        alarmInfo.setSeverity(itimsLevel);
-                                        int type = jsnPara.getInt("type");
-                                        String itimsStatus = type==0?"发生":"清除";
+                                    AlarmInfo alarmInfo = new AlarmInfo();
+                                    alarmInfo.setOccurtime(padate);
+                                    String eqid = jsnPara.getString("eqid");
+                                    alarmInfo.setEquipCode(eqid);
+                                    int level = jsnPara.getInt("level");
+                                    String itimsLevel = (5-level)+"";
+                                    alarmInfo.setSeverity(itimsLevel);
+                                    int type = jsnPara.getInt("type");
+                                    String itimsStatus = type==0?"发生":"清除";
+                                    alarmInfo.setStatus(itimsStatus);
 
-                                        String detail = jsnPara.getString("name")
-                                                + jsnPara.getString("enid")
-                                                + jsnPara.getString("info");
-                                        alarmInfo.setDetail(detail);
+                                    String detail =  jsnPara.getString("info");
+                                    alarmInfo.setDetail(detail);
 
-                                        alarmInfo.setStatus(itimsStatus);
+                                    String origininfo = jsnPara.getString("enid");
+                                    alarmInfo.setOrigininfo(origininfo);
 
+                                    String name = jsnPara.getString("name");
+                                    alarmInfo.setAddinfo(name);
 
-                                        alarmInfos.add(alarmInfo);
-                                    } catch (ParseException e) {
-                                        e.printStackTrace();
-                                    } catch (Exception e){
-                                        log.warn("发送告警失败: "+ e);
-                                    }
+                                    String cause = jsnPara.getString("info");
+                                    alarmInfo.setCause(cause);
 
+                                    alarmInfos.add(alarmInfo);
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                } catch (Exception e){
+                                    log.warn("发送告警失败: "+ e);
                                 }
                                 boolean sendAlarm = shzdtService.sendAlarmToITIMS(alarmInfos);
                                 log.info("发送告警" + (sendAlarm?"成功":"失败"));

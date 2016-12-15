@@ -1,6 +1,7 @@
 package com.dhcc.itims.cri;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -26,12 +27,25 @@ public class MT {
         }
 
 
-        String s = "清除";
+        String s = "%B7%A2%C9%FA";    //%B7%A2%C9%FA
         try {
-            System.out.println(URLEncoder.encode(s,"UTF-8"));
+            s = new String(s.getBytes("ISO-8859-1"), "UTF-8");//s = URLDecoder.decode(s,"UTF-8");
+            s = URLDecoder.decode(s, "GBK");
+            s = URLDecoder.decode(s,"utf-8");
+            System.out.println(s);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
+        String ca = "发生";
+        try {
+            //ca = URLEncoder.encode(ca,"utf-8");
+            ca = URLEncoder.encode(ca, "GBK");
+            System.out.println(ca);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

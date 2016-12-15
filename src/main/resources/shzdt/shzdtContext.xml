@@ -71,24 +71,17 @@
     </bean>
     -->
 
+    <!-- itims 告警接口 -->
+    <bean id="itimsClient" class="com.dhcc.itims.cri.component.rest.ITIMSClientImpl">
+        <property name="template" ref="restTemplate" />
+        <property name="apiUrl" value="http://192.168.241.129:7981//event?params="></property>
+    </bean>
 
     <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
-        <property name="messageConverters">
-            <list>
-                <bean class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
-                    <property name="marshaller" ref="xStreamMarshaller"/>
-                    <property name="unmarshaller" ref="xStreamMarshaller"/>
-                </bean>
-            </list>
-        </property>
+        <property name="errorHandler" ref="customErrorHandler"/>
     </bean>
 
-    <bean id="xStreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
-        <property name="annotatedClasses">
-            <array></array>
-        </property>
-    </bean>
-
+    <bean class="com.dhcc.itims.cri.component.rest.ITIMSErrorHandler" id="customErrorHandler"/>
 
 
     <beans profile="dev">

@@ -11,34 +11,27 @@
         rest测试上下文
     </description>
 
-    <bean class="com.dhcc.itims.cri.component.rest.ITIMSClientImpl">
-        <property name="template" ref="restTemplate"></property>
+    <bean id="itimsClient" class="com.dhcc.itims.cri.component.rest.ITIMSClientImpl">
+        <property name="template" ref="restTemplate" />
+        <property name="apiUrl" value="http://192.168.241.129:7981//event?params="></property>
     </bean>
+
 
     <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
-        <property name="messageConverters">
-            <list>
-                <bean class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
-                    <property name="marshaller" ref="xStreamMarshaller"/>
-                    <property name="unmarshaller" ref="xStreamMarshaller"/>
-                </bean>
-            </list>
-        </property>
+        <property name="errorHandler" ref="customErrorHandler"/>
     </bean>
 
-    <bean id="xStreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
-        <property name="annotatedClasses">
-            <array></array>
-        </property>
-    </bean>
-
+    <bean class="com.dhcc.itims.cri.component.rest.ITIMSErrorHandler" id="customErrorHandler"/>
 
     <bean id="alarmInfoOccur"   class="com.dhcc.itims.cri.component.rest.po.AlarmInfo">
-        <property name="mosn" value="998000001"></property><s>`W</s>roperty>
-        <property name="occurtime" value="2016-12-15%2015:26:56"></property>
+        <property name="mosn" value="998000001"></property>
+        <property name="occurtime" value="2016-12-15 15:47:56"></property>
+        <property name="severity" value="5"></property>
+        <property name="status" value="发生"></property>
         <property name="cause" value="test"></property>
-        <property name="addinfo" value="test"></property>
-        <property name="origininfo" value="test"></property>
+        <property name="detail" value="W1101Test 中文 an2 d"></property>
+        <property name="addinfo" value="附加信息"></property>
+        <property name="origininfo" value="原始告警信息"></property>
     </bean>
 
 
