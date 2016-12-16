@@ -42,7 +42,7 @@ public class ITIMSClientImpl implements ITIMSClient {
                     log.info("事件参数 :  " + urlP);
                     String success = template.postForObject(urlP,
                             null, String.class);
-                    sendedCnt += success!=null?success.matches("success")? 1:0 : 0;
+                    sendedCnt += success!=null&&success.matches(".*success.*")? 1 : 0;
                     log.info("发送告警结果:" + success);
                 }catch (Exception e){
                     e.printStackTrace();

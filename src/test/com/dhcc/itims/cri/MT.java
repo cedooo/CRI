@@ -46,6 +46,7 @@ public class MT {
             e.printStackTrace();
         }
 
+        System.out.println("sdjkfsuccesslsjdfojo".matches(".*success.*"));
     }
 
 

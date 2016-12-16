@@ -138,11 +138,6 @@ public class AlarmInfo {
                 ;
 
         urlStr = urlStr.replace("&", "%26");
-       /* try {
-            return URLEncoder.encode(str,"utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }*/
         return urlStr;
     }
     private String decode(String s){
