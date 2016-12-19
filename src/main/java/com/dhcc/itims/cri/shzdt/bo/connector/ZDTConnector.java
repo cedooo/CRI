@@ -262,7 +262,7 @@ public class ZDTConnector extends CRIConnector  {
                 while (!stopSend) {
                     for (String strCmd : listCmds) {
                         log.info("send:" + strCmd);
-                        outSock.println(strCmd);
+                        outSock.println(strCmd+"\r\n");
                         outSock.flush();
                         try {
                             Thread.sleep(3000);
