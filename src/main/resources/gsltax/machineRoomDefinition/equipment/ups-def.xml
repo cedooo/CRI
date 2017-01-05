@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<equipment name="UPS" type="ups" >
+ 	<!-- ref: 映射别名; type: 0.状态型 1，数值型 ; collect: 0.不采集 1，采集   -->
+ 	
+ 	<group refTab="shzdt_ups_state" collect="1" type="0">  
+		<node id="001" ref="inState" name="输入状态"   	collect="1"    />  
+		<node id="002" ref="batteryLevelState" name="电池电量状态"   	collect="1"    />  
+		<node id="003" ref="chargState" name="充电状态"    	collect="1"    />  
+		<node id="004" ref="outChargeState" name="放电状态"    	collect="1"    />  
+		<node id="005" ref="outputState" name="输出状态" 	collect="1"    />  
+		<node id="006" ref="hardwareError" name="硬件故障"   	collect="1"    />  
+		<node id="007" ref="battleNeedChange" name="电池需要更换"   	collect="1"    />  
+		<node id="008" ref="overload" name="过载"    	collect="1"    />  
+		<node id="009" ref="shudownNow" name="立即关机"    	collect="1"    />  
+		<node id="010" ref="compatibility" name="兼容性故障"    	collect="1"    />  
+		<node id="011" ref="parameterError" name="参数错误"  collect="1"    />  
+		<node id="012" ref="shutdownEmergency" name="紧急关机"  	collect="1"    />  
+		<node id="013" ref="fan" name="风扇故障"  	collect="1"    />  
+		<node id="014" ref="tempTooHigh" name="温度过高" collect="1"    />  
+ 	</group>
+
+ 	<group refTab="shzdt_ups" collect="1" type="1">   
+		<node id="015" ref="leftBattery" name="剩余电量"  collect="1"    />  
+		<node id="016" ref="leftTime" name="剩余时间"  collect="1"    />  
+		<node id="017" ref="batteryI" name="电池电流"  collect="1"    />  
+		<node id="018" ref="outOverload" name="输出负载"  collect="1"    />  
+		<node id="019" ref="innerTemp" name="内部温度"  collect="1"    />  
+		<node id="020" ref="batteryV" name="电池电压"  collect="1"    />  
+		<node id="021" ref="powerRate" name="有功功率"  collect="1"    />  
+		<node id="022" ref="viewRate" name="视在功率"  collect="1"    />  
+		<node id="023" ref="inputI" name="输入电流"  collect="1"    />  
+		<node id="024" ref="inputHz" name="输入频率"  collect="1"    />  
+		<node id="025" ref="inputFactor" name="功率因数"  collect="1"    />  
+		<node id="026" ref="voltage" name="电压"  collect="1"    />  
+		<node id="027" ref="inputAI" name="输入A相电流"  collect="1"    />  
+		<node id="028" ref="inputAV" name="输入A相电压"  collect="1"    />  
+		<node id="029" ref="inputABV" name="输入AB线电压"  collect="1"    />  
+		<node id="030" ref="inputBI" name="输入B相电流"  collect="1"    />  
+		<node id="031" ref="inputBV" name="输入B相电压"  collect="1"    />  
+		<node id="032" ref="inputBCV" name="输入BC线电压"  collect="1"    />  
+		<node id="033" ref="inputCI" name="输入C相电流"  collect="1"    />  
+		<node id="034" ref="inputCV" name="输入C相电压"  collect="1"    />  
+		<node id="035" ref="inputCAV" name="输入CA线电压"  collect="1"    />  
+		<node id="036" ref="bypathAI" name="旁路A相电流"  collect="1"    />  
+		<node id="037" ref="bypathAV" name="旁路A相电压"  collect="1"    />  
+		<node id="038" ref="bypathABV" name="旁路AB线电压"  collect="1"    />  
+		<node id="039" ref="bypathBI" name="旁路B相电流"  collect="1"    />  
+		<node id="040" ref="bypathBV" name="旁路B相电压"  collect="1"    />  
+		<node id="041" ref="bypathBCV" name="旁路BC线电压"  collect="1"    />  
+		<node id="042" ref="bypathCI" name="旁路C相电流"  collect="1"    />  
+		<node id="043" ref="bypathCV" name="旁路C相电压"  collect="1"    />  
+		<node id="044" ref="bypathCAV" name="旁路CA线电压"  collect="1"    />  
+		<node id="045" ref="bypathRate" name="旁路功率因数"  collect="1"    />  
+		<node id="046" ref="outputAI" name="输出A相电流"  collect="1"    />  
+		<node id="047" ref="outputAOverload" name="输出A相负载"  collect="1"    />  
+		<node id="048" ref="outputAV" name="输出A相电压"  collect="1"    />  
+		<node id="049" ref="outputABV" name="输出AB线电压"  collect="1"    />  
+		<node id="050" ref="outputBI" name="输出B相电流"  collect="1"    />  
+		<node id="051" ref="outputBOverload" name="输出B相负载"  collect="1"    />  
+		<node id="052" ref="outputBV" name="输出B相电压"  collect="1"    />  
+		<node id="053" ref="outputBCV" name="输出BC线电压"  collect="1"    />  
+		<node id="054" ref="outputCI" name="输出C相电流"  collect="1"    />  
+		<node id="055" ref="outputCOverload" name="输出C相负载"  collect="1"    />  
+		<node id="056" ref="outputCV" name="输出C相电压"  collect="1"    />  
+		<node id="057" ref="outputCAV" name="输出CA线电压"  collect="1"    />  
+ 	</group>
+</equipment>
