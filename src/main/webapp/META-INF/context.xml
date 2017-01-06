@@ -24,6 +24,6 @@
           username="itims"
           password="itims1cstnet2DH"
           driverClassName="com.mysql.jdbc.Driver"
-          url="jdbc:mysql://192.168.241.129:3306/dmsn_998"/>
+          url="jdbc:mysql://192.168.1.134:3306/dmsn_998"/>
 
 </Context>

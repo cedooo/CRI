@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job-scheduling-data
+	xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData http://www.quartz-scheduler.org/xml/job_scheduling_data_2_0.xsd"
+	version="2.0">
+	<schedule>
+
+		<!--甘肃地税局-->
+		<job>
+			<name>gsltax_collector_1</name>
+			<group>gsltax_jobs</group>
+			<description>甘肃地税局 采集任务-1</description>
+			<job-class>com.dhcc.itims.cri.shzdt.bo.job.SHZDTCRICollectJob</job-class>
+			<durability>true</durability>
+			<recover>false</recover>
+			<job-data-map>
+				<entry>
+					<key>machineId</key>   <!-- 公司&任务 ID -->
+					<value>GSLTAX</value>    <!--多个Job时，ID的值， 一定不能重复 -->
+				</entry>
+			</job-data-map>
+		</job>
+		<trigger>
+			<cron>
+				<name>gsltax_trigger_1</name>
+				<group>GSLTAX_TRI</group>
+				<job-name>gsltax_collector_1</job-name>
+				<job-group>gsltax_jobs</job-group>
+				<priority>5</priority>
+				<cron-expression>25 0/3 * * * ?</cron-expression>
+			</cron>
+		</trigger>
+
+
+		<!--维护任务-->
+		<job>
+			<name>CONNECTOR_CHECK</name>
+			<group>SYSTEM_TASK</group>
+			<description>检查接口连接是否有效，如果断开连接，重新连接。</description>
+			<job-class>com.dhcc.itims.cri.component.job.CheckConnectorAliveJob</job-class>
+			<durability>true</durability>
+			<recover>false</recover>
+		</job>
+		<trigger>
+			<cron>
+				<name>CONNECTOR_CHECK_TRRI</name>
+				<group>SYSTEM_TASK_TRRI</group>
+				<job-name>CONNECTOR_CHECK</job-name>
+				<job-group>SYSTEM_TASK</job-group>
+				<priority>5</priority>
+				<cron-expression>0 0/2 * * * ?</cron-expression>
+			</cron>
+		</trigger>
+
+		<job>
+			<name>DELETE_OUTDATED_DATA</name>
+			<group>SYSTEM_TASK</group>
+			<description>删除原始数据表中 采集时间距离现在超过__秒的过期数据。</description>
+			<job-class>com.dhcc.itims.cri.shzdt.bo.job.DeleteOutdatedRawDataJob</job-class>
+			<durability>true</durability>
+			<recover>false</recover>
+			<job-data-map>
+				<entry>
+					<key>outdatedSecond</key>
+					<value>100</value>    <!-- 过期时间(单位：s) -->
+				</entry>
+			</job-data-map>
+		</job>
+		<trigger>
+			<cron>
+				<name>DELETE_OUTDATED_DATA_TRRI</name>
+				<group>SYSTEM_TASK_TRRI</group>
+				<job-name>DELETE_OUTDATED_DATA</job-name>
+				<job-group>SYSTEM_TASK</job-group>
+				<priority>5</priority>
+				<cron-expression>10 0/5 * * * ?</cron-expression>
+			</cron>
+		</trigger>
+
+	</schedule>
+
+</job-scheduling-data>

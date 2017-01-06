@@ -1,4 +1,4 @@
-package com.dhcc.itims.cri.gsltax.service.impl;
+package com.dhcc.itims.cri.gsltax.service;
 
 import com.dhcc.itims.cri.gsltax.service.GsltaxService;
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<machineroom location="甘肃地税局" name="甘肃地税局机房" id="GSLTAX" type="GSLTAX">
+	<metadata equipmentsXml="com/dhcc/itims/cri/component/machineroom/element/equipment/equipment-def-rules.xml:
+			  				gsltax/machineRoom/equipment/temp-humi-def.xml"
+			  subSystemsXml=""
+			  machineRoomXml=""
+			  ip = "127.0.0.1" port="8002"
+			  connectorClass="com.dhcc.itims.cri.gsltax.bo.connector.GJSocketConnection">
+	</metadata>
+	<equipment id="L1101" name="漏水控制器1" type="leakwater" />
+</machineroom>

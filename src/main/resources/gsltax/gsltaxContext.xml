@@ -17,6 +17,45 @@
     <context:component-scan base-package="com.dhcc.itims.cri.gsltax">
         <context:exclude-filter type="regex" expression=".*Config"></context:exclude-filter>
     </context:component-scan>
+    <context:component-scan base-package="com.dhcc.itims.cri.itims">
+    </context:component-scan>
+    <context:component-scan base-package="com.dhcc.itims.cri.component">
+    </context:component-scan>
+
+    <!-- spring task schedule -->
+    <!-- 定义采集任务调度器 -->
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="configLocation" value="classpath:gsltax/quartz.properties">
+        </property>
+        <!-- 配置使用Spring ApplicationContext中配置的job bean -->
+        <property name="jobFactory" ref="springBeanJobACAFactory" >
+        </property>
+
+    </bean>
+    <bean id="taskExecutor"
+          class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor" >
+        <property name="corePoolSize" value="3" />
+        <property name="maxPoolSize" value="5" />
+        <property name="WaitForTasksToCompleteOnShutdown" value="true" />
+    </bean>
+
+
+
+    <!-- 接口连接器 -->
+    <bean id="connectorService" class="com.dhcc.itims.cri.component.connector.ConnectorService" scope="singleton"
+          init-method="init">
+        <property name="threadPoolTaskExecutor" ref="taskExecutor"></property>
+        <property name="machineRoomBuilder" ref="machineRoomBuilder" />
+    </bean>
+
+    <bean name="machineRoomBuilder" class="com.dhcc.itims.cri.component.machineroom.MachineRoomBuilder" scope="singleton">
+        <constructor-arg name="machineRoomXmls" >
+            <list>
+                <value>gsltax/machineRoom/machineroom.xml</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
 
     <!-- ========================================数据库========================================= -->
     <!-- 自动扫描com/dhcc/ywp/dao/目录下的所有SQL映射的xml文件, 省掉Configuration.xml里的手工配置 -->
@@ -29,5 +68,16 @@
         <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/datasource"/>
     </beans>
 
+    <!-- itims 告警接口 -->
+    <bean id="itimsClient" class="com.dhcc.itims.cri.component.rest.ITIMSClientImpl">
+        <property name="template" ref="restTemplate" />
+        <property name="apiUrl" value="http://192.168.1.134:7981//event?params="></property>
+    </bean>
+
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+        <property name="errorHandler" ref="customErrorHandler"/>
+    </bean>
+
+    <bean class="com.dhcc.itims.cri.component.rest.ITIMSErrorHandler" id="customErrorHandler"/>
 
 </beans>
